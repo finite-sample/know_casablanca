@@ -2,40 +2,38 @@
 
 Robert C. Luskin and Gaurav Sood
 
-[Paper](ms/main.pdf) · [Data](data/README.md)
+[Paper](ms/main.pdf) · [Data](data/README.md) · [Illustration design](docs/identification_design.md)
 
-## Question and motivation
+## Question and contribution
 
-How can a survey distinguish a confidently held false belief from a guess?
-Multiple-choice answers often count both as misinformation. The distinction
-matters when estimating its prevalence and the partisan differences in it.
-This paper separates misinformation from knowledge, mere belief, and ignorance,
-and asks how definitely true or false each statement is on a 0–10 scale.
+What can survey responses tell us about beliefs held before the question?
+An incorrect answer can reflect stored misinformation, tentative belief, a guess,
+or fresh inference. A person holding a confident false belief can also withhold it.
+Randomizing formats reveals changes in answers, but does not by itself distinguish
+these response processes.
 
-The companion study, [Misinformation about Misinformation?](https://github.com/finite-sample/know_misinfo_misinfo),
-examines how the wording and response options in media polls affect these estimates.
+The manuscript defines five belief states, states conditions for identifying all
+five or only misinformation, and derives sharp prevalence bounds under explicit
+limits on false positives and false negatives. It separates population prevalence
+from individual classification. Confidence ratings provide observations; their
+endpoints are not automatically validated measures of stored belief.
 
-## Data and research design
+## Empirical illustration
 
-Four surveys of university alumni, university staff, and Mechanical Turk workers
-randomly assigned respondents to multiple-choice items or a probability scale.
-The analysis compares response formats within each survey and documents the
-wording, answer keys, and excluded propositions. The convenience samples support
-these within-sample comparisons; their prevalence estimates do not describe the
-public as a whole.
+One March 2017 ACA proposition illustrates the identification problem. Selecting
+the false single-payer option and endorsing it at the scale endpoint are different
+observable events. The same arm-specific response rates can arise under very
+different misinformation prevalence and reporting errors. Generated tables and a
+sensitivity figure show what follows from alternative error restrictions, with
+sampling uncertainty reported separately.
 
-## Key findings
+![Misinformation bounds under alternative measurement-error caps](figs/identification_sensitivity.png)
 
-The scale finds much less misinformation about prominent falsehoods than
-multiple-choice answers suggest. Most ratings fall between the scale's ends.
-Partisan differences remain in the expected direction, but they are smaller
-when misinformation requires confidence in the false answer.
-
-![Misinformation estimates by response format](figs/format.png)
-
-Points show the share choosing an incorrect multiple-choice answer or the
-false end of the scale, with 95% intervals. Panels separate the four surveys.
-The lenient scale threshold is shown alongside the strict endpoint rule.
+The caps are sensitivity assumptions, not estimated error rates. The convenience
+sample does not identify national prevalence. The data overlap with the companion
+[Hidden Knowledge](https://github.com/finite-sample/know_hidden) project; the
+illustration contributes an identification analysis rather than another claim
+about format effects.
 
 ## Reproduce
 
@@ -44,64 +42,52 @@ make restore
 make check
 ```
 
-`make restore` installs the versions in `renv.lock`. `make check` runs the
-analysis, builds the manuscript, lints the R code, and runs the tests.
-`make analysis` runs stages 01–08 without compiling the manuscript.
+`make restore` installs the versions in `renv.lock`. `make check` runs all analyses,
+builds the manuscript, lints the R code, and runs the tests. `make analysis` runs
+stages 01–09 without compiling. The manuscript needs XeLaTeX and latexmk.
+`make ci-docker` runs the same checks in `rocker/verse:4.6.0`.
 
-The manuscript needs XeLaTeX and latexmk. Empirical estimates quoted in the text
-come from generated macros in `tabs/macros.tex`, `tabs/extension_macros.tex`,
-and `tabs/reconstruction_macros.tex`.
-
-With Docker installed, `make ci-docker` runs the same checks in `rocker/verse:4.6.0`.
+Every empirical number, table, and figure in the manuscript comes from stage 09,
+including `tabs/identification_macros.tex`. Analytical counterexamples are
+explicitly labeled and tested separately.
 
 ## Files and pipeline
 
 | Path | Contents |
 |---|---|
-| `data/raw/` | The four survey files, anonymized; see [data/README.md](data/README.md) |
-| `docs/propositions.csv` | Every statement, its key (true, false, or dropped), and the basis for the key |
-| `docs/mc_options.csv` | How each multiple-choice answer is scored |
-| `docs/recode_ledger.csv` | Decisions that differ from earlier analyses of these data |
-| `docs/citations.csv` | How each cited work was checked |
-| `R/` | Functions: reading and checking the data (`sources.R`), scoring (`beliefs.R`), estimates (`analysis.R`), figure and table output (`paper.R`) |
-| `scripts/` | Numbered execution stages, shared configuration, and the runner listed below |
-| `ms/` | `main.tex`, `references.bib`, and the compiled `main.pdf` |
-| `tests/testthat/` | Reproductions of earlier published numbers, scoring unit tests, and a check that the data carry no direct identifiers |
-
-`R/` contains reusable functions; `scripts/` calls them in execution order.
+| `data/raw/` | Four anonymized survey files; see [data documentation](data/README.md) |
+| `data/historical/` | Minimal, hash-verified historical extracts |
+| `docs/propositions.csv` | Statement wording, truth keys, exclusions, and key sources |
+| `docs/mc_options.csv` | Multiple-choice response coding |
+| `docs/recode_ledger.csv` | Departures from earlier coding |
+| `docs/citations.csv` | Citation verification ledger |
+| `docs/identification_design.md` | Estimand, assumptions, retrospective illustration choices, inference, and validation |
+| `docs/exploratory_analyses.md` | Inventory and limits of retained descriptive and historical analyses |
+| `R/identification.R` | Binary sharp bounds, finite-state linear program, response intervals, and illustration |
+| `R/` | Reusable data, scoring, estimation, and output functions |
+| `ms/` | Manuscript source, bibliography, and compiled PDF |
+| `tests/testthat/` | Numerical, scoring, data-integrity, reconstruction, and identification tests |
 
 | Script | Purpose |
 |---|---|
-| `00_config.R` | Paths, source checksums, labels, colours, `theme_paper()`, figure sizes, and table styles |
-| `01_prepare_data.R` | Verify sources, read and score responses, and save `data/derived/prepared_data.rds` |
-| `02_estimate.R` | Read the prepared data and write estimates to `tabs/*.csv` |
-| `03_figures.R` | Read estimates and write PDF and PNG figures to `figs/` |
-| `04_tables.R` | Write LaTeX tables, number macros, and table styles to `tabs/` |
-| `05_extensions.R` | Compare the three planned belief-state scorings and estimate descriptive engagement associations |
-| `06_correlates.R` | Recover demographics, ideology, party attachment, and 2010 voting intention |
-| `07_historical.R` | Reconstruct historical response models, partisan gaps, and latent response classes |
-| `08_reconstruction_tables.R` | Generate reconstruction tables and manuscript values |
-| `99_run_all.R` | Load configuration and helpers, then run stages 01–08 in order |
+| `00_config.R` | Paths, source checksums, labels, plot and table styles |
+| `01_prepare_data.R` | Verify, read, and score survey sources |
+| `02_estimate.R` | Descriptive estimates |
+| `03_figures.R` | Descriptive figures |
+| `04_tables.R` | Descriptive tables and macros |
+| `05_extensions.R` | Scoring sensitivity and descriptive engagement associations |
+| `06_correlates.R` | Demographics, ideology, party attachment, and 2010 voting intention |
+| `07_historical.R` | Historical response models, partisan gaps, and exploratory response classes |
+| `08_reconstruction_tables.R` | Reconstruction tables and macros |
+| `09_identification.R` | Current manuscript's identification illustration and sensitivity analysis |
+| `99_run_all.R` | Load configuration and helpers; run stages 01–09 |
 
-Prepared data in `data/derived/` are generated and ignored by Git. Table settings
-in `00_config.R` cover standard tables and the denser appendix tables; the
-manuscript applies them through generated commands in `tabs/style.tex`.
+Prepared data in `data/derived/` are generated and ignored. Historical extracts
+make the normal build independent of local archives and sibling repositories;
+`scripts/import_archived_data.R` can recreate them from the documented originals.
 
-The first extension implements the 2018 scoring schemes and relates respondent
-belief-state indices to political interest, voting intention, and partisan
-intensity. See the [analysis plan](docs/belief_state_extensions.md) and
-[generated results](docs/belief_extension_results.md). The manuscript includes
-these comparisons in its results, discussion, and three generated appendix
-tables; quoted estimates come from generated LaTeX macros. These associations
-are descriptive; voting intention is not observed turnout or candidate choice.
-
-The subsequent [reconstruction](docs/reconstructed_results.md) adds the verified
-2010 voting measures and demographic correlates, eleven historical party-based
-response models, eight ANES affect models, partisan-gap sensitivity to answer
-keys, and exploratory latent response classes. The [source notes](docs/recovered_measures.md)
-document questionnaire evidence, data joins, repaired historical code, and
-interpretation limits. The [retrospective plan](docs/historical_analysis_plan.md)
-records specifications and changes following source review. `data/historical/`
-contains minimal, hash-verified extracts, so the normal build does not depend on
-the local historical archive or sibling repositories. `scripts/import_archived_data.R`
-recreates those extracts when the documented original sources are available.
+The earlier [belief-state scoring results](docs/belief_extension_results.md) and
+[historical reconstruction](docs/reconstructed_results.md) remain reproducible.
+Their scoring labels and latent response classes do not identify the five
+premeasurement cognitive states. They are separate reports, not empirical
+validation of the current manuscript's state definitions.

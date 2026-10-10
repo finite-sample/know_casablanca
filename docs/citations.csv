@@ -43,3 +43,7 @@ shen2025,crossref_doi,10.1093/poq/nfaf044,Added for this manuscript
 stroud2010,crossref_doi,10.1111/j.1460-2466.2010.01497.x,2011 drafts
 sturgis2008,crossref_doi (reused verbatim),10.1093/poq/nfm032,04-04-18-gs has placeholder 'Sturgis xxxx'; 09-02-17 draft says 2007. Not in ref list
 taber2006,crossref_doi,10.1111/j.1540-5907.2006.00214.x,Cited (no year) in 2012-2013 drafts
+molinari2008,author_publication_page+working_paper,10.1016/j.jeconom.2007.12.003,"Metadata from author publication page; framework checked against https://cae.economics.cornell.edu/05-10.pdf"
+tamer2010,publisher_page,10.1146/annurev.economics.050708.143401,"Annual Reviews publication page; general partial-identification attribution"
+allman2009,author_manuscript,10.1214/09-AOS689,"https://arxiv.org/pdf/0809.5032; conditional independence and rank conditions do not establish substantive cognitive labels"
+rogan1978,publisher_page,10.1093/oxfordjournals.aje.a112510,"Oxford Academic metadata and abstract; standard sensitivity/specificity adjustment"

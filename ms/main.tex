@@ -1,22 +1,19 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{fontspec}
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{float}
-\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,array,float,graphicx}
 \usepackage[font=small,labelfont=bf]{caption}
-\usepackage{natbib}
-\usepackage{xurl}
+\usepackage{natbib,xurl}
 \usepackage[hidelinks]{hyperref}
 \usepackage{setspace}
 \setstretch{1.15}
 \graphicspath{{../figs/}}
-\input{../tabs/macros.tex}
-\input{../tabs/extension_macros.tex}
-\input{../tabs/reconstruction_macros.tex}
+\input{../tabs/identification_macros.tex}
 \input{../tabs/style.tex}
+\newtheorem{proposition}{Proposition}
+\newcommand{\states}{\mathcal{S}}
+\newcommand{\simplex}{\Delta^4}
 
 \title{The Waters of Casablanca: On Political Misinformation}
 \author{Robert C. Luskin \and Gaurav Sood}
@@ -26,367 +23,338 @@
 \maketitle
 
 \begin{abstract}
-\noindent Misinformation is a confidently held false belief. Separating it from knowledge, from ignorance, and from mere, less confident belief poses conceptual and operational problems, and this paper takes up both. Conceptually, we draw the boundaries between these belief states, distinguish invention (believing a congenial fiction) from denial (disbelieving an uncongenial fact), and ask which propositions can be objects of misinformation at all. Operationally, we trace how correct, incorrect, and ``don't know'' responses map onto belief states and argue that multiple-choice items cannot tell misinformation from guessing and inference. We propose asking how definitely true or false each proposition is on a 0--10 scale, counting only the scale's false end as misinformation. In four surveys that randomly assigned respondents to multiple-choice items or to the scale (\nTotal{} respondents in all), the scale finds far less misinformation about well-publicized falsehoods: \muslimScale{} are confident that Barack Obama is a Muslim, against \muslimMc{} choosing that answer from a menu with a ``don't know'' option and \muslimMedia{} when the question is worded as media polls word it. Most ratings fall between the scale's ends. Misinformation is partisan in the expected direction, but the partisan gaps are much smaller than multiple-choice items make them look. Exploratory comparisons across three belief-state scorings associate knowledge with greater engagement relative to intermediate ratings; direct comparisons with misinformation are less precise and sensitive to scoring and item completeness.
+\noindent Misinformation is a confidently held false belief. An incorrect answer need not reveal one, and a person holding one need not report it. We distinguish knowledge, tentative correct and incorrect belief, ignorance, and misinformation, then ask what survey responses can identify about their prevalence. Randomly assigning response formats identifies differences in answers but does not, by itself, identify the beliefs held before measurement. Point identification requires restrictions on how those beliefs produce responses. We state conditions for identifying all five states or only misinformation, derive sharp prevalence bounds under limits on false positives and false negatives, and show how multiple formats can narrow or contradict those bounds. A survey illustration makes the assumptions consequential: the same observed answers support very different misinformation prevalence under different response processes. Confidence ratings provide useful observations, but their endpoints are not self-validating measures of stored belief. The resulting framework specifies what a proposed measure establishes, what it assumes, and what further evidence would make its interpretation credible.
 \end{abstract}
 
 \section{Introduction}
 
-In an oft-quoted scene from the movie \emph{Casablanca}, the protagonist Rick claims, when asked by his frenemy Captain Renault, to have come to Casablanca ``for the waters.'' When Renault responds, ``The waters? What waters? We're in the desert,'' Rick shrugs, ``I was misinformed.'' Of course Rick was merely engaging in witty evasion, but suppose, for analogy's sake, that he had actually had a condition that would have been improved by curative waters located elsewhere but worsened by the aridity of Casablanca. If he had merely known nothing of these possibilities and therefore gone nowhere, he would have incurred some opportunity cost, but if he had in fact come to Casablanca for the waters, he would actually have been worsening his health, overlaying the opportunity cost with real cost. To take his lines at face value, this, in this scenario, would have been Rick's case. He did not simply know nothing about Casablanca or the location of curative waters; he believed Casablanca to have them. He was misinformed.
+In an oft-quoted scene from \emph{Casablanca}, Rick claims to have come to Casablanca ``for the waters.'' Captain Renault responds, ``The waters? What waters? We're in the desert.'' Rick shrugs: ``I was misinformed.'' Rick was engaging in witty evasion. Taken literally, however, his reply distinguishes a false belief from an absence of belief. He did not merely know nothing about Casablanca's waters. He believed Casablanca to have them.
 
-This paper is about misinformation. A first step is to disambiguate the term. Like ``information,'' ``misinformation'' can refer either to communication (residing in messages) or to cognition (residing inside the head). The former may engender or sustain the latter, but they are not the same thing. Rick, on his account, was told there were curative waters in Casablanca (a message containing misinformation) and chose to believe it (thus coming to hold that misinformation). Here we focus on inside-the-head misinformation---on the pictures in our heads \citep{lippmann1922}---while pointing to misinformation in messages as one of its sources.
+That distinction matters. Suppose Rick had a condition that curative waters would have improved and desert air would have worsened. Ignorance might have kept him home, forgoing a benefit. Misinformation might have sent him to Casablanca, incurring a further cost. The same distinction can matter in politics: lacking a relevant belief and confidently holding a false one can lead to different choices. Neither condition invariably produces worse choices. A mistaken belief may happen to support the choice someone would make with better information. Establishing the prevalence of misinformation is therefore separate from establishing its consequences.
 
-A good deal of misinformation, these days, concerns politics. The airwaves, print media, and internet are densely inhabited by politicians, commentators, and ``journalists'' assiduously promoting this falsehood or that, and large fractions of the public appear to have swallowed some. According to media reports, many Americans have believed that Saddam Hussein was involved in the 9/11 attacks, that former President Obama is a Muslim, that the Affordable Care Act (a.k.a.\ ``Obamacare'') involved ``death panels,'' and that millions of illegal immigrants voted in the 2016 presidential election \citep{kull2003, pew2009, pew2010, nyhan2010a, frankovic2016}. The percentages believing such falsehoods are generally overstated \citep[see][and below]{luskin2018} but nonzero enough to be troubling.
+A survey observes Rick's answer, not his prior belief. He might have arrived believing in the waters, guessed that they existed when asked, inferred their existence from a suggestive question, or said that they existed while believing otherwise. Conversely, a Rick who did believe in the waters might withhold the answer or avoid expressing certainty. Correct answers and ``don't know'' responses admit analogous ambiguities. The difficulty is not merely that people sometimes err. Several states of belief can produce the same answer, and the same state can produce different answers.
 
-The consequences may be more complex and contingent than may appear at first blush. Controlling for values, interests, and other dispositions, the misinformed and the ignorant can be expected to behave differently, and in pursuit of different preferences. In ways, the misinformed may actually resemble the knowledgeable more than the ignorant. Both misinformation and knowledge provide cognitive anchoring, making attitudes more stable; misperceptions can survive even direct correction \citep{nyhan2010b}. Both also help motivate voting and other forms of participation. In these ways, being misinformed may arguably be ``better'' than being ignorant.
+This paper concerns misinformation inside the head, rather than falsehoods in messages. Our contribution is to connect a substantive account of belief states to the assumptions needed to measure them. We distinguish stored belief from cognition produced while answering; formalize the response process; and separate identification of a population share from classification of a person. We then develop point-identification conditions and partial-identification results for this measurement problem. The mathematics applies established ideas about misclassification and incomplete identification \citep{molinari2008,tamer2010}. Its purpose here is to make the substantive commitments visible.
 
-In the critically important way suggested by the Casablanca excerpt, however, it may be worse. For both the individual citizen and the democratic system, the greatest single benefit of political knowledge may lie in its helping people approach their authentic policy and electoral preferences---definitionally, those they would have with unlimited information and unlimited opportunity and ability to process it; axiomatically, given that definition, those best serving their individual values and interests. Both ignorance and misinformation, on the other hand, can be expected to leave many people some appreciable distance from their authentic preferences, through either an absence of direction in the one case or misdirection in the other.
+Confidence is relevant to the definition of misinformation. Previous studies accordingly distinguish confidently wrong answers from uncertainty or lack of information \citep{kuklinski2000,pasek2015,li2020}. But an observed confidence response does not establish that the corresponding belief existed before the question. Nor does a middle response necessarily establish ignorance. These are measurement claims, not consequences of the labels attached to a scale.
 
-Which can be expected to lead people further astray is unclear and almost certainly contingent. It surely depends on who consumes what media \citep{iyengar2009, stroud2010}; on who processes what information how; on the conditioning roles of prior cognition, political dispositions, and personality traits, among other things; and on how these conditioning variables may be correlated with values and interests. Misinformation may sometimes be accepted precisely because it comports with one's values and interests. It may suppress nuance and heighten fervor, without necessarily luring people away from their authentic preferences. People may reach the right conclusions for the wrong reasons. If Casablanca had been good for Rick's health for reasons other than its aridity, he might have made a good choice despite his mistaken belief in its having waters. Similarly, someone who ``knew'' only of the Affordable Care Act that it featured ``death panels'' might well still have opposed it if he or she knew all (and only) the facts. Misinformation may sometimes make it easier to reach authentic preferences.
+We illustrate the problem with one randomized survey comparison. The illustration does not select a winning format or estimate a national prevalence. It holds observed response rates fixed while changing explicit assumptions about how stored misinformation produces those responses. This is the empirical contribution appropriate to the argument: showing how much the interpretation depends on restrictions that a format comparison alone cannot supply.
 
-For democracy, the key questions are of net error. Averaging across individuals, does a given piece of misinformation about Policy X lead people toward or away from authentic preferences about it? If away, does it lead them further away than does mere ignorance? The answer probably varies with the misinformation, the policy, and the circumstances, but it seems fair to suspect that misinformation must often induce significant net error---and often more of it than does mere ignorance. Simulations of fully informed preferences suggest that information often changes collective preferences \citep{dellicarpini1996, althaus1998}, but those analyses bundle ignorance with misinformation. People knowing next to nothing about the health care debate may nonetheless opine about the legislation, and those opinions may differ, in either direction, from their authentic attitudes. But the errors, under most conditions, seem likely to be relatively symmetric and countervailing. Some who ``should'' favor the legislation oppose it; some who ``should'' oppose it favor it. By contrast, the erroneous belief that the legislation involves ``death panels'' seems likelier to work preponderantly in one direction, leading more of those who should favor it to oppose it than vice versa.
+\section{Belief states and their objects}
 
-Here we consider the conceptualization, measurement, incidence, and correlates of political misinformation. In the way of conceptualization, we urge distinguishing misinformation from knowledge, ignorance, and ``mere belief,'' and existing from fresh misinformation (learned and inferred in the process of responding to the questionnaire). In the process, we also attempt to chart and bound misinformation's domain, noting that not all empirical propositions can be reasonably characterized as misinformation when believed or disbelieved. In the way of measurement, we argue that the questions conventionally used to gauge misinformation yield too many substantive (either correct or incorrect) responses and too few DKs---partly and most fundamentally because their multiple-choice format is inapt. We propose a measure that asks how definitely true or false each proposition is, and we test it against multiple-choice items in four surveys that randomly assigned respondents to one format or the other.
+\subsection{Truth, confidence, and stored belief}
 
-The measure finds much less misinformation than multiple-choice items do about the falsehoods that make headlines, and most of what it finds is less confident belief rather than misinformation. It is not the first attempt to separate the confidently wrong from the rest. \citet{kuklinski2000} asked how confident respondents were in their answers about welfare, \citet{li2020} separate the misinformed from the uninformed and the ambiguously informed, \citet{pasek2015} used certainty follow-ups to estimate how many Americans were misinformed about the Affordable Care Act, and \citet{graham2023} shows that even answers held with professed certainty are unstable over time. We take the conceptual argument further than these studies and add randomized comparisons of formats; Graham's result, to which we return, implies that our estimates are upper bounds.
+Misinformation is a species of belief: a cognitive representation of an empirical proposition. It is confidently held and false. Knowledge, in the operational sense used here, is a confidently held true belief. This usage sets aside philosophical requirements concerning justification. Between confident belief and no relevant belief lie tentative beliefs, which can also be true or false. Calling every wrong answer misinformation collapses these distinctions before measuring them.
 
-\section{Misinformation versus Other Belief States}
+The unit is a person and a specified proposition at a specified time. Fix a proposition with a defensible truth value $T\in\{0,1\}$ and a time immediately before assignment to a survey format or exposure to its cues. Let
+\[
+S\in\states=\{K,B^+,I,B^-,M\}
+\]
+denote, respectively, confident true belief, tentative true belief, no relevant stored belief, tentative false belief, and confident false belief. Correctness concerns the person's judgment of the proposition: confidently rejecting a false proposition is $K$, just as confidently accepting a true proposition is $K$.
 
-Misinformation is a species of belief---a cognitive representation of an empirical proposition linking objects to attributes, objects to other objects, or attributes to other attributes. But not just any belief. It is not something you suspect, kind of think, or are inclined to believe. It is something you believe. And it is not something that is true or neither true nor false. It is false. In fine, misinformation is a confidently held belief in an empirical proposition that is false. Its opposite, in a way, is knowledge---a confidently held belief in an empirical proposition that is true. But not all beliefs are either knowledge or misinformation. Some concern propositions whose truth value is debatable (and may, in some cases, forever remain so). Others are unconfidently held. Someone who believes that Barack Obama is a Muslim is incorrect, but is misinformed only if he or she confidently believes it, just as someone who believes that Barack Obama was born in Hawaii is correct, but knows it only if he or she confidently believes it. Less confidently held beliefs, whether correct or incorrect, are mere belief. But misinformation, knowledge, and mere (correct or incorrect) belief are not the only, as we shall call them, belief states. A final, and probably the most common, belief state is ignorance: the absence of relevant belief. We trust these distinctions are clear but suspect they can stand some elaboration.
+A conceptual confidence threshold separates $K$ from $B^+$ and $M$ from $B^-$. It must be stated substantively; it is not automatically the highest number on a questionnaire. A scale endpoint can serve as an indicator of crossing the threshold only under a measurement assumption. Similarly, having no relevant stored belief is different from assigning roughly equal credence to two possibilities after considering them. A midpoint response can arise from either, or from reluctance to answer.
 
-\subsection{Existing versus Measurement-Induced Belief}
+The five-state representation is an idealization. It assumes that stored beliefs in the population under study have a direction and can be divided by the confidence threshold. Unresolved ambivalence or simultaneous contradictory representations may require additional states. We do not define these cases away as ignorance. The identification arguments below extend to any specified finite state space; the five states make the conceptual distinctions of interest explicit.
 
-Misinformation, like knowledge and mere belief, is a matter of previously stored cognition---what the respondent already believes before starting the questionnaire. But questionnaires are reactive instruments. Respondents may learn, gleaning the answers to subsequent questions from the informational crumbs afforded by prior ones. They may make fresh inferences, sometimes correct, sometimes incorrect, using other, already-held pieces of knowledge or misinformation. A respondent who knows that Massachusetts is a heavily Democratic state may infer, when asked to supply the party affiliation of Senator X from Massachusetts, that Senator X is a Democrat. The inference is correct but does not represent knowledge if X is Ed Markey and would have been incorrect but not represent misinformation if X, a few years ago, was Scott Brown. What the respondent knows is simply that Massachusetts is a heavily Democratic state. The response regarding Senator X's party affiliation is stereotypic inference. If retained, such learning or inference may subsequently become knowledge (if correct) or misinformation (if incorrect). But that is not what we are interested in measuring---not if we wish to gauge the extent of knowledge or misinformation, how it arises, and what it affects in the real world. This reactivity may be more of an issue for measuring knowledge than for measuring misinformation, to the extent that most of the fresh learning and inference is correct. But it is, in either case, a critical caution to note.
+Guessing and fresh inference are processes that produce responses, not additional enduring belief states. Someone who stores no belief about a senator's party may infer an answer from the senator's state. That answer can be correct and confidently given without revealing prior knowledge of the senator's party. An erroneous inference during measurement similarly need not reveal prior misinformation. A belief inferred and stored before the survey, however, belongs in the target state: its origin does not disqualify it.
 
-\subsection{Belief versus Disbelief, Invention versus Denial}
+\subsection{Invention, denial, and the domain of misinformation}
 
-Belief subsumes disbelief (believing a proposition to be false). Knowledge includes both confident belief in truths and confident disbelief in falsehoods. Someone who confidently disbelieves claims that several million illegal immigrants voted in the 2016 presidential election knows something, even lacking any confident belief about exactly how many did vote. Symmetrically, misinformation includes both confident belief in falsehoods and confident disbelief in truths. The latter is \emph{denial}---a matter of confidently rejecting uncongenial facts (as those denying that the earth's climate is changing have been doing). The former is \emph{invention}---a matter of confidently adopting congenial fictions (as those believing that several million illegal immigrants voted in the 2016 U.S. presidential election are doing).
+Misinformation can involve invention, confidently accepting a false proposition, or denial, confidently rejecting a true one. The truth key determines which direction is incorrect. Denial and invention concern particular propositions, not mutually exclusive kinds of person. Someone can know one fact and be misinformed about another, or endorse both a true statement and an unrelated false statement in the same battery.
 
-Both denial and invention are forever tempting. In varying degree, we all strain toward consistency \citep{festinger1957, kunda1990}, while also trying to minimize effort (less ``cognitive misers'' than ``cognitive slackers''). It is often easier to deny uncongenial facts than to interpret them away or argue around them (by marshaling other, more congenial facts or fictions) and to invent congenial fictions than to research the facts (which may or may not be congenial). Of course, this is especially so for uncongenial facts being publicly and energetically denied, or congenial fictions being publicly and energetically promoted, by prominent politicians or media sources, as has been the case with respect to Iraq's supposed involvement in the 9/11 attacks, the ACA's inclusion of death panels, the reality of climate change, and the millions of illegal immigrants supposedly voting in the 2016 presidential election.
+Selecting one wrong option from a multiple-choice menu is therefore not equivalent to denying the correct option, still less to endorsing every other false option. The response records a choice under a particular instruction. A battery that separately rates each proposition can reveal more about the pattern of expressed judgments. Turning that additional detail into a description of stored beliefs still requires a response model.
 
-\subsection{Descriptive versus Causal Propositions}
+The proposition's truth value also needs independent justification. An assertion about an observable event can have an evidentially defensible key even when politically contested. A preference, an undefined evaluative comparison, or an unresolved prediction cannot simply be keyed as false because the analyst disagrees. Disputed wording may require alternative keys or exclusion from the target domain. All results below are conditional on the stated key. Measurement-error bounds do not repair a mistaken definition of truth.
 
-Just as in social science, of which political cognition (the phenomena, as distinct from the field of study) is, in part, a barefoot version, empirical propositions may be either descriptive (verbal characterizations of what are essentially means, variances, or correlations) or causal (verbal characterizations of one variable's effect on another: how much, on average, and holding everything else constant, a given increase in the one can be expected, under given conditions, to increase or decrease the other). A belief that most illegal immigrants have a criminal record or, on the other side of the debate, that most countries automatically award citizenship to anyone born within their borders is descriptive (and its holder misinformed). A belief that greenhouse gases have played an important part in producing climate change is causal (and its holder knowledgeable). One that a border fence can never reduce illegal border crossings is causal (and its holder misinformed).
+Sincerely held partisan false beliefs count as misinformation under this definition. An association with party is not, by itself, evidence of insincere reporting. Removing the association by regression or declaring one partisan group an unbiased reference can remove precisely the beliefs we want to measure. A valid distinction between belief and expression requires evidence about the response process, not a preference for politically neutral answers.
 
-\subsection{What Is True?}
+\section{From stored beliefs to survey responses}
 
-For a belief to count as knowledge, the empirical proposition it represents must be true. For it to count as misinformation, the empirical proposition it represents must be false. But then we must say what is true and what is false. This can be clear sailing. Some empirical propositions are plainly true or false. That the ACA was passed by Congress and signed into law is true; that it was struck down in its entirety by the U.S. Supreme Court is false. Descriptive propositions like these are likelier than causal ones to be unambiguously true or false.
+Let $\pi_s=\Pr(S=s)$ and $\pi=(\pi_K,\pi_{B^+},\pi_I,\pi_{B^-},\pi_M)'$. These are shares in a specified respondent population for one proposition, with $\pi\in\simplex$, the five-state probability simplex. A survey format $Z=z$ produces a response $R(z)$ in a finite set $\mathcal R_z$. Define the response channel
+\begin{equation}
+ A_z(r,s)=\Pr\{R(z)=r\mid S=s\}.
+ \label{eq:channel}
+\end{equation}
+Each column of $A_z$ is a probability distribution. Under random assignment of format, consistency of the observed response with the assigned format, and no interference between respondents,
+\begin{equation}
+ q_z=A_z\pi,\qquad q_z(r)=\Pr(R=r\mid Z=z).
+ \label{eq:mixture}
+\end{equation}
+Randomization supplies the common premeasurement composition $\pi$. It does not supply $A_z$.
 
-But other propositions, even some descriptive ones, are harder calls. For one thing, all humanly defined ``truths'' contain a smaller or larger dose of social construction. Propositions consensually taken to be true in one time and place may not be in others, and, in any given time and place, the truth of any given proposition may be more or less debated. Postmodern intellectualizing aside, social construction does pervasively strain toward realism. The social environment often penalizes erroneous beliefs. Atlantans believing their city is Chicago may baffle and ultimately repel conversational partners and, for that matter, perplex and frustrate themselves when they try to find their way to the Art Institute or other Chicago landmarks. The physical environment can impose still harsher penalties. People not believing in gravity and acting on that disbelief risk Darwin Awards.
+The channel includes retrieval, inference, interpretation of wording, use of response categories, withholding, and expression. It can also include belief changes caused by the question. Equation~\eqref{eq:mixture} does not require the question to leave beliefs unchanged: its target is the state before the question, and its channel describes everything between that state and the observed answer. Recovering that earlier state becomes harder, not logically impossible, when measurement is reactive.
 
-So on what basis can we say that this proposition is true, and that one false? Truths may tend to be more widely believed than falsehoods, but we should hardly want to define truth as a matter of popular belief. The truth is what it is, however rarely credited. God knows what is true, but we mortals need a yardstick. Perhaps the most reasonable one, and the one we typically if unthinkingly use, is the existence of a sufficient consensus of untainted expert opinion. By untainted, we mean that there should be some discounting for blatant self-interest, as on the part of experts in the employ of stake-holding interests.
+The observation space should distinguish a substantive answer, an explicit ``don't know,'' and a missing answer when the instrument distinguishes them. Dropping nonrespondents can destroy the common composition if completion depends on format and belief state. Keeping missingness as an outcome avoids that selection assumption. Alternatively, one can bound the unobserved response among those with missing answers.
 
-But what do we make of the evolution of knowledge---in effect, of the occasionally shifting balance of expert opinion? It is no accident that virtually everyone, especially the experts, now believes the earth to be (approximately) round, but there was a time when many believed it to be flat. How should responses to a hypothetical medieval knowledge question about the earth's shape have been scored? With ``flat'' as correct? That, in any case, is how they would have been scored. In practice, we can only hold people to a high mortal standard---to the expert opinion of the day.
+For a 0--10 rating, the eleven categories can be used directly in $q_z$. Dividing the number by ten does not establish that it is a calibrated subjective probability. Even an explicitly probabilistic response may reflect rounding or a different interpretation of uncertainty. Nor must ratings of several statements sum to one unless the statements are mutually exclusive and exhaustive under the intended interpretation. The observation model must respect the instrument actually administered.
 
-\subsection{Debatable Propositions}
+Randomization identifies effects of format on responses. A lower rate of incorrect answers under one format can reflect fewer guesses, more withheld false beliefs, different inference, or different thresholds for expression. The marginal distributions $q_z$ cannot tell us which explanation is responsible. They also do not reveal any respondent's joint potential responses to all formats.
 
-The truth-value of some, indeed many empirical propositions is less certain. That the State of Texas allows the death penalty for certain classes of homicide is a fact. To believe otherwise is to be misinformed. That the death penalty deters (or fails to deter) homicide, however, is debatable. This is what \citet{luskin2002} term an ``empirical premise,'' highlighting its role in the rough, often faulty syllogisms of political argument, while relying on the distinction between ``empirical premises'' and ``facts'' to indicate debatability. Here, we shall refer instead to ``debatable propositions,'' to highlight their uncertain truth-value. One may either accept or reject a debatable proposition without being, on that count, either knowledgeable or misinformed. Causal propositions, as this example suggests, are especially likely to be debatable.
+\section{What identifies a belief state?}
 
-So how undebatable does a proposition have to be before we count it as fact, and someone who denies it or believes something inconsistent with it as misinformed? Some of the most important empirical propositions are somewhat-to-highly debatable. We shall very likely wish to ask about them but must consider how to interpret the results. Are the beliefs in keeping with a proposition that is probably but uncertainly true knowledge? Are those at odds with it misinformation? Or is any belief about it neither knowledge nor misinformation, because the truth of the matter is uncertain? We need not require absolutely certain truth or falseness to take a proposition as sufficiently undebatable to be the object of knowledge, ignorance, or misinformation. But it cannot exceed some hard-to-specify threshold of debatability. The domain of both misinformation and knowledge is propositions that are either plainly true or plainly false. Other propositions, of which there are a great many, can only be the object of mere belief or ignorance.
+\subsection{Why more responses need not identify more beliefs}
 
-The items we analyze below show how easily a question can stray past that threshold. Of the \nMarchPropositions{} propositions in our March 2017 survey, we drop \nDropped{}. Two about greenhouse gases are not plainly true or false: greenhouse gases include ground-level ozone, which causes respiratory problems, and nitrous oxide, which depletes the ozone layer. One about the executive order on immigration could reasonably be read as referring to an earlier order. And the four of a second greenhouse-gas question go because an edit made just before fielding left it with two correct answers. Appendix Table~\ref{tab:propositions} lists every proposition, its key, and the basis for it.
+\begin{proposition}[Unrestricted response channels]
+\label{prop:nonid}
+If the response channels are unrestricted apart from being column stochastic, every $\pi\in\simplex$ is compatible with any collection of response distributions $\{q_z\}$. Thus neither the five-state composition nor the misinformation share is identified, regardless of the number of randomized formats.
+\end{proposition}
 
-\subsection{Political Entanglements}
+For any proposed composition, set every column of $A_z$ equal to $q_z$. Equation~\eqref{eq:mixture} then holds. This construction need not be psychologically attractive. It shows exactly why psychological or measurement restrictions must do some work. An assertion that knowledgeable people always answer correctly would be such a restriction, rather than something already contained in the unrestricted model.
 
-Sadly, not everything that is undebatable is undebated. But categorizing such propositions as true or false risks embroiling us who study misinformation in the very debates motivating and affected by it. But what is the alternative? To take an important example, is the occurrence of global climate change a fact? That greenhouse gas production has been contributing to it? Neither proposition is quite as indisputable as the existence of the death penalty in Texas. Again, a reasonable standard is the degree of consensus in the relevant expert---here, scientific---community. But how much is needed? To require 100\% would be to misunderstand the nature of science and to ignore important scientific knowledge. But where exactly to draw the line? Probably 60\%, even 70\%, is too low. But what about 80\%? 90\%? One could survey relevant experts to estimate the percentage, but since any threshold is arbitrary, perhaps the best a scholar can do is to be clear about what is being taken as factual and to leave it to readers to accept or reject the argument and results as they see fit. In the case of climate change, we see the scientific consensus as being overwhelming enough (about 97\% of publishing climate scientists; \citealt{cook2016}) to regard its occurrence and its being at least partly caused by greenhouse gas production as matters of fact \citep{ipcc2013} and those rejecting those propositions as misinformed (in denial).
+Nonidentification also arises under channels that appear quite informative. Consider a deliberately specified hypothetical instrument with correct, DK, and incorrect responses and the known channel
+\begin{equation}
+ A=\begin{pmatrix}
+ 1&1&0&0&0\\
+ 0&0&1&0&0\\
+ 0&0&0&1&1
+ \end{pmatrix},
+ \qquad\text{columns ordered }K,B^+,I,B^-,M.
+ \label{eq:toy}
+\end{equation}
+The instrument perfectly separates correct belief, ignorance, and incorrect belief, but cannot distinguish confidence within either direction. Both
+\[
+ \pi^{(a)}=(.4,0,.3,0,.3)',\qquad
+ \pi^{(b)}=(.1,.3,.3,.3,0)'
+\]
+produce $q=(.4,.3,.3)'$. Misinformation is 30 percent in the first composition and absent in the second. These numbers specify a counterexample, not empirical estimates. Adding a confidence question helps only insofar as its state-specific response probabilities distinguish the relevant columns.
 
-In the 1950s, the debate over the carcinogenicity of cigarettes stood more or less where the climate change debate in the U.S. does now, except that there were rather more dissenting studies, sponsored by the tobacco industry. Should we have refrained then from regarding those denying that cigarette smoking (probabilistically) causes cancer as misinformed? We think not. People on one or both sides of many debates will insist on denying uncongenial facts or maintaining congenial fictions. Are we to ignore some of the most widespread and potentially most consequential pieces of misinformation simply because some interests insist on promoting them, and some people therefore on believing them?
+Repeated measurements can add identifying restrictions, but repetition alone is insufficient. Finite-mixture identification results require conditions on such features as conditional independence and the ranks of response distributions \citep{allman2009}. Repeated questions about the same proposition may change the state being measured or retain correlated response errors. A latent class fitted to answers about different propositions instead requires a common latent construct across those propositions. Even an identified class model does not establish that its classes are knowledge, ignorance, or misinformation about a particular proposition. Statistical identification of response profiles and substantive validation of their labels are separate tasks.
 
-The problem is compounded to the extent that the dissemination and acceptance of misinformation are unevenly distributed, more prevalent on one side than the other. It is politically entangling enough to point equally to misinformation on both sides, since each may regard only the other's misinformation as wrong. It is still more so to point to misinformation preponderantly on one side. Doing so may seem like taking sides but is not. A prevalence of misinformed bad arguments does not imply the unavailability of better ones or the inauthenticity of the preference motivating the misinformation. There were good reasons, depending on one's values and interests, for opposing the ACA. They just did not include its establishing ``death panels.'' That was misinformation \citep{nyhan2010a}. And if one side is producing and consuming distinctly more misinformation than the other, that is something we cannot ignore if we wish to understand the dynamics of the debate.
+\subsection{Known channels and targeted identification}
 
-\subsection{Sources and Processes}
+Stack the matrices $A_z$ vertically into $A$, and the corresponding distributions into $q$. Suppose calibration or other independently justified restrictions make $A$ known.
 
-How is misinformation transmitted and absorbed? A great deal of misinformation clearly comes from the media or other people. Some may be implicit and relatively nonpartisan. The saturation of local news by stories about crime, especially violent crime, coupled with the profusion of crime dramas on TV and in the cinema, may leave many people thinking the rates of crime, especially violent crime, much higher than they are. But much mediated misinformation appears to have partisan origins or a sharp partisan edge. The misrepresentations in Fox News and from Rush Limbaugh are hardly random, as Fox viewers' beliefs about the Iraq war attest \citep{kull2003, berinsky2009}, and political talk radio leaves its listeners misinformed about some matters as well as informed about others \citep{hofstetter1999}. Those from the evening op-ed shows on MSNBC, if perhaps somewhat less pervasive and somewhat less severe, are also non-random, tilted in the opposite direction.
+\begin{proposition}[Known-channel identification]
+\label{prop:rank}
+The full composition is identified for every possible $\pi$ if and only if $A$ has full column rank. A linear functional $c'\pi$ is identified for every possible $\pi$ if and only if $c$ lies in the row space of $A$.
+\end{proposition}
 
-Other misinformation is homespun, the residue of more exogenous inferences. People naturally fill gaps in their impressions of the political landscape---and do so from hedonic and consistency-maximizing as well as error-minimizing impulses. Many such inferences are idiosyncratic, although others may be widely shared. Some conservatives and Republicans may have genuinely believed Barack Obama to be a Muslim, based on his name, his complexion, his father's background, or perhaps even some of his policy views, even without having encountered that assertion from acquaintances or media sources. Some people may genuinely believe that greenhouse gases cause lung cancer (an incorrect statement in a question we have asked), having taken aboard the idea that greenhouse gases are somehow bad and knowing that the air we breathe contains gases. Plausibly, the first of these pieces of misinformation may sometimes be homespun; probably, the second almost always is. What makes nontrivial fractions of the public believe them is, partly in the first case and entirely or almost entirely in the second, that they are plausible inferences, possibly stored in existing belief, from other scraps of information or misinformation.
+Full five-state identification requires five linearly independent columns. Identifying only misinformation requires less: take $c=(0,0,0,0,1)'$. The response system must separate the misinformation share from alternative compositions, but need not distinguish every other state. Rank conditions describe information in a known channel; they do not justify treating an estimated or assumed channel as known.
 
-As this suggests, several psychological processes may leave misinformation. The most obvious are affective consistency, leading to motivated misinformation, consistent with policy, partisan, or ideological preferences \citep{lord1979, taber2006}; stereotypic processing, leading to misinformation consistent with commonly perceived patterns (even when the case at hand is actually an exception); and default credulousness, referring to the tendency to believe what we hear, absent explicit contradiction or grounds for skepticism. The first, a species of wishful thinking, may lead some Democrats or Republicans to think unemployment or inflation increased under a Republican or Democratic administration, even when it did not \citep{gaines2007, bullock2015}. The second may lead some people of whatever partisan affiliation to think that the deficit increased under a Democratic administration or that military spending increased under a Republican one, even when it did not. And the third may lead some people, regardless of partisanship, to accept un- or at least insufficiently contradicted assertions, for example that Michael Dukakis, as Governor of Massachusetts, was heavily responsible for the pollution of Boston Harbor. A given piece of misinformation may have roots in none, any one, any two, or all three of these processes \citep{flynn2017}.
+The necessity statements are global, and also apply at any observed-data solution set containing a strictly positive composition. At a boundary, nonnegativity can identify more. For example, the two-response, three-state matrix with rows $(1,0,0)$ and $(0,1,1)$ is rank deficient, but $q=(1,0)'$ forces the composition $(1,0,0)'$. It would be wrong to use rank deficiency alone to declare every possible observed case unidentified.
 
-\subsection{Topics}
+A binary example gives the most direct point-identification route. Let $Y_z=1$ denote a stated response indicator of misinformation, let $p=\pi_M$, and write
+\begin{equation}
+ f_z=\Pr(Y_z=1\mid S\ne M),\quad
+ s_z=\Pr(Y_z=1\mid S=M),\quad
+ q_z=f_z(1-p)+s_zp.
+ \label{eq:binary}
+\end{equation}
+Here $f_z$ is the false-positive rate and $s_z$ the sensitivity. If both are known and $s_z\ne f_z$, then
+\begin{equation}
+ p=\frac{q_z-f_z}{s_z-f_z}.
+ \label{eq:point}
+\end{equation}
+This is the standard sensitivity/specificity adjustment \citep{rogan1978}. A negative value or a value above one contradicts the maintained population restrictions. With estimated rates, sampling uncertainty in both the survey and calibration must be propagated.
 
-The topics of political misinformation, knowledge, belief, and ignorance are numerous---far too numerous to be exhaustively, indeed more than very fractionally, addressed by survey measurements. Among the sorts of topics most commonly addressed are (a) the identities of political figures (what offices or positions they hold), (b) their biographies (what religion they follow, whether and how they served in the military, etc.), (c) policy-relevant facts (causal or descriptive propositions that may alter the subjective utilities associated with given policy alternatives), including those concerning existing statutes (what they do or do not already allow or require), (d) policy or ideological locations (of political figures, parties, or other organizations), (e) party control (as of Houses of Congress), (f) objective performance (under incumbent politicians or parties with respect to such quantitative indicators as inflation, unemployment, or casualties), and (g) government structures and constitutional provisions (e.g., the number of seats and length of terms in the U.S. Senate or the contents of the Bill of Rights).
+The substantive burden is calibration. A validation task must establish the relevant premeasurement state and reproduce the response process closely enough for its channel to apply. Correct performance on another item does not establish the absence of misinformation on this one. Inducing a belief experimentally can establish something about a newly induced state, but transport to stored political beliefs remains an assumption. Moreover, $f_z$ averages over four non-misinformation states. Even if each state's reporting behavior transports, a changed mixture of those states can change this aggregate false-positive rate. Calibration should therefore match or address the relevant composition as well as wording and population.
 
-Some of these categories should see more misinformation than others. The misinformation-richer topics figure to be those where relevant stereotypes are particularly common, the urge to maintain affective consistency is particularly strong, or the environment is particularly rife with misinformation. It is hard to see that the identities of political figures, the details of government structures or constitutional provisions, or the party control of given branches of government should excite much misinformation. Policy locations may see a bit more. Individual Democrats or Republicans may be stereotyped as being to the left or right of where they may actually be (though in these days of increasingly homogeneous parties, there may not be much room for error). Not many Democrats are comforted by seeing Republicans as being anything but right-of-center, nor many Republicans comforted by seeing Democrats as being anything but left-of-center, although extremists on either side may occasionally see less extreme parties or politicians on their own side as being in the center or even on the other side. But the misinformation-richest topics figure to concern biographies, policy-relevant facts, and objective performance, the first and third because they elicit a high level of stereotyping, and all three because they spark affective consistency seeking and are frequent topics of politicians and commentators spreading misinformation.
+Identifying a prevalence also does not identify individuals. Even with known $A$ and $\pi$, a positive-probability response ordinarily gives
+\begin{equation}
+ \Pr(S=s\mid R=r,Z=z)=\frac{A_z(r,s)\pi_s}{q_z(r)},
+ \label{eq:posterior}
+\end{equation}
+a distribution over states. Assigning its most likely state is a classification rule, not a discovery that the respondent must occupy that state. Certainty requires the response to have support in only one positive-mass state.
 
-\section{Measurement}
+\section{Bounds under limited measurement assumptions}
 
-The measurement of misinformation, like that of knowledge, revolves around the relationship between survey responses and the information states producing them. Questions aimed at detecting knowledge are frequently termed ``knowledge items.'' Let us term those aimed at detecting misinformation ``misinformation items.'' Like knowledge items, they have a correct answer and one or more incorrect ones. Like knowledge items, they are typically closed-ended, specifically multiple choice, including binary true/false items as a special case. What distinguishes them from knowledge items is that the interest lies at least as much in the incorrect response options as in the correct one and that the former are usually written to embody pieces of misinformation presumed to be widely held, usually because heavily promoted. Misinformation items hunt where the ducks are thought to be.
+\subsection{Two error directions}
 
-Occasionally, a respondent who knows the right answer or ``knows'' a wrong one (is misinformed) may nonetheless say DK. But this is rare \citep{luskin2011, sturgis2008}. Thus the principal trick, in measuring both knowledge and misinformation, is to sift the correct responses reflecting actual knowledge from lucky guesses and shrewd inferences and the incorrect responses reflecting actual misinformation from unlucky guesses and misguided inferences. Sufficiently well designed items should do much of this sifting for us by largely inhibiting guessing and inference. That, unfortunately, is exactly what most knowledge and misinformation items do not do.
+Complete channel calibration is demanding. We can instead ask what follows from upper limits on the two error rates. For each format, assume
+\begin{equation}
+ 0\le f_z\le\alpha_z,\qquad 0\le1-s_z\le\beta_z,
+ \qquad \alpha_z,\beta_z\in[0,1].
+ \label{eq:caps}
+\end{equation}
+A false positive includes a guess, a freshly inferred confident answer, or an expressive response by someone without stored misinformation. A false negative includes withholding a stored false belief or using a less extreme response despite meeting the conceptual confidence threshold. Neither error direction can be dismissed merely by making the observed indicator stricter.
 
-\subsection{The Trouble with Multiple Choice}
+\begin{proposition}[Sharp misinformation bounds]
+\label{prop:bounds}
+Under \eqref{eq:binary}--\eqref{eq:caps}, the sharp identified interval from format $z$ is $[L_z,U_z]$, where
+\begin{equation}
+ L_z=\max\left\{0,\frac{q_z-\alpha_z}{1-\alpha_z}\right\},\qquad
+ U_z=\min\left\{1,\frac{q_z}{1-\beta_z}\right\}.
+ \label{eq:bounds}
+\end{equation}
+Define $L_z=0$ when $\alpha_z=1$ and $U_z=1$ when $\beta_z=1$. With a common premeasurement composition and otherwise unrestricted format-specific channels, the sharp joint set is
+\begin{equation}
+ \mathcal P=\left[\max_z L_z,\min_z U_z\right],
+ \label{eq:joint}
+\end{equation}
+interpreted as empty if its lower endpoint exceeds its upper endpoint.
+\end{proposition}
 
-One reason lies with the multiple-choice format. Consider a typical multiple-choice misinformation item, of $C$ response categories. It may or may not have an explicit DK response option, but in any case there will typically be at least a few volunteered DK responses. The information states underlying the responses are misinformation (M), knowledge (K), mere belief (B), and ignorance (I)---all matters of stored cognition, present (M, K, B) or absent (I); correct (K and sometimes B) or incorrect (M and sometimes B); and confidently (M, K) or unconfidently held (B). Alas, we never see these information states. All we actually see are the responses---for multiple-choice items, of three types: correct ($c$), incorrect ($i$), or ``don't know'' ($d$). The response production function is the function mapping these response types onto the information states. We assume that K $\rightarrow$ $c$ or occasionally $d$, that M $\rightarrow$ $i$ or occasionally $d$, that B $\rightarrow$ $c$, $i$, or $d$, and that I $\rightarrow$ $c$, $i$, or $d$.
+The bounds require no condition that $\alpha_z+\beta_z<1$. They are sharp because every point in the interval can generate the observed response probability under some admissible channel; Appendix~\ref{app:proofs} supplies the construction.
 
-Several mechanisms play a role in this function. For knowledge (K) or misinformation (M), the possibilities are plain speaking (simply giving the correct or incorrect response one believes to be true), withholding (saying DK instead), and misrepresentation (deliberately giving a correct or incorrect response, despite confidently believing in an incorrect or correct one). Withholding---resulting from bored or timid respondents or failed retrieval---figures to be relatively rare (as the evidence regarding DK versus correct responses in \citealt{luskin2011} and \citealt{sturgis2008} suggests; for a contrary view, see \citealt{mondak1999}), misrepresentation---resulting from mischievous respondents or trick questions---to be vanishingly so. That is why we say above that K and M only occasionally $\rightarrow$ $d$ and assume away the possibility that M $\rightarrow$ $c$ or K $\rightarrow$ $i$. For ignorance (I), the possibilities are plain speaking (simply admitting that one doesn't know), guessing (choosing a substantive response---possibly correct, possibly incorrect---at random), and inference (making an educated or miseducated guess from other pieces of knowledge or misinformation). For belief, the possibilities are inference (choosing the most confidently believed-in response option or using other pieces of knowledge or misinformation) or guessing (when no response option is more confidently believed-in than any other). Table~\ref{tab:rpf} arrays response types against information states, indicating the mechanisms involved.
+The direction of the assumptions matters. No false positives ($\alpha_z=0$) makes $q_z$ a lower bound on misinformation: every positive response comes from $M$, but some people in $M$ may not respond positively. No false negatives ($\beta_z=0$) makes $q_z$ an upper bound: everyone in $M$ responds positively, but others may too. Assuming both identifies $p=q_z$. Allowing both errors without informative restrictions gives $[0,1]$.
 
-\begin{table}[t]
+This corrects a tempting interpretation of response instability. Instability can undermine a response's validity as evidence of stored belief, as the measurement concerns raised by \citet{graham2023} make clear. It does not establish that an observed misinformation rate is an upper bound. That conclusion additionally needs a restriction on missed misinformation. A measure can admit false positives and still undercount a larger number of false negatives.
+
+Stricter scoring has a parallel limitation. Within the same administered instrument, suppose $Y_{\mathrm{strict}}\le Y_{\mathrm{lenient}}$ for every response. Both the false-positive rate and sensitivity then weakly decrease. Stricter scoring admits no more false positives, but can miss more genuine misinformation. Its lower observed rate is not necessarily closer to the target. This monotonicity concerns nested scores of the same response; it does not automatically hold across differently administered formats.
+
+Multiple randomized formats can strengthen inference by intersecting their restrictions. They can also expose a contradiction. If the population intersection is empty, the assumed error caps, common target population, or other maintained conditions cannot all hold. An empty plug-in set in a sample can additionally reflect sampling variation. A confidence set for the partially identified target must accommodate that variation rather than interpret every sample contradiction as a population rejection.
+
+\subsection{More states and more response categories}
+
+The same reasoning applies to all five states without treating a middle rating as ignorance or a DK as absence of belief. Let $\ell_{zrs}$ and $u_{zrs}$ bound each channel entry. Before estimation, require
+\begin{equation}
+ 0\le\ell_{zrs}\le u_{zrs}\le1,\qquad
+ \sum_r\ell_{zrs}\le1\le\sum_r u_{zrs}
+ \label{eq:validcolumns}
+\end{equation}
+for every format and state. These conditions ensure that every column admits a probability distribution, including columns for states that might have zero prevalence.
+
+Introduce joint masses $x_{zrs}=A_z(r,s)\pi_s$. The feasible set is described by
+\begin{align}
+ &\pi_s\ge0,\quad \sum_s\pi_s=1,\quad x_{zrs}\ge0,\nonumber\\
+ &\sum_r x_{zrs}=\pi_s,\qquad \sum_s x_{zrs}=q_z(r),\label{eq:lp}\\
+ &\ell_{zrs}\pi_s\le x_{zrs}\le u_{zrs}\pi_s.\nonumber
+\end{align}
+Minimizing and maximizing $c'\pi$ over \eqref{eq:lp} gives sharp bounds under the stated entrywise channel restrictions. This is a linear program in joint masses and prevalences, despite the product in the original mixture representation. Known entries, bounded errors, and unrestricted entries fit in the same formulation. Arbitrary restrictions relating conditional probabilities need not remain linear and are outside this claim.
+
+This formulation also clarifies the cost of appealing to an ``anchor'' response. Declaring an answer impossible outside $M$ imposes zeros on the relevant non-$M$ columns. Declaring every person in $M$ certain to give it imposes a one on the $M$ column. An extreme scale label establishes neither restriction. Researchers can impose them when supported by external evidence, or show how bounds widen when they are relaxed.
+
+For partisan comparisons, apply the restrictions separately to each group. If group-specific misinformation shares satisfy $p_R\in[L_R,U_R]$ and $p_D\in[L_D,U_D]$, with no additional restrictions linking groups, the sharp difference interval is $[L_R-U_D,U_R-L_D]$. A smaller observed partisan response gap under a different format need not imply less partisan misinformation or less partisan guessing. Equal reporting errors across groups would be an additional assumption, and substantive partisan belief differences belong in the target rather than being removed by definition.
+
+\section{An empirical illustration of the identification problem}
+
+\subsection{One proposition, two observed response events}
+
+We use the March 2017 survey's first Affordable Care Act battery. It contains a false statement that the law replaces private insurance with a single-payer system, a proposition with a relatively direct literal truth key.\footnote{The Centers for Medicare \& Medicaid Services describes the ACA marketplaces as private insurance markets: \url{https://www.cms.gov/marketplace/about/overview-exchanges}.} Its role here is to hold the substantive proposition fixed while comparing two elicited response events. The analysis is retrospective; item selection and the error-cap grid were not preregistered.
+
+Respondents were randomly assigned to multiple choice or separate 0--10 ratings of the statements. In the multiple-choice arm, $Y=1$ means selecting the single-payer option. In the rating arm, $Y=1$ means rating that false statement 10, the definitely-true endpoint. These events have different reporting demands. We do not equate an unselected multiple-choice option with a belief that it is false, or treat a non-endpoint rating as ignorance.
+
+Table~\ref{tab:counts} retains each assigned-arm denominator. There are \idMcN{} multiple-choice respondents and \idScaleN{} rating respondents; the respective positive counts are \idMcPositive{} and \idScalePositive{}. The corresponding positive rates are \idMcRate{} and \idScaleRate{}. Missing counts are shown separately. The confidence intervals assume independent draws from each arm's respondent population and use a simultaneous binomial construction described in Appendix~\ref{app:inference}. These convenience-sample observations do not identify national prevalence. The data overlap with the companion work on hidden knowledge; reusing them here supplies an identification illustration, not an independent replication or a new format-effect claim.
+
+\begin{table}[htbp]
 \centering
-\caption{The response production function for a multiple-choice item}
-\label{tab:rpf}
+\caption{Observed responses to the single-payer proposition}
+\label{tab:counts}
 \TableStyle
-\begin{tabular}{lcccc}
-\toprule
-& \multicolumn{4}{c}{Information state} \\
-\cmidrule(lr){2-5}
-Response & K & M & B & I \\
-\midrule
-Correct ($c$) & $\rho$ (near 1) & $\mu$ (very near 0) & $\iota$, $\gamma$ (moderate) & $\gamma$, $\iota$ (moderate) \\
-Incorrect ($i$) & $\mu$ (very near 0) & $\rho$ (near 1) & $\iota$, $\gamma$ (moderate) & $\gamma$, $\iota$ (moderate) \\
-DK ($d$) & $\omega$ (very low) & $\omega$ (very low) & $\omega$ (moderate) & $\rho$ (moderate) \\
-\bottomrule
-\end{tabular}
-\begin{minipage}{0.92\linewidth}
-\vspace{0.5em}\footnotesize \emph{Note:} Information states: K knowledge, M misinformation, B mere belief, I ignorance. Mechanisms: $\rho$ plain speaking, $\omega$ withholding, $\mu$ misrepresentation, $\gamma$ guessing, $\iota$ inference. Parentheses give the rough conditional probability of the response given the state. For B and I these depend heavily on the item's response options and on whether it encourages or discourages DK responses.
+\input{../tabs/identification_counts.tex}
+\begin{minipage}{\linewidth}
+\footnotesize\emph{Note:} A positive response selects the false single-payer option (multiple choice) or rates it 10 (scale). Rates and intervals are in percent. The response-rate interval allows every missing answer to be either positive or negative. The final column has at least 95\% simultaneous coverage across the two arm probabilities under the sampling model.
 \end{minipage}
 \end{table}
 
-By guessing we mean blind guessing: a random draw of response, typically but not necessarily from a uniform distribution. It is a matter of mentally flipping a possibly multi-sided, typically fair coin. Guessing is simpler and easier than inference, which requires more prior, if only tangential, cognition and more reasoning. Some responses, however, may reflect both. A respondent inclined to disbelieve two of four response options but knowing nothing about the other two will infer that one of those latter two must be correct, then guess as between them.
+\subsection{The same responses, different prevalence}
 
-In sum, any given response type reflects a mix of information states. Taken at face value, a correct response suggests knowledge, a DK response ignorance, and an incorrect response misinformation. But respondents find the impulse to guess or infer answers to knowledge and misinformation questions hard to resist \citep{cor2016}. Thus not every response that looks like knowledge---or misinformation---is what it seems. A good many correct responses stem from lucky guessing or shrewd inference, a good many incorrect responses from unlucky guessing or misguided inference (and a few DK responses from withheld knowledge or misinformation).
+Table~\ref{tab:equivalence} constructs two response models that reproduce both observed arm rates. They are not fitted estimates of sensitivity, false positives, or misinformation. Their misinformation shares are set to $p_{\mathrm{low}}=\min_z q_z/2$ and $p_{\mathrm{high}}=(1+\max_z q_z)/2$. In the low-prevalence construction, set $s_z=1$ and $f_z=(q_z-p_{\mathrm{low}})/(1-p_{\mathrm{low}})$. In the high-prevalence construction, set $f_z=0$ and $s_z=q_z/p_{\mathrm{high}}$. Both satisfy \eqref{eq:binary} exactly.
 
-\subsection{To Make Matters Worse}
+Thus \idLowPrevalence{} and \idHighPrevalence{} misinformation are observationally equivalent for these two response rates when their channels are unknown. The example does not establish that either channel is plausible. It establishes that the response rates alone cannot choose between them. The empirical task is to justify restrictions that rule out some of these possibilities.
 
-Other reasons most misinformation items are not very good at inhibiting guessing and inference lie in other aspects of how they are framed and phrased.
-
-\paragraph{Question format.} For any given information state, the conditional probabilities with which the possible mechanisms kick in, and with which the possible responses therefore occur, depend partly on the question's format. One important formatting dimension is whether the question is open- or closed-ended. Withholding appears to be much rarer, and blind guessing and fresh inference much more common, on closed-ended items \citep{luskin2005, luskin2011, luskin2012}, where the provision of response categories makes blind guessing effortless, and the information in the response categories facilitates inference. Both correct and incorrect answers are therefore more numerous, and DK responses less numerous.
-
-Open- and closed-ended questions also differ in the elicitation of partially correct responses. A closed-ended question asks only which of a menu of predefined statements, constructed so as to be either true (in one case) or false (in all others), is true. An open-ended question asks for whatever the respondent can say about some political object (typically, some public figure), some but not all of which may be true \citep[see][]{luskin2011}. Someone who answers an open-ended question asking who David Cameron was by describing him as the ``president of England'' is neither entirely misinformed nor entirely knowledgeable. He or she knows that David Cameron was the chief executive of a country including England but does not know that the country is the United Kingdom, nor that the chief executive there is the prime minister. Responses of this sort resist any clean sorting, although they do appear to be less common than some accounts have suggested (compare \citealt{luskin2011} and \citealt{debell2013} with \citealt{krosnick2008} and \citealt{gibson2009}).
-
-Of course, offices held by prominent political figures, the focus of almost all open-ended knowledge items, are unlikely to excite much misinformation. A confident belief that David Cameron was the prime minister of Ireland fits no stereotype and has no consequence for policy or electoral preferences. It is therefore rare. There is nothing to prevent open-ended items from asking about policy-relevant facts or objective performance, on which there would probably be much more misinformation. But the available ones do not. In what follows, we therefore confine our attention to closed-ended items.
-
-\paragraph{DK orientation.} Knowledge and misinformation items vary in the extent to which they discourage or encourage DKs. They may or may not offer explicit DK options. They may have a preface urging respondents who do not believe they know the right answer either to take a stab anyway or one urging them to just say they don't know. Or they may have no preface. There may or may not be probes pressing respondents who initially say DK for a substantive response. There may or may not be opening phrases inviting respondents to shrug off uncertainties (``Do you think \ldots,'' ``To the best of your knowledge, \ldots,'' or ``As far as you know, \ldots'') or reply with mere opinions (``Do you personally believe that \ldots'' or ``Based on what you have heard, \ldots''). Openings of this sort invite respondents who know they don't know the answer to choose what they see as most probable, based on assertions by trusted sources, fresh inferences from side knowledge or misinformation, or what they would most like to believe. Many Republicans who knew that they did not know the actual truth of the death panel allegation may have responded ``yes'' to the question, ``do you \emph{think} the 2010 health care legislation involves death panels?''
-
-\paragraph{Response options.} Some of the individual propositions constituting incorrect response options may be the loci of more misinformation or may draw more fresh inference than others. We have already suggested some of the grounds on which such expectations might be based. Doubtless, there are many others, but, for the moment, let us add one more. It is our impression from working with knowledge items that people have much more trouble with numerical than with categorical propositions. On most topics, very few people have precise numbers, correct or incorrect, stored in memory. Many people know that the U.S. federal deficit is large and has increased over time. They may believe, incorrectly, that it decreased during the presidency of Ronald Reagan or increased during that of Bill Clinton. But only some tiny fraction of the public ever knows the number, even to the nearest trillion. Responses to questions offering alternative numbers or ranges of numbers as alternatives will therefore be almost entirely guesses or inferences.
-
-But the set of response options also needs to be considered as a whole. The more numerous the response options, the more guessing they are likely to produce. With only two options, guessing the right answer seems easy. With four, it seems more daunting. We refer to the psychological perception of difficulty, but of course that tracks the objective probability of guessing the correct answer (.5 in the first case, only .25 in the second, where the guessing is at random from a uniform distribution).
-
-The structure of the options also matters. That the question is multiple choice means that one is true, and all the others false. In itself, that inherent constraint is an encouragement to guess or make inferences. If the response options are all independent propositions, all, none, or any proper subset of which could be true, that is the only constraint. But, in many cases, the propositions in the response options are mutually exclusive---and would be, even if not bundled together in the same multiple-choice question. An example is the frequently posed question asking, non-numerically, whether the federal deficit has increased, decreased, or stayed about the same during a given presidential term. Those propositions are mutually exclusive even when not offered as alternatives to a multiple-choice question, and that is an additional layer of constraint, making guessing and inference easier.
-
-\subsection{A Probability-Based Measure}
-
-Some aggregate approaches, based on statistical corrections for guessing or experimental manipulations, are possible, but are, in the end, merely aggregate, speaking clearly to how many people are misinformed but much less clearly to who \citep{cor2016, luskin2018}. Here we take a more direct, finer-grained, individual-level approach.
-
-Specifically, we propose asking how definitely true versus definitely false each proposition is, on a scale from 0 (definitely false) to 10 (definitely true). For a proposition that is in fact true, we count 10 as knowledge, 6--9 as belief, 5 as ignorance, 1--4 as disbelief, and 0 as misinformation. Propositions that are in fact false are scored in mirror-image fashion, with 0 as knowledge and 10 as misinformation. That is our strict version. We also try a lenient version counting 9--10 as knowledge of, and 0--1 as misinformation about, a true statement and 0--1 as knowledge of, and 9--10 as misinformation about, a false one. Since the definitely-false-to-definitely-true scale (with the scores divided by 10) is essentially a probability scale, we refer to this measure as ``probability-based.''
-
-A measure of this sort provides more detailed as well as presumptively more accurate information about what people do and do not confidently or tentatively believe or disbelieve. Every four-option multiple-choice question can become four individual definitely true/definitely false items, one for each option, at least when the options are logically unrelated except by the known constraint that one and only one can be true. It also separates invention from denial, which a wrong multiple-choice answer cannot: choosing a false option may reflect confident belief in it, confident disbelief in the true option, or neither. The probability measure is still imperfect, in ways we discuss below, but is, we think, a distinct improvement.
-
-\section{Data}
-
-We take our data from four original online surveys, each of which randomly assigned respondents either to multiple-choice versions of a set of misinformation items or to 0--10 ratings of the propositions in those items. Two surveyed the alumni (\nAlumniMc{} multiple choice, \nAlumniScale{} scale) and staff (\nStaffMc{} and \nStaffScale{}) of a large private university in the western United States in the fall of 2010. Two surveyed U.S. workers on Amazon's Mechanical Turk (MTurk) in March 2017 (\nMarchMc{} and \nMarchScale{}) and July 2017 (\nJulyMc{} and \nJulyScale{}). MTurk samples are not representative of the U.S. public, but experimental effects estimated on them resemble those from national samples \citep{berinsky2012, huff2015, mullinix2015}, and our interest lies in the difference between formats, which random assignment identifies, more than in levels.
-
-The 2010 surveys and the March 2017 survey asked two four-option questions about the Affordable Care Act, one about its coverage, taxes, and screening provisions and one about Medicare; the March survey added questions about greenhouse gases and the executive order on immigration issued earlier that month. The July survey asked nine two- and three-option questions about widely reported falsehoods, among them Barack Obama's birthplace and religion, death panels, climate change, the MMR vaccine, and illegal voting in 2016. Its third arm, \nJulyMedia{} respondents, answered the same nine questions worded as media polls word them, with opinion-inviting openings such as ``Do you personally believe'' and no DK option \citep{luskin2018}. The July data also appear in a study of partisan knowledge gaps \citep{shen2025}.
-
-Every multiple-choice version except the media wording offered an explicit DK option (``couldn't say'' in 2010), and all but the 2010 versions came with a preface encouraging its use. The July scale offered one too, through a ``not applicable'' box that \julySkipMin{} to \julySkipMax{} of respondents checked, depending on the statement. We treat a skipped or not-applicable rating as the scale's DK. The 2010 surveys asked respondents to type a number, and the March 2017 survey presented a grid of 0--10 with no DK option. Appendix Table~\ref{tab:propositions} gives the wording of every statement, its key, and the source for the key; Appendix Table~\ref{tab:balance} shows that the arms are similar in partisanship and political interest, except that the staff scale arm happens to have fewer Republicans (\staffRepScale{} against \staffRepMc{}).
-
-\section{Results}
-
-\subsection{Belief States}
-
-On the scale, most answers sit between the poles. Of all ratings of the \nPropositions{} propositions we keep, \shareKnowledge{} are at the correct end and \shareMisinformation{} at the incorrect end; the remaining \shareMiddle{} lean one way or the other or sit at the midpoint (\shareMidpoint{} at exactly 5). Appendix Table~\ref{tab:states} gives the distribution for each proposition. By the definitions above, mere belief and ignorance together are more common than knowledge, and misinformation is the rarest of the five states.
-
-\subsection{How Much Misinformation?}
-
-Figure~\ref{fig:format} compares, for each question, the share of respondents answering the multiple-choice version incorrectly with the share holding misinformation on the scale. For questions with several propositions, we count a respondent as misinformed if any rating of the question's propositions is at the wrong end, which errs toward finding misinformation on the scale.
-
-\begin{figure}[t]
+\begin{table}[htbp]
 \centering
-\includegraphics[width=\linewidth]{format.pdf}
-\caption{Misinformation measured four ways. Points are shares of respondents in each randomly assigned arm; lines are 95\% Wilson intervals. For multiple choice, the share choosing an incorrect option (DK and skipped answers count as not incorrect). For the 0--10 scale, the share with a confidently wrong rating of any of the question's propositions (strict: 0 or 10; lenient: 0--1 or 9--10); skipped and not-applicable ratings count as not misinformed. Media-poll wording was asked only in July 2017.}
-\label{fig:format}
+\caption{Constructed observationally equivalent response models}
+\label{tab:equivalence}
+\TableStyle
+\input{../tabs/identification_equivalence.tex}
+\begin{minipage}{\linewidth}
+\footnotesize\emph{Note:} All entries are percentages. $p$ is the constructed misinformation share, $s$ sensitivity, $f$ the false-positive rate, and $q$ the reproduced positive-response rate. Each construction has a common $p$ across formats. None of the channel parameters is estimated or independently calibrated.
+\end{minipage}
+\end{table}
+
+Table~\ref{tab:bounds} applies common upper caps to both error directions in both arms. The channels themselves need not be equal across formats. Each row asks a conditional question: if both formats' false-positive and false-negative rates are at most the specified cap, which common misinformation shares remain possible? The displayed caps are sensitivity scenarios, not empirically validated ranges.
+
+\begin{table}[htbp]
+\centering
+\caption{Misinformation bounds under alternative error caps}
+\label{tab:bounds}
+\TableStyle
+\input{../tabs/identification_bounds.tex}
+\begin{minipage}{\linewidth}
+\footnotesize\emph{Note:} Entries are percentage intervals. Each row imposes $\alpha_z=\beta_z$ equal to the first column in both formats. MC and scale bounds substitute observed response rates into Proposition~\ref{prop:bounds}; joint bounds intersect them. $\varnothing$ denotes incompatibility. The final column propagates simultaneous sampling uncertainty and is an outer confidence set, not another plug-in identified interval.
+\end{minipage}
+\end{table}
+
+With 10-percent caps, the plug-in joint set is \idTenBounds{} and the outer confidence set is \idTenOuter{}; with 20-percent caps, they are \idTwentyBounds{} and \idTwentyOuter{}, respectively, in percentage units. Figure~\ref{fig:sensitivity} shows the wider grid. As restrictions weaken, the sets expand, eventually admitting every prevalence. No preferred prevalence follows without a defended choice of error restrictions.
+
+
+
+\subsection{What joint ratings add}
+
+The rating battery also observes endorsement of the keyed true statement alongside endorsement of the false statements. Table~\ref{tab:joint} reports that observable cross-classification among \idJointComplete{} respondents with all required ratings; \idJointExcluded{} respondents are excluded for incomplete ratings. In this complete-case description, \idBothEndpoints{} endorse both the true statement and at least one false statement at 10.
+
+\begin{table}[htbp]
+\centering
+\caption{Joint endpoint endorsements within the rating battery}
+\label{tab:joint}
+\TableStyle
+\input{../tabs/identification_joint_patterns.tex}
+\begin{minipage}{\linewidth}
+\footnotesize\emph{Note:} The true statement concerns the additional payroll tax on high earners. The false statements concern single-payer insurance, coverage for undocumented immigrants, and reimbursement of routine mammograms only after age 50. These classifications use the documented battery keys; the single-proposition bounds depend only on the single-payer key. Rows describe expressed endpoint endorsements across propositions; they are not latent classes or estimates of mutually exclusive cognitive types. A ``No'' includes all lower ratings and does not establish denial or ignorance.
+\end{minipage}
+\end{table}
+
+Separate ratings therefore provide information that a single selected option cannot: the joint pattern of expressed endorsement. They do not make a person exclusively knowledgeable or misinformed across topics. Nor does endorsement of a true statement prove that a simultaneous false endorsement was guessed. Identifying stored states behind the pattern requires restrictions on the joint response channel, just as identifying the single-proposition share does.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{identification_sensitivity.pdf}
+\caption{Prevalence depends on restrictions on both error directions}
+\label{fig:sensitivity}
+\begin{minipage}{\linewidth}
+\footnotesize\emph{Note:} Both arms share the horizontal-axis cap on false positives and false negatives. Shaded intervals intersect the arm-specific bounds. The left panel uses observed rates; the right propagates simultaneous binomial uncertainty. Crosses mark empty sets at evaluated grid points. The 5-percentage-point grid is joined for display; exact calculations are provided in the replication files.
+\end{minipage}
 \end{figure}
 
-For the well-publicized falsehoods of the July survey, the scale finds far less misinformation than multiple choice does, and multiple choice with a DK option finds far less than media-poll wording. \muslimMedia{} of respondents said Obama is a Muslim when asked as media polls ask, \muslimMc{} when the question offered DK, and \muslimScale{} were confident of it on the scale. For the ACA and illegal immigrants, the three numbers are \illegalMedia{}, \illegalMc{}, and \illegalScale{}; for Trump's winning most legal votes, \fraudMedia{}, \fraudMc{}, and \fraudScale{}. Pooling the July questions, the scale lowers the share misinformed by \julyStrict{} percentage points relative to multiple choice with DK (95\% interval \julyStrictLower{} to \julyStrictUpper{}), from a base that is itself deflated by the DK option.
+\section{Implications for measurement and study design}
 
-The deficit item is the exception that proves the measure is not merely deflationary. The federal deficit fell from \$1,087 billion in fiscal year 2012 to \$585 billion in 2016, yet \deficitScale{} rated ``the annual federal budget deficit has increased since 2012'' definitely true, against \deficitMc{} choosing ``increased'' or ``stayed about the same'' with a DK option and \deficitMedia{} with media wording. A plausible reading is stereotypic inference of the kind described above: deficits are large, the debt was rising, and ``increased'' is what deficits do.
+A useful measure must specify both its target and its possible mistakes. If the target is stored misinformation, researchers should state the proposition and truth key, the time at which belief is defined, the conceptual confidence threshold, the respondent population, and the response event used as evidence. A rate of confidently incorrect responses can be reported directly. Calling it the prevalence of misinformation adds a claim about the channel.
 
-For the obscurer provisions of the ACA, the formats differ little. In the 2010 surveys and in March 2017, the strict scale share is within a few points of the multiple-choice share (\alumniStrict{} points higher among alumni, \staffStrict{} lower among staff, \marchStrict{} lower in March), and the lenient scale share runs \marchLenient{} points higher in March. Two things explain the contrast with July. These multiple-choice items offered DK and drew many DKs, so their incorrect answers were already fewer; and each ACA question bundles four propositions, so the any-proposition rule gives the scale four chances to register misinformation to multiple choice's one. Across all questions and surveys, the scale finds \pooledStrict{} points less misinformation (95\% interval \pooledStrictLower{} to \pooledStrictUpper{}) under strict scoring and \pooledLenient{} points less under lenient scoring.
+The most tenable starting point allows both false positives and false negatives. Questions can induce answers, and respondents can withhold or understate beliefs. Neither direction needs to dominate everywhere. An informative partial-identification analysis then needs substantive evidence for limits on these errors. When no such evidence exists, an uninformative bound is an accurate description of what has been learned about the stored state, alongside potentially informative findings about responses.
 
-\subsection{Invention and Denial}
+Validation effort should target the assumptions that matter for the estimand. Identifying only misinformation may require less calibration than recovering all five states. Cognitive interviews, records of prior statements, repeated measurements, and controlled validation tasks can probe different parts of the channel. None automatically supplies error-free ground truth: prior statements may themselves be expressive, repeated questions may change beliefs, and controlled tasks may not transport. Their value is in supporting or challenging specific restrictions rather than certifying an instrument in the abstract.
 
-The scale separates invention from denial. For the ACA's lesser-known provisions, denial is the more common: \denialAlumni{} of alumni ratings of its true provisions (a Medicare payroll tax on high earners and limits on payments to Medicare providers) were confidently false, against \inventionAlumni{} of ratings of its false ones; among staff, \denialStaff{} and \inventionStaff{}; in March 2017, \denialMarch{} and \inventionMarch{}. For the better-known claims of the July survey, invention and denial are about equally common (\inventionJuly{} and \denialJuly{}). Confident disbelief in true but little-publicized provisions looks less like motivated rejection than like inference from what a law of that kind would do; it is a reminder that misinformation need not come from anyone's promoting it.
+Format randomization has a useful but limited role. It identifies how elicitation changes response distributions and can test the compatibility of proposed measurement restrictions across formats. It does not explain the response changes by itself. Incentives or additional prompts likewise identify effects on answers under their designs; interpreting those effects as removal of partisan expression or guessing requires further assumptions about other response pathways and the underlying belief state.
 
-\subsection{Partisan Misinformation}
+Our earlier empirical comparisons and reconstructed historical models remain reproducible in the accompanying repository. They describe format effects, scoring sensitivity, correlates, and response profiles. Those findings cannot by themselves establish the size of an ignorant public, identify a guessing mechanism, or validate cognitive labels for latent response classes. They are separate from the formal contribution developed here.
 
-If the measure captures motivated misinformation, Republicans should be more misinformed about falsehoods congenial to them and Democrats about falsehoods congenial to them. Figure~\ref{fig:gaps} shows that they are. Of the \nRcongenial{} propositions in the two MTurk surveys whose errors favor Republicans, \nRpositive{} show more misinformation among Republicans (\nRclear{} with 95\% intervals excluding zero), and the \nDcongenial{} whose errors favor Democrats (among them that greenhouse gases cause lung cancer and that the executive order stripped green cards) show more among Democrats, though with wide intervals.
+The Casablanca distinction survives this caution. Rick's false belief and Rick's absence of belief remain substantively different. A questionnaire can help distinguish them, but only through a defensible account of how each state would produce an answer. The appropriate claim is the one supported by that account: an observed response distribution, a range of possible belief prevalences, or, where the channel is sufficiently known, an identified prevalence.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{partisan_gaps.pdf}
-\caption{Partisan gaps in misinformation. Points are Republican minus Democratic shares (with leaners) misinformed on the scale (strict scoring) or answering incorrectly on multiple choice; lines are 95\% intervals from unpooled binomial standard errors. T and F mark true and false statements; for true statements, misinformation is confident disbelief. Panels group statements by the party to which the error is congenial.}
-\label{fig:gaps}
-\end{figure}
+\appendix
+\section{Proofs and scope of the results}
+\label{app:proofs}
 
-The gaps are much smaller on the scale than in multiple-choice answers. Republicans were \gapMuslimMedia{} points more likely than Democrats to say Obama is a Muslim with media wording, \gapMuslimMc{} points with a DK option, and \gapMuslimScale{} points on the scale; for Trump's legal votes the gaps are \gapFraudMedia{}, \gapFraudMc{}, and \gapFraudScale{}. On whether warming is human-caused, the gap falls from \gapWarmingMc{} points to \gapWarmingScale{}, and on whether most scientists doubt warming from \gapScienceMc{} to \gapScienceScale{}. Much of the partisan gap in answers to misinformation items is thus not partisan misinformation but partisan guessing and inference, in line with evidence that incentives and DK options shrink partisan gaps in factual answers \citep{bullock2015, prior2015, schaffner2018, peterson2021}. Using the July data among others, \citet{shen2025} reach the same conclusion about partisan knowledge gaps: features that encourage guessing inflate them by about 40 percent, through the guesses of the ignorant rather than cheerleading. What remains is not trivial: \gapDeficitScale{} points on the deficit and double digits on Obama's birthplace, Trump's legal votes, and human-caused warming.
+\subsection{Known-channel identification}
 
-\subsection{Who Is Misinformed?}
+If $A$ has full column rank, $A\pi=q$ has at most one solution. Conversely, rank deficiency supplies a nonzero $d$ with $Ad=0$. Because each block of $A$ is column stochastic, $\mathbf1'$ belongs to its row space, so $\mathbf1'd=0$. At an interior composition, sufficiently small positive and negative perturbations $\pi\pm\epsilon d$ remain in the simplex and generate the same $q$. Hence the full composition is not globally identified.
 
-The misinformed resemble the knowledgeable in one way the introduction anticipated: both are more interested in politics. Within the scale arms, moving from no interest to maximal interest raises the share of ratings at the correct end by \interestKnows{} points (standard error \interestKnowsSe{}) from an average of \meanKnows{}, and raises the share at the incorrect end by \interestMisinformed{} points (95\% interval \interestMisinformedLower{} to \interestMisinformedUpper{}) from an average of \meanMisinformed{}. Both estimates hold each proposition fixed and cluster standard errors by respondent. Interest is associated with confident belief, most of it right but some of it wrong.
+If $c$ lies in the row space, write $c'=b'A$. Then $c'\pi=b'q$ is observed. If it does not, there is a null vector $d$ with $c'd\ne0$. The same interior perturbations yield distinct values of the functional at the same $q$. This proves Proposition~\ref{prop:rank}, including its interior qualification. Nonnegativity may eliminate those perturbations at boundary compositions, which is why the qualification matters.
 
-\subsection{Scoring the Five Belief States}
+\subsection{Binary sharpness and intersections}
 
-The distinction between mere belief and ignorance is more sensitive to where we draw the boundaries than the endpoint measures alone reveal. We therefore compare three scorings of the truth-oriented scale, on which 10 is confidently correct and 0 confidently incorrect. Scheme 1 assigns knowledge to 10, correct belief to 7--9, the middle to 4--6, incorrect belief to 1--3, and misinformation to 0. Scheme 2 also counts 9 as knowledge and 1 as misinformation. Scheme 3 keeps those broader endpoints but narrows the middle to 5, assigning 6 to correct belief and 4 to incorrect belief. These are classification rules; calling the middle ignorance does not establish that respondents there have no relevant belief.
+At a fixed $p$, the attainable response probabilities are exactly
+\[
+ [(1-\beta)p,\;\alpha+(1-\alpha)p].
+\]
+The endpoints set $(f,s)$ to $(0,1-\beta)$ and $(\alpha,1)$, respectively. The image of the rectangular admissible set under the linear map $f(1-p)+sp$ is the entire interval. Inverting its two inequalities gives \eqref{eq:bounds}, with the stated conventions when a denominator vanishes.
 
-For these comparisons, each respondent's index is the share of retained propositions assigned to a given state. The five indices sum to one, and respondents receive equal weight. Our primary specification requires ratings on every retained proposition; an available-item specification divides by the number actually rated. Missing and not-applicable responses enter neither belief state nor index denominator. These respondent averages differ from the item-level distributions above and from prevalence estimates that retain skipped responses in their denominators.
+Explicitly, for a feasible $p$, let
+\[
+ D=\alpha(1-p)+\beta p,\qquad
+ t=\frac{q-(1-\beta)p}{D}.
+\]
+If $D>0$, feasibility implies $t\in[0,1]$; choose $f=t\alpha$ and $s=1-\beta+t\beta$. These parameters reproduce $q$. If $D=0$, the attainable interval is a singleton and its endpoint construction suffices. This proves sharpness for one arm.
 
-Table~\ref{tab:beliefschemes} reports all five states. In March, the middle accounts for \extMarchMiddleWide{} under Schemes 1 and 2 but \extMarchMiddleNarrow{} under Scheme 3. The change reallocates intermediate answers between the middle and mere belief; it does not change the endpoint definitions between Schemes 2 and 3. Item completeness also matters. All \extMarchComplete{} March scale respondents rated every retained proposition, but only \extJulyComplete{} of \extJulyTotal{} July respondents did so; \extJulyAvailable{} supplied at least one usable rating. Complete-item and available-item comparisons in July therefore change both the respondents included and the propositions contributing to their indices.
+For every $p$ in the intersection, construct an admissible $(f_z,s_z)$ separately for each arm. A joint distribution of potential responses exists, for example by drawing them independently conditional on the premeasurement state using these kernels. This is a construction proving existence, not an empirical assumption of conditional independence. With no additional cross-format restrictions, every point of the intersection is attainable. Constraints such as common channels or monotone individual potential responses would define a different model and may narrow its set.
 
-\subsection{Belief States and Political Engagement}
+\subsection{The finite-state linear program}
 
-We next relate the respondent indices to political interest in each survey and to voting intention and partisan intensity in the two MTurk surveys. Voting intention is reported likelihood of voting in the next congressional election, from 0 (certain not to vote) to 10 (certain to vote). It is neither observed turnout nor candidate choice. Partisan intensity is twice the absolute distance from the midpoint of the 0--10 Democratic--Republican orientation scale. It measures extremity of partisan orientation, rather than a separately validated attachment-strength construct. All three outcomes range from 0 to 10.
+Any admissible $(A_z,\pi)$ generates joint masses satisfying \eqref{eq:lp}. Conversely, take a feasible solution. For $\pi_s>0$, set $A_z(r,s)=x_{zrs}/\pi_s$. The column sums and entrywise bounds follow directly. For $\pi_s=0$, choose any stochastic column within its bounds; \eqref{eq:validcolumns} guarantees that one exists. Every feasible solution therefore corresponds to an admissible response model, proving sharpness. The same program accepts intervals on response probabilities by replacing each response-margin equality with lower and upper inequalities. These intervals must jointly admit probability distributions.
 
-Within each study, we regress each engagement outcome on the four non-middle state indices and an intercept. Omitting the middle avoids the exact collinearity imposed by shares summing to one. A coefficient scaled by 0.1 describes the association with replacing ten percentage points of the middle share by the named state, holding the other shares fixed. Table~\ref{tab:engagement} reports Scheme 1 with complete-item respondents; Table~\ref{tab:beliefcontrasts} compares knowledge directly with misinformation under all three scorings and both missing-item rules. Intervals use HC3 standard errors and residual-degrees-of-freedom $t$ critical values. They are pointwise; Holm-adjusted $p$-values account for all estimable contrasts across studies, scorings, item sets, and missing-item rules within each original engagement outcome; the subsequently recovered panel voting measure forms a separate family. The underlying analyses also split true from false propositions; these and the descriptive correlations are supplied with the replication materials. These retrospective comparisons are exploratory and do not identify causal effects of belief states.
+\section{Sampling uncertainty and reproducibility}
+\label{app:inference}
 
-Knowledge is positively associated with engagement relative to the middle category, but the evidence separating knowledge from misinformation is less decisive. In March under Scheme 1, replacing ten percentage points of the middle with knowledge is associated with \extMarchInterestK{} more interest points (95\% interval \extMarchInterestKCI{}), compared with \extMarchInterestM{} for misinformation (\extMarchInterestMCI{}), on a sample mean of \extMarchInterestKMean{}. The direct knowledge-minus-misinformation contrast for partisan intensity is \extMarchIntensity{} points (\extMarchIntensityCI{}). Neither comparison warrants treating the misinformed as uniformly disengaged.
+For an arm with $n_z$ assigned respondents, $a_z$ observed positives, and $m_z$ missing answers, the sample response probability is bounded by $[a_z/n_z,(a_z+m_z)/n_z]$ without assuming anything about missing answers. Proposition~\ref{prop:bounds} uses the lower endpoint for its lower bound and the upper endpoint for its upper bound. This treats the missing respondents as potentially positive or negative while retaining the assigned-arm population.
 
-For voting intention, the corresponding March associations are \extMarchVoteK{} points for knowledge (\extMarchVoteKCI{}) and \extMarchVoteM{} for misinformation (\extMarchVoteMCI{}), from a mean of \extMarchVoteKMean{}. Replacing ten percentage points of misinformation with knowledge gives a direct contrast of \extMarchVoteDiff{} points (\extMarchVoteDiffCI{}). Under Scheme 2 it is \extMarchVoteLenient{} (\extMarchVoteLenientCI{}). The latter interval excludes zero before multiplicity adjustment, but the adjusted comparison does not provide firm evidence of a difference. July gives \extJulyVoteComplete{} (\extJulyVoteCompleteCI{}) among complete-item respondents and \extJulyVoteAvailable{} (\extJulyVoteAvailableCI{}) using available items under Scheme 1. The intervals span both signs, and the sample and item-composition changes preclude interpreting the point-estimate reversal as a behavioral effect.
+For the illustration's two fully observed arms, we construct a 97.5\% two-sided Clopper--Pearson interval for each binomial probability. Bonferroni's inequality gives at least 95\% simultaneous coverage. Propagating the lower and upper probability limits through the bound functions and intersecting across arms gives an outer confidence set for the population identified set under the maintained error restrictions. The calculation is conservative and conditional on independent within-arm sampling from the respondent population. It is not a design-exact finite-population randomization interval and does not address selection into this convenience sample.
 
-\subsection{Additional Correlates and the 2010 Voting Measures}
+The code also handles missing responses. In that case it uses one lower confidence limit for the observable positive event and one upper confidence limit for the event ``positive or missing'' in each arm, allocating the familywise error probability equally across these four one-sided limits. Their lower and upper limits bound the corresponding partially observed response probabilities without a missing-at-random assumption. Channel uncertainty and sampling uncertainty remain distinct: the caps specify the former, the binomial intervals the latter. None of these calculations covers a wrongly keyed proposition.
 
-The archived questionnaire also verifies a 0--10 intention to vote in the 2010 congressional elections. Table~\ref{tab:panelvoting} extends the engagement analysis to the alumni and staff samples. Under Scheme 1, replacing ten percentage points of the middle share with knowledge is associated with \newalumniVoteK{} voting-intention points among alumni (95\% interval \newalumniVoteKCI{}) and \newstaffVoteK{} among staff (\newstaffVoteKCI{}). The direct knowledge-minus-misinformation contrasts are \newalumniVoteDiff{} (\newalumniVoteDiffCI{}) and \newstaffVoteDiff{} (\newstaffVoteDiffCI{}), respectively. The staff interval excludes zero before adjustment, but neither direct comparison does so after Holm adjustment across the separate family of panel-voting specifications. These are intentions, not observed turnout.
+The replication package is available at \href{https://github.com/finite-sample/know_casablanca}{\nolinkurl{github.com/finite-sample/know_casablanca}}. Stage 09 generates every empirical number, table, and figure in this manuscript from the checked survey files. It also implements the multicategory linear program and tests it against analytic cases, observational-equivalence examples, and boundary and incompatibility cases. Stages 01--08 retain the earlier descriptive and historical analyses. The design note documents the illustration's retrospective status, item choice, and assumptions; separate reports distinguish those other analyses from this manuscript's identification claims.
 
-Demographic differences in knowledge do not consistently mirror differences in misinformation. Table~\ref{tab:demographics} shows that age is positively correlated with both endpoint indices in the alumni, staff, and March complete-item samples; July's knowledge association differs. More conservative ideological identification is associated with less knowledge in the two 2010 samples, but its association with misinformation is small and differs in sign. These descriptive correlations depend on the proposition set and sample, and ideological position was not measured comparably in the MTurk exports. Table~\ref{tab:attachment} separately reports strong versus weak party attachment among self-identified Democrats and Republicans; it should not be equated with the MTurk scale's partisan extremity. The replication tables report gender, education, race/ethnicity, party, and all scoring and missing-item variants. Alumni demographics were linked from panel intake, with conflicting fields set to missing; staff demographics come from the survey itself. The four surveys contain no verified candidate-choice measure from which to estimate the proposed choice models.
-
-\subsection{Historical Multiple-Choice Evidence}
-
-Earlier analyses used conventional response items in the ANES, GSS, NIC, and BTP surveys. Reconstructing them helps establish what these responses can support, but does not turn an incorrect answer into a confidence measure. We recover the original correct/incorrect/DK distributions and fit three-category response models with knowledge, party identification, and their interaction; the ANES items with a separate ``same'' response also support four-category models with partisan affect. Table~\ref{tab:historicalpredictions} reports average predicted probabilities at observed covariates, at neutral partisanship, and at zero knowledge. The models describe responses conditional on their predictors. They neither identify the effects of changing those predictors nor assign respondents to cognitive states. NIC relates a baseline warming answer to post-wave knowledge; BTP's original knowledge index includes the outcome item, so we also report an index excluding it.
-
-The historical partisan comparisons are particularly sensitive to their answer keys (Table~\ref{tab:historicalgaps}). For the 2004 past-year unemployment item, the Republican-minus-Democratic gap is \histunemparchived{} percentage points under the archived key but \histunempannualbenchmark{} under a benchmark that defines falling national unemployment as improvement. For inflation, the corresponding gaps are \histinflarchived{} and \histinflannualbenchmark{}. The latter benchmark treats rising twelve-month CPI inflation as worsening. The questionnaire and contemporary BLS releases support these benchmark definitions; the \href{https://github.com/finite-sample/know_casablanca/blob/main/docs/recovered_measures.md}{replication notes} provide the exact sources. The archived 1992 inflation key is less readily adjudicated because the direction of the annual change depends on the interview month. The 1992 reconstruction also restores missing and unasked responses that the archive had classified as DK. Its archived party variable comes from 1990; we report both that grouping and contemporary 1992 party identification. These comparisons use unweighted samples and historical coding conventions, not nationally representative estimates of misinformation.
-
-Finally, a single response item cannot identify separate informed, misinformed, and guessing classes. Multi-item latent-class fits can describe response patterns under local independence, but require a separate interpretation. Among one-, two-, and three-class fits to the same three-item ANES samples, BIC favors \latentnesEightEightClasses{} classes in 1988 and \latentnesZeroEightClasses{} in 2008 (Table~\ref{tab:latent}). The smallest favored 1988 class contains \latentnesEightEightSmallest{} of the fitted sample, and some response probabilities lie near the boundary. Repeated starts and alternative class counts reveal how model-dependent these profiles are. Neither the fit nor ordering classes by keyed-correct answers establishes that they represent knowledge, misinformation, or guessing.
-
-\section{Discussion}
-
-According to much news coverage and some scholarly literature, the American public is awash in misinformation. That picture, it now seems, is considerably overdrawn. There is misinformation, to be sure, but much less than the headlines suggest. Some of what masquerades as misinformation is guessing or inference---not pre-existing, stored cognition but on-the-spot processing, occasioned only by the task of answering the question. Some is pre-existing belief, just not confidently enough held to constitute misinformation. Much the same may be said of knowledge. There is some, but much less than the raw responses to questionnaire items suggest. Many correct responses, too, are the products of guessing, fresh inference, or mere belief. The besetting deficiency in public opinion is not misinformation but ignorance.
-
-Even the scale's estimates are probably too high. \citet{graham2023} finds that people who say they are certain of a falsehood often give a different answer weeks later, at rates similar to those who say they are certain of obscure scientific falsehoods, and concludes that confident wrong answers are often miseducated guesses rather than stored beliefs. If so, some of what the scale counts as misinformation is confident inference made on the spot, and the true prevalence is lower still. The scale also inherits the respondent's use of it: people who reserve the endpoints for near certainty will register less knowledge and less misinformation than those who use them freely, and a single wave cannot tell those apart from genuine differences in confidence.
-
-Two further limits bear on the comparisons. The samples are convenience samples, drawn from a university's alumni and staff and from MTurk, so the levels do not describe the public; the comparisons between randomly assigned formats within each survey are what the design identifies. And the keys are ours. We have tried to keep only propositions that are plainly true or plainly false and to document the basis for each, but the one we consider most debatable among those we keep---that the ACA cuts benefits to existing Medicare patients, which is false of guaranteed benefits but not of every extra benefit offered by private Medicare plans---shows how fine the line can be.
-
-The five-state comparisons add a qualification to the argument about political participation. Knowledge is associated with greater engagement relative to intermediate ratings in several comparisons, but the direct contrasts with misinformation are less precise and sensitive to scoring and item completeness. Intended voting cannot establish actual participation, and these cross-sectional associations cannot distinguish engagement's causes from its consequences. Establishing those relationships requires behavioral outcomes and a design that separates pre-existing belief from fresh inference and differences in scale use.
-
-That said, misinformation exists and may be consequential. So, short of actual misinformation, may tentative mistaken belief. The scale distinguishes these possibilities more clearly than multiple-choice responses alone, while leaving the behavioral consequences an open empirical question.
-
+\clearpage
 \bibliographystyle{apsr}
 \bibliography{references}
-
-\clearpage
-\appendix
-\section*{Appendix}
-\setcounter{table}{0}
-\renewcommand{\thetable}{A\arabic{table}}
-
-\begin{table}[H]
-\centering
-\caption{Balance across randomly assigned arms}
-\label{tab:balance}
-\TableStyle
-\input{../tabs/balance.tex}
-\begin{minipage}{0.8\linewidth}
-\vspace{0.5em}\footnotesize \emph{Note:} Shares of respondents identifying with or leaning toward each party; mean political interest on a 0--10 scale.
-\end{minipage}
-\end{table}
-
-\begin{table}[H]
-\centering
-\caption{Belief states on the 0--10 scale (strict scoring), percent of ratings}
-\label{tab:states}
-\BeliefTableStyle
-\input{../tabs/belief_states.tex}
-\begin{minipage}{0.95\linewidth}
-\vspace{0.5em}\footnotesize \emph{Note:} Ratings are recoded so that 10 is the correct end: knowledge is 10, misinformation 0, leaning right 6--9, leaning wrong 1--4. $n$ counts respondents who rated the statement. T and F mark true and false statements.
-\end{minipage}
-\end{table}
-
-{\PropositionTableStyle
-\input{../tabs/propositions.tex}
-}
-
-\clearpage
-\begingroup
-\setstretch{1}
-\section*{Belief-state scoring and engagement}
-
-\begin{table}[H]
-\centering
-\caption{Five belief states under three scoring schemes, percent of respondent indices}
-\label{tab:beliefschemes}
-\ExtensionTableStyle
-\input{../tabs/belief_schemes.tex}
-\begin{minipage}{0.97\linewidth}
-\vspace{0.5em}\footnotesize \emph{Note:} Alumni and staff were surveyed in 2010; March and July refer to 2017. K denotes knowledge, CB correct belief, Mid. the middle, IB incorrect belief, and M misinformation. Rows average equally across respondents using all retained propositions. Complete requires every item rated; Available requires at least one and divides each index by that respondent's number rated. $n$ is the number of respondents. Scheme 1 uses endpoints and middle 4--6; Scheme 2 broadens the endpoints to 0--1 and 9--10; Scheme 3 also narrows the middle to 5. Percentages may not sum to 100 because of rounding.
-\end{minipage}
-\end{table}
-
-\clearpage
-{\ExtensionTableStyle
-\input{../tabs/belief_engagement.tex}
-\noindent\footnotesize \emph{Note:} Each study/outcome regression includes four belief-state shares and an intercept, with the middle omitted. Diff. is the association with replacing ten percentage points of the middle share by the named state. Mean is the outcome's sample mean. All outcomes use 0--10 scales; intensity is distance from partisan neutrality, scaled to that range. Intervals use HC3 covariance and residual-degrees-of-freedom $t$ critical values. $p_H$ adjusts for all estimable contrasts and specifications within the outcome using Holm's procedure; intervals are pointwise. Only respondents rating every retained item enter this table. The recovered 2010 voting-intention estimates appear in Table~\ref{tab:panelvoting}; panel party attachment is a different construct from MTurk extremity. Estimates describe associations, not causal effects.
-}
-
-\clearpage
-{\ExtensionTableStyle
-\input{../tabs/belief_contrasts.tex}
-\noindent\footnotesize \emph{Note:} Diff. is the association with replacing ten percentage points of misinformation with knowledge, holding other state shares fixed. Units, covariance, and multiplicity adjustment are as in Table~\ref{tab:engagement}. Complete and Available use the missing-item rules in Table~\ref{tab:beliefschemes}. All retained propositions enter the indices; changing the missing-item rule can change both respondents and item composition. A wide interval is not evidence of equivalence.
-}
-
-
-\clearpage
-\begin{table}[H]
-\centering
-\caption{Voting intention in the 2010 panels: complete-item respondents, Scheme 1}
-\label{tab:panelvoting}
-\ExtensionTableStyle
-\input{../tabs/panel_voting.tex}
-\begin{minipage}{0.97\linewidth}
-\vspace{0.5em}\footnotesize\emph{Note:} Diff. replaces ten percentage points of the middle share by the named state, except K minus M, which replaces misinformation with knowledge. All retained propositions enter the indices. Mean is voting intention on a 0--10 scale. Intervals use HC3 covariance and residual-degrees-of-freedom $t$ critical values. Holm adjustment covers all estimable panel-voting contrasts across schemes, proposition sets, and missing-item rules. Intervals are pointwise.
-\end{minipage}
-\end{table}
-
-\begin{table}[H]
-\centering
-\caption{Age and ideology correlations with the five belief-state indices}
-\label{tab:demographics}
-\ExtensionTableStyle
-\input{../tabs/demographic_correlations.tex}
-\begin{minipage}{0.97\linewidth}
-\vspace{0.5em}\footnotesize\emph{Note:} Pearson correlations, Scheme 1, all retained propositions, complete-item respondents; $n$ is the paired sample size. Age is survey year minus birth year. Ideology ranges from liberal to conservative in seven ordered categories; unconsidered ideology is missing. K, CB, Mid., IB, and M are as in Table~\ref{tab:beliefschemes}. These are descriptive correlations without significance tests.
-\end{minipage}
-\end{table}
-
-\begin{table}[H]
-\centering
-\caption{Belief-state percentages by party attachment in the 2010 panels}
-\label{tab:attachment}
-\ExtensionTableStyle
-\input{../tabs/attachment_states.tex}
-\begin{minipage}{0.97\linewidth}
-\vspace{0.5em}\footnotesize\emph{Note:} Self-identified Democrats and Republicans with a matching attachment response only; Scheme 1, all propositions, complete-item respondents. Entries are equally weighted respondent means in percent. Differences can reflect party and item composition as well as attachment.
-\end{minipage}
-\end{table}
-
-\clearpage
-{\ExtensionTableStyle
-\input{../tabs/historical_gaps.tex}
-\noindent\footnotesize\emph{Note:} R minus D compares Republican and Democratic shares agreeing with the specified key; explicit DK responses enter the denominator, missing responses do not. Archive preserves historical answer keys; Benchmark uses the specified national unemployment/CPI direction for the 2004 past-year questions. Intervals use independent-binomial standard errors and normal critical values, without multiplicity adjustment or survey-design corrections. The 1992 rows use the archived key and distinguish party identification measured in 1990 from that measured in 1992; raw missing/not-asked responses are excluded in both. Economy items distinguish four years (Economy), since July, and the past year. The 1988 unemployment and inflation items refer to change since 1980. Keyed correctness is not a confidence measure.
-}
-
-\clearpage
-{\ExtensionTableStyle
-\input{../tabs/historical_predictions.tex}
-\noindent\footnotesize\emph{Note:} Party models use correct/incorrect/DK outcomes and three-category party identification; Affect models keep ``same'' separate and use the Republican-minus-Democratic thermometer. Both include knowledge and its interaction with the partisan predictor. Neutral sets party to Independent or affect to zero; Zero K sets knowledge to zero. Entries average predicted probabilities over the same model sample; intervals use the coefficient covariance and delta method, conditional on those covariates. They are pointwise and model-based, not survey-design intervals. * excludes the Iraq/9-11 item from BTP's knowledge index. NIC's knowledge measure is post-wave and its warming response baseline. These scenarios are not causal effects or cognitive-state estimates.
-}
-
-\clearpage
-\begin{table}[H]
-\centering
-\caption{Latent response-class fits to three ANES items}
-\label{tab:latent}
-\ExtensionTableStyle
-\input{../tabs/latent_models.tex}
-\begin{minipage}{0.97\linewidth}
-\vspace{0.5em}\footnotesize\emph{Note:} Each year's fits use the same respondents with complete answers to all three four-category items. Lower BIC is preferred. Best starts counts runs attaining the best log likelihood within $10^{-5}$; the one-class independence model has a single solution. Min. share is the smallest class in percent. Boundary counts response probabilities within $10^{-6}$ of zero or one. TV is total variation between observed and fitted joint response distributions. Classes are response profiles under historical keys, not validated cognitive states.
-\end{minipage}
-\end{table}
-
-\endgroup
 \end{document}

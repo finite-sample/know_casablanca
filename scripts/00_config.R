@@ -6,6 +6,7 @@ table_dir <- project_file("tabs")
 figure_dir <- project_file("figs")
 prepared_data_file <- file.path(derived_dir, "prepared_data.rds")
 figure_sizes <- list(format = c(width = 6.5, height = 6.2), partisan_gaps = c(width = 6.5, height = 7.6))
+figure_sizes$identification_sensitivity <- c(width = 6.5, height = 4.5)
 figure_dpi <- 180
 reference_colour <- "grey60"
 table_style <- list(

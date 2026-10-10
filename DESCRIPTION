@@ -5,10 +5,10 @@ Version: 0.1.1
 Authors@R: c(
     person("Robert C.", "Luskin", role = "aut"),
     person("Gaurav", "Sood", role = c("aut", "cre"), email = "gsood07@gmail.com"))
-Description: Data, analyses, and manuscript for a paper that separates
-    misinformation from knowledge, mere belief, and ignorance and compares
-    multiple-choice items with a 0-10 probability scale in four randomized
-    survey experiments.
+Description: Theory, identification bounds, data, and manuscript for a paper
+    separating stored misinformation from knowledge, tentative belief, and
+    ignorance. Includes a randomized-format illustration and reproducible
+    descriptive and historical analyses.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Imports:
@@ -19,6 +19,7 @@ Imports:
     foreign,
     ggplot2,
     lubridate,
+    lpSolve,
     purrr,
     nnet,
     poLCA,

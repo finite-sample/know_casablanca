@@ -67,8 +67,9 @@ significance tests or class-share causal claims are planned.
 Keep generated numbers, sample accounting, diagnostics, and comparisons with
 saved outputs together. Test the known missing-response and counterfactual
 failures with synthetic data, verify real-data counts independently, and run the
-full local checks. Incorporate supported findings and their limitations in the
-manuscript and generated appendices. Record unavailable measures and unresolved
+full local checks. Preserve supported findings and their limitations in the
+separate results reports and generated tables. The current manuscript develops
+identification conditions rather than using response profiles as cognitive states. Record unavailable measures and unresolved
 historical inputs explicitly rather than substituting another construct.
 
 Implementation references: [multinomial models](https://stat.ethz.ch/R-manual/R-devel/library/nnet/html/multinom.html),

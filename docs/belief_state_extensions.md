@@ -92,11 +92,9 @@ correlations to `tabs/belief_engagement_models.csv` and
 `tabs/belief_engagement_correlations.csv`. Respondent indices are saved in the
 ignored `data/derived/belief_indices.rds`. The generated results note presents
 all-proposition summaries; the true/false splits remain in the tables.
-`write_extension_paper()` generates the manuscript's three appendix tables and
-`tabs/extension_macros.tex` from those same outputs. The manuscript discusses
-scoring sensitivity and engagement in the main text, with all-proposition
-complete-item estimates and direct knowledge-versus-misinformation sensitivity
-comparisons in the appendix.
+`write_extension_paper()` retains the three generated extension tables and
+`tabs/extension_macros.tex` for reproducibility. They are separate from the
+current identification manuscript; see the [analysis inventory](exploratory_analyses.md).
 
 An independent design review confirmed the MTurk item wording and requested
 explicit missingness counts, respondent weighting, and a covariance-based direct
