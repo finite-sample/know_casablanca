@@ -5,10 +5,10 @@ respondents to multiple-choice items or to 0-10 ratings of the same statements.
 
 | File | Survey | Fielded | Source |
 |---|---|---|---|
-| `raw/alumni_2010.csv` | Alumni panel of a private university in the western U.S. | September 2010 | `soodoku/hidden`, `data/arep/arep.csv` |
-| `raw/staff_2010.csv` | Staff panel of the same university | September-October 2010 | `soodoku/hidden`, `data/srep/srep.csv` |
-| `raw/mturk_march_2017.csv` | Amazon Mechanical Turk, U.S. workers | 27-28 March 2017 | `soodoku/hidden`, `data/mturk/` (Qualtrics export of 28 March) |
-| `raw/mturk_july_2017.csv` | Amazon Mechanical Turk, U.S. workers | 9 July 2017 | `soodoku/partisan-gaps`, `data/turk/mam_mturk_070917.csv` |
+| `raw/alumni_2010.csv` | Alumni panel of a private university in the western U.S. | September 2010 | `finite-sample/know_hidden`, `data/arep/arep.csv` |
+| `raw/staff_2010.csv` | Staff panel of the same university | September-October 2010 | `finite-sample/know_hidden`, `data/srep/srep.csv` |
+| `raw/mturk_march_2017.csv` | Amazon Mechanical Turk, U.S. workers | 27-28 March 2017 | `finite-sample/know_hidden`, `data/mturk/` (Qualtrics export of 28 March) |
+| `raw/mturk_july_2017.csv` | Amazon Mechanical Turk, U.S. workers | 9 July 2017 | `finite-sample/know_pgap_format`, `data/turk/mam_mturk_070917.csv` |
 
 `R/sources.R` checks each file against a SHA-256 hash before any analysis.
 
