@@ -9,6 +9,7 @@ figure_sizes <- list(format = c(width = 6.5, height = 6.2), partisan_gaps = c(wi
 figure_dpi <- 180
 reference_colour <- "grey60"
 table_style <- list(
+  ExtensionTableStyle = list(font_size = "footnotesize", column_padding = "3pt", row_stretch = 1),
   TableStyle = list(font_size = "small", column_padding = "6pt", row_stretch = 1),
   BeliefTableStyle = list(font_size = "footnotesize", column_padding = "2pt", row_stretch = 1),
   PropositionTableStyle = list(font_size = "footnotesize", column_padding = "3pt", row_stretch = 1)

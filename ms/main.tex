@@ -14,6 +14,7 @@
 \setstretch{1.15}
 \graphicspath{{../figs/}}
 \input{../tabs/macros.tex}
+\input{../tabs/extension_macros.tex}
 \input{../tabs/style.tex}
 
 \title{The Waters of Casablanca: On Political Misinformation}
@@ -24,7 +25,7 @@
 \maketitle
 
 \begin{abstract}
-\noindent Misinformation is a confidently held false belief. Separating it from knowledge, from ignorance, and from mere, less confident belief poses conceptual and operational problems, and this paper takes up both. Conceptually, we draw the boundaries between these belief states, distinguish invention (believing a congenial fiction) from denial (disbelieving an uncongenial fact), and ask which propositions can be objects of misinformation at all. Operationally, we trace how correct, incorrect, and ``don't know'' responses map onto belief states and argue that multiple-choice items cannot tell misinformation from guessing and inference. We propose asking how definitely true or false each proposition is on a 0--10 scale, counting only the scale's false end as misinformation. In four surveys that randomly assigned respondents to multiple-choice items or to the scale (\nTotal{} respondents in all), the scale finds far less misinformation about well-publicized falsehoods: \muslimScale{} are confident that Barack Obama is a Muslim, against \muslimMc{} choosing that answer from a menu with a ``don't know'' option and \muslimMedia{} when the question is worded as media polls word it. Most ratings fall between the scale's ends. Misinformation is partisan in the expected direction, but the partisan gaps are much smaller than multiple-choice items make them look.
+\noindent Misinformation is a confidently held false belief. Separating it from knowledge, from ignorance, and from mere, less confident belief poses conceptual and operational problems, and this paper takes up both. Conceptually, we draw the boundaries between these belief states, distinguish invention (believing a congenial fiction) from denial (disbelieving an uncongenial fact), and ask which propositions can be objects of misinformation at all. Operationally, we trace how correct, incorrect, and ``don't know'' responses map onto belief states and argue that multiple-choice items cannot tell misinformation from guessing and inference. We propose asking how definitely true or false each proposition is on a 0--10 scale, counting only the scale's false end as misinformation. In four surveys that randomly assigned respondents to multiple-choice items or to the scale (\nTotal{} respondents in all), the scale finds far less misinformation about well-publicized falsehoods: \muslimScale{} are confident that Barack Obama is a Muslim, against \muslimMc{} choosing that answer from a menu with a ``don't know'' option and \muslimMedia{} when the question is worded as media polls word it. Most ratings fall between the scale's ends. Misinformation is partisan in the expected direction, but the partisan gaps are much smaller than multiple-choice items make them look. Exploratory comparisons across three belief-state scorings associate knowledge with greater engagement relative to intermediate ratings; direct comparisons with misinformation are less precise and sensitive to scoring and item completeness.
 \end{abstract}
 
 \section{Introduction}
@@ -53,7 +54,7 @@ Misinformation is a species of belief---a cognitive representation of an empiric
 
 \subsection{Existing versus Measurement-Induced Belief}
 
-Misinformation, like knowledge and mere belief, is a matter of existing, previously stored cognition---what the respondent already believes before starting the questionnaire. But questionnaires are reactive instruments. Respondents may learn, gleaning the answers to subsequent questions from the informational crumbs afforded by prior ones. They may make fresh inferences, sometimes correct, sometimes incorrect, using other, already-held pieces of knowledge or misinformation. A respondent who knows that Massachusetts is a heavily Democratic state may infer, when asked to supply the party affiliation of Senator X from Massachusetts, that Senator X is a Democrat. The inference is correct but does not represent knowledge if X is Ed Markey and would have been incorrect but not represent misinformation if X, a few years ago, was Scott Brown. What the respondent knows is simply that Massachusetts is a heavily Democratic state. The response regarding Senator X's party affiliation is stereotypic inference. If retained, such learning or inference may subsequently become knowledge (if correct) or misinformation (if incorrect). But that is not what we are interested in measuring---not if we wish to gauge the extent of knowledge or misinformation, how it arises, and what it affects in the real world. This reactivity may be more of an issue for measuring knowledge than for measuring misinformation, to the extent that most of the fresh learning and inference is correct. But it is, in either case, a critical caution to note.
+Misinformation, like knowledge and mere belief, is a matter of previously stored cognition---what the respondent already believes before starting the questionnaire. But questionnaires are reactive instruments. Respondents may learn, gleaning the answers to subsequent questions from the informational crumbs afforded by prior ones. They may make fresh inferences, sometimes correct, sometimes incorrect, using other, already-held pieces of knowledge or misinformation. A respondent who knows that Massachusetts is a heavily Democratic state may infer, when asked to supply the party affiliation of Senator X from Massachusetts, that Senator X is a Democrat. The inference is correct but does not represent knowledge if X is Ed Markey and would have been incorrect but not represent misinformation if X, a few years ago, was Scott Brown. What the respondent knows is simply that Massachusetts is a heavily Democratic state. The response regarding Senator X's party affiliation is stereotypic inference. If retained, such learning or inference may subsequently become knowledge (if correct) or misinformation (if incorrect). But that is not what we are interested in measuring---not if we wish to gauge the extent of knowledge or misinformation, how it arises, and what it affects in the real world. This reactivity may be more of an issue for measuring knowledge than for measuring misinformation, to the extent that most of the fresh learning and inference is correct. But it is, in either case, a critical caution to note.
 
 \subsection{Belief versus Disbelief, Invention versus Denial}
 
@@ -218,7 +219,25 @@ The gaps are much smaller on the scale than in multiple-choice answers. Republic
 
 \subsection{Who Is Misinformed?}
 
-The misinformed resemble the knowledgeable in one way the introduction anticipated: both are more interested in politics. Within the scale arms, moving from no interest to maximal interest raises the share of ratings at the correct end by \interestKnows{} points (standard error \interestKnowsSe{}) from an average of \meanKnows{}, and raises the share at the incorrect end by \interestMisinformed{} points (95\% interval \interestMisinformedLower{} to \interestMisinformedUpper{}) from an average of \meanMisinformed{}. Both estimates hold each proposition fixed and cluster standard errors by respondent. Interest brings confident belief, most of it right but some of it wrong.
+The misinformed resemble the knowledgeable in one way the introduction anticipated: both are more interested in politics. Within the scale arms, moving from no interest to maximal interest raises the share of ratings at the correct end by \interestKnows{} points (standard error \interestKnowsSe{}) from an average of \meanKnows{}, and raises the share at the incorrect end by \interestMisinformed{} points (95\% interval \interestMisinformedLower{} to \interestMisinformedUpper{}) from an average of \meanMisinformed{}. Both estimates hold each proposition fixed and cluster standard errors by respondent. Interest is associated with confident belief, most of it right but some of it wrong.
+
+\subsection{Scoring the Five Belief States}
+
+The distinction between mere belief and ignorance is more sensitive to where we draw the boundaries than the endpoint measures alone reveal. We therefore compare three scorings of the truth-oriented scale, on which 10 is confidently correct and 0 confidently incorrect. Scheme 1 assigns knowledge to 10, correct belief to 7--9, the middle to 4--6, incorrect belief to 1--3, and misinformation to 0. Scheme 2 also counts 9 as knowledge and 1 as misinformation. Scheme 3 keeps those broader endpoints but narrows the middle to 5, assigning 6 to correct belief and 4 to incorrect belief. These are classification rules; calling the middle ignorance does not establish that respondents there have no relevant belief.
+
+For these comparisons, each respondent's index is the share of retained propositions assigned to a given state. The five indices sum to one, and respondents receive equal weight. Our primary specification requires ratings on every retained proposition; an available-item specification divides by the number actually rated. Missing and not-applicable responses enter neither belief state nor index denominator. These respondent averages differ from the item-level distributions above and from prevalence estimates that retain skipped responses in their denominators.
+
+Table~\ref{tab:beliefschemes} reports all five states. In March, the middle accounts for \extMarchMiddleWide{} under Schemes 1 and 2 but \extMarchMiddleNarrow{} under Scheme 3. The change reallocates intermediate answers between the middle and mere belief; it does not change the endpoint definitions between Schemes 2 and 3. Item completeness also matters. All \extMarchComplete{} March scale respondents rated every retained proposition, but only \extJulyComplete{} of \extJulyTotal{} July respondents did so; \extJulyAvailable{} supplied at least one usable rating. Complete-item and available-item comparisons in July therefore change both the respondents included and the propositions contributing to their indices.
+
+\subsection{Belief States and Political Engagement}
+
+We next relate the respondent indices to political interest in each survey and to voting intention and partisan intensity in the two MTurk surveys. Voting intention is reported likelihood of voting in the next congressional election, from 0 (certain not to vote) to 10 (certain to vote). It is neither observed turnout nor candidate choice. Partisan intensity is twice the absolute distance from the midpoint of the 0--10 Democratic--Republican orientation scale. It measures extremity of partisan orientation, rather than a separately validated attachment-strength construct. All three outcomes range from 0 to 10.
+
+Within each study, we regress each engagement outcome on the four non-middle state indices and an intercept. Omitting the middle avoids the exact collinearity imposed by shares summing to one. A coefficient scaled by 0.1 describes the association with replacing ten percentage points of the middle share by the named state, holding the other shares fixed. Table~\ref{tab:engagement} reports Scheme 1 with complete-item respondents; Table~\ref{tab:beliefcontrasts} compares knowledge directly with misinformation under all three scorings and both missing-item rules. Intervals use HC3 standard errors and residual-degrees-of-freedom $t$ critical values. They are pointwise; Holm-adjusted $p$-values account for all estimable contrasts across studies, scorings, item sets, and missing-item rules within each outcome. The underlying analyses also split true from false propositions; these and the descriptive correlations are supplied with the replication materials. These retrospective comparisons are exploratory and do not identify causal effects of belief states.
+
+Knowledge is positively associated with engagement relative to the middle category, but the evidence separating knowledge from misinformation is less decisive. In March under Scheme 1, replacing ten percentage points of the middle with knowledge is associated with \extMarchInterestK{} more interest points (95\% interval \extMarchInterestKCI{}), compared with \extMarchInterestM{} for misinformation (\extMarchInterestMCI{}), on a sample mean of \extMarchInterestKMean{}. The direct knowledge-minus-misinformation contrast for partisan intensity is \extMarchIntensity{} points (\extMarchIntensityCI{}). Neither comparison warrants treating the misinformed as uniformly disengaged.
+
+For voting intention, the corresponding March associations are \extMarchVoteK{} points for knowledge (\extMarchVoteKCI{}) and \extMarchVoteM{} for misinformation (\extMarchVoteMCI{}), from a mean of \extMarchVoteKMean{}. Replacing ten percentage points of misinformation with knowledge gives a direct contrast of \extMarchVoteDiff{} points (\extMarchVoteDiffCI{}). Under Scheme 2 it is \extMarchVoteLenient{} (\extMarchVoteLenientCI{}). The latter interval excludes zero before multiplicity adjustment, but the adjusted comparison does not provide firm evidence of a difference. July gives \extJulyVoteComplete{} (\extJulyVoteCompleteCI{}) among complete-item respondents and \extJulyVoteAvailable{} (\extJulyVoteAvailableCI{}) using available items under Scheme 1. The intervals span both signs, and the sample and item-composition changes preclude interpreting the point-estimate reversal as a behavioral effect.
 
 \section{Discussion}
 
@@ -228,7 +247,9 @@ Even the scale's estimates are probably too high. \citet{graham2023} finds that 
 
 Two further limits bear on the comparisons. The samples are convenience samples, drawn from a university's alumni and staff and from MTurk, so the levels do not describe the public; the comparisons between randomly assigned formats within each survey are what the design identifies. And the keys are ours. We have tried to keep only propositions that are plainly true or plainly false and to document the basis for each, but the one we consider most debatable among those we keep---that the ACA cuts benefits to existing Medicare patients, which is false of guaranteed benefits but not of every extra benefit offered by private Medicare plans---shows how fine the line can be.
 
-That said, misinformation exists and may be consequential. So, short of actual misinformation, may tentative mistaken belief. Much remains to be done in measuring them and examining their sources and consequences.
+The five-state comparisons add a qualification to the argument about political participation. Knowledge is associated with greater engagement relative to intermediate ratings in several comparisons, but the direct contrasts with misinformation are less precise and sensitive to scoring and item completeness. Intended voting cannot establish actual participation, and these cross-sectional associations cannot distinguish engagement's causes from its consequences. Establishing those relationships requires behavioral outcomes and a design that separates pre-existing belief from fresh inference and differences in scale use.
+
+That said, misinformation exists and may be consequential. So, short of actual misinformation, may tentative mistaken belief. The scale distinguishes these possibilities more clearly than multiple-choice responses alone, while leaving the behavioral consequences an open empirical question.
 
 \bibliographystyle{apsr}
 \bibliography{references}
@@ -265,4 +286,33 @@ That said, misinformation exists and may be consequential. So, short of actual m
 \input{../tabs/propositions.tex}
 }
 
+\clearpage
+\begingroup
+\setstretch{1}
+\section*{Belief-state scoring and engagement}
+
+\begin{table}[H]
+\centering
+\caption{Five belief states under three scoring schemes, percent of respondent indices}
+\label{tab:beliefschemes}
+\ExtensionTableStyle
+\input{../tabs/belief_schemes.tex}
+\begin{minipage}{0.97\linewidth}
+\vspace{0.5em}\footnotesize \emph{Note:} Alumni and staff were surveyed in 2010; March and July refer to 2017. K denotes knowledge, CB correct belief, Mid. the middle, IB incorrect belief, and M misinformation. Rows average equally across respondents using all retained propositions. Complete requires every item rated; Available requires at least one and divides each index by that respondent's number rated. $n$ is the number of respondents. Scheme 1 uses endpoints and middle 4--6; Scheme 2 broadens the endpoints to 0--1 and 9--10; Scheme 3 also narrows the middle to 5. Percentages may not sum to 100 because of rounding.
+\end{minipage}
+\end{table}
+
+\clearpage
+{\ExtensionTableStyle
+\input{../tabs/belief_engagement.tex}
+\noindent\footnotesize \emph{Note:} Each study/outcome regression includes four belief-state shares and an intercept, with the middle omitted. Diff. is the association with replacing ten percentage points of the middle share by the named state. Mean is the outcome's sample mean. All outcomes use 0--10 scales; intensity is distance from partisan neutrality, scaled to that range. Intervals use HC3 covariance and residual-degrees-of-freedom $t$ critical values. $p_H$ adjusts for all estimable contrasts and specifications within the outcome using Holm's procedure; intervals are pointwise. Only respondents rating every retained item enter this table. No voting-intention or intensity estimates are reported for the 2010 samples because those measures were not harmonized. Estimates describe associations, not causal effects.
+}
+
+\clearpage
+{\ExtensionTableStyle
+\input{../tabs/belief_contrasts.tex}
+\noindent\footnotesize \emph{Note:} Diff. is the association with replacing ten percentage points of misinformation with knowledge, holding other state shares fixed. Units, covariance, and multiplicity adjustment are as in Table~\ref{tab:engagement}. Complete and Available use the missing-item rules in Table~\ref{tab:beliefschemes}. All retained propositions enter the indices; changing the missing-item rule can change both respondents and item composition. A wide interval is not evidence of equivalence.
+}
+
+\endgroup
 \end{document}

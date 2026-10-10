@@ -105,12 +105,18 @@ read_mturk_march <- function() {
       arm = dplyr::recode(reticence_guessing, closed = "mc", scale = "scale"),
       party = mturk_party(pid, pid_strength_1),
       interest = parse_rating(interest_1),
+      voting_intention = parse_rating(vote_1),
+      partisan_position = parse_rating(pid_strength_1),
+      partisan_intensity = 2 * abs(partisan_position - 5),
       mc_aca1 = pick_mc("rgc_o_aca", "rgc_c_aca"),
       mc_aca2 = pick_mc("rgc_o_aca2", "rgc_c_aca2"),
       dplyr::across(dplyr::all_of(scale_cols), parse_rating)
     ) |>
     dplyr::filter(!is.na(arm)) |>
-    dplyr::select(study, respondent, arm, party, interest, mc_aca1, mc_aca2, dplyr::all_of(scale_cols)) |>
+    dplyr::select(
+      study, respondent, arm, party, interest, voting_intention, partisan_position,
+      partisan_intensity, mc_aca1, mc_aca2, dplyr::all_of(scale_cols)
+    ) |>
     assertr::assert(assertr::is_uniq, respondent)
 }
 
@@ -135,6 +141,9 @@ read_mturk_july <- function() {
       arm = dplyr::recode(question_type, `14k` = "mc", `24k` = "scale", RW = "mc_media"),
       party = mturk_party(pid, pid_strength_1),
       interest = parse_rating(interest_1),
+      voting_intention = parse_rating(vote_1),
+      partisan_position = parse_rating(pid_strength_1),
+      partisan_intensity = 2 * abs(partisan_position - 5),
       dplyr::across(dplyr::all_of(scale_cols), parse_rating)
     ) |>
     dplyr::bind_cols(mc) |>
