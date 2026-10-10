@@ -1,5 +1,3 @@
-purrr::walk(list.files("R", full.names = TRUE), source)
-
 balance_tab <- read_tab("balance.csv")
 comparison <- read_tab("format_comparison.csv")
 pooled <- read_tab("format_pooled.csv")
@@ -9,7 +7,7 @@ inv <- read_tab("invention_denial.csv")
 inv_test <- read_tab("invention_denial_test.csv")
 gaps <- read_tab("partisan_gaps.csv")
 interest <- read_tab("interest_gradient.csv")
-propositions <- read_propositions()
+propositions <- readRDS(prepared_data_file)$propositions
 
 n_arm <- \(s, a) balance_tab$respondents[balance_tab$study == s & balance_tab$arm == a]
 share <- \(s, q, m) comparison$estimate[comparison$study == s & comparison$question == q & comparison$measure == m]
@@ -95,7 +93,7 @@ values <- c(
   nDcongenial = as_word(nrow(d_gaps)), nDnegative = sum(d_gaps$estimate < 0)
 )
 if (sum(d_gaps$estimate < 0) != nrow(d_gaps)) stop("Text says every Democrat-congenial gap is negative")
-write_macros(values, "tabs/macros.tex")
+write_macros(values, file.path(table_dir, "macros.tex"))
 
 state_cols <- c("knowledge", "lean correct", "midpoint", "lean incorrect", "misinformation")
 states |>
@@ -112,7 +110,7 @@ states |>
   dplyr::select(study, short, truth, rated, dplyr::all_of(state_cols)) |>
   dplyr::mutate(short = latex_escape(short)) |>
   write_table(
-    "tabs/belief_states.tex", "llcrrrrrr",
+    file.path(table_dir, "belief_states.tex"), "llcrrrrrr",
     c("Study", "Proposition", "", "$n$", "Know", "Lean right", "5", "Lean wrong", "Misinf.")
   )
 
@@ -129,7 +127,7 @@ propositions |>
   ) |>
   dplyr::select(study, text, key, basis) |>
   write_table(
-    "tabs/propositions.tex", "lp{4.8cm}lp{7cm}",
+    file.path(table_dir, "propositions.tex"), "lp{4.8cm}lp{7cm}",
     c("Survey", "Statement", "Key", "Basis"),
     caption = "Statements, keys, and the basis for each key",
     label = "tab:propositions"
@@ -145,6 +143,15 @@ balance_tab |>
   dplyr::arrange(study) |>
   dplyr::mutate(study = dplyr::if_else(duplicated(study), "", as.character(study))) |>
   write_table(
-    "tabs/balance.tex", "llrrrr",
+    file.path(table_dir, "balance.tex"), "llrrrr",
     c("Study", "Arm", "$n$", "Democrat", "Republican", "Interest (0--10)")
   )
+
+style_lines <- purrr::imap_chr(table_style, function(style, name) {
+  paste0(
+    "\\newcommand{\\", name, "}{\\", style$font_size,
+    "\\setlength{\\tabcolsep}{", style$column_padding,
+    "}\\renewcommand{\\arraystretch}{", style$row_stretch, "}}"
+  )
+})
+writeLines(style_lines, file.path(table_dir, "style.tex"))

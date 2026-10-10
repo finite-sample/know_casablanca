@@ -1,11 +1,4 @@
-raw_path <- \(name) file.path("data", "raw", name)
-
-raw_files <- c(
-  alumni_2010.csv = "7baf68c339ab36d99eac7ff018c6c4e1179b13443dd8450f1d0d1c6b13ab6c82",
-  staff_2010.csv = "891f04e9cfe768d0b666a3133a23da05478b90c4a6653285fe197d263e7fb5c2",
-  mturk_march_2017.csv = "845864d3861868f27a781aa3ed5875e77b5d8587f216eff22930416521808f02",
-  mturk_july_2017.csv = "62aa2380baf0fcb4ca7aeb64d552de597c2927d61289d27146072e70f329fa67"
-)
+raw_path <- \(name) file.path(raw_dir, name)
 
 verify_sources <- function() {
   found <- purrr::map_chr(names(raw_files), \(f) digest::digest(file = raw_path(f), algo = "sha256"))
@@ -155,13 +148,13 @@ read_strict_csv <- function(path) {
 }
 
 read_propositions <- function() {
-  read_strict_csv("docs/propositions.csv") |>
+  read_strict_csv(project_file("docs", "propositions.csv")) |>
     tidyr::separate_longer_delim(study, ";") |>
     assertr::assert(assertr::in_set("R", "D", "none"), congenial) |>
     assertr::verify(!keep | !is.na(truth))
 }
 
 read_mc_options <- function() {
-  read_strict_csv("docs/mc_options.csv") |>
+  read_strict_csv(project_file("docs", "mc_options.csv")) |>
     tidyr::separate_longer_delim(study, ";")
 }

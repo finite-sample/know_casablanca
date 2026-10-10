@@ -1,14 +1,11 @@
-purrr::walk(list.files("R", full.names = TRUE), source)
+prepared <- readRDS(prepared_data_file)
+frame <- prepared$frame
+propositions <- prepared$propositions
+ratings <- prepared$ratings
+mc <- prepared$mc
+by_question <- prepared$by_question
 
-verify_sources()
-frame <- dplyr::bind_rows(read_alumni(), read_staff(), read_mturk_march(), read_mturk_july())
-propositions <- read_propositions()
-ratings <- scale_ratings(frame, propositions)
-mc <- mc_responses(frame, read_mc_options())
-by_question <- scale_by_question(ratings)
-
-dir.create("tabs", showWarnings = FALSE)
-write_output <- \(x, name) readr::write_csv(x, file.path("tabs", name), na = "")
+write_output <- \(x, name) readr::write_csv(x, file.path(table_dir, name), na = "")
 
 write_output(balance(frame), "balance.csv")
 write_output(belief_states(ratings), "belief_states.csv")

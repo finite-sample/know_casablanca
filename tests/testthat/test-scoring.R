@@ -1,4 +1,5 @@
 root <- "../.."
+source(file.path(root, "scripts", "00_config.R"))
 purrr::walk(list.files(file.path(root, "R"), full.names = TRUE), source)
 
 test_that("belief_state() scores true and false statements symmetrically", {

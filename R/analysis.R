@@ -1,10 +1,3 @@
-study_labels <- c(
-  alumni = "Alumni 2010",
-  staff = "Staff 2010",
-  mturk_march = "MTurk March 2017",
-  mturk_july = "MTurk July 2017"
-)
-
 # Wilson intervals stay inside [0, 1] when shares are near zero, as most are.
 wilson <- function(successes, n, z = qnorm(0.975)) {
   p <- successes / n

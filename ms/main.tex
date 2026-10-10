@@ -14,6 +14,7 @@
 \setstretch{1.15}
 \graphicspath{{../figs/}}
 \input{../tabs/macros.tex}
+\input{../tabs/style.tex}
 
 \title{The Waters of Casablanca: On Political Misinformation}
 \author{Robert C. Luskin \and Gaurav Sood}
@@ -120,7 +121,7 @@ Several mechanisms play a role in this function. For knowledge (K) or misinforma
 \centering
 \caption{The response production function for a multiple-choice item}
 \label{tab:rpf}
-\small
+\TableStyle
 \begin{tabular}{lcccc}
 \toprule
 & \multicolumn{4}{c}{Information state} \\
@@ -242,7 +243,7 @@ That said, misinformation exists and may be consequential. So, short of actual m
 \centering
 \caption{Balance across randomly assigned arms}
 \label{tab:balance}
-\small
+\TableStyle
 \input{../tabs/balance.tex}
 \begin{minipage}{0.8\linewidth}
 \vspace{0.5em}\footnotesize \emph{Note:} Shares of respondents identifying with or leaning toward each party; mean political interest on a 0--10 scale.
@@ -253,16 +254,14 @@ That said, misinformation exists and may be consequential. So, short of actual m
 \centering
 \caption{Belief states on the 0--10 scale (strict scoring), percent of ratings}
 \label{tab:states}
-\footnotesize
-\setlength{\tabcolsep}{2pt}
+\BeliefTableStyle
 \input{../tabs/belief_states.tex}
 \begin{minipage}{0.95\linewidth}
 \vspace{0.5em}\footnotesize \emph{Note:} Ratings are recoded so that 10 is the correct end: knowledge is 10, misinformation 0, leaning right 6--9, leaning wrong 1--4. $n$ counts respondents who rated the statement. T and F mark true and false statements.
 \end{minipage}
 \end{table}
 
-{\footnotesize
-\setlength{\tabcolsep}{3pt}
+{\PropositionTableStyle
 \input{../tabs/propositions.tex}
 }
 

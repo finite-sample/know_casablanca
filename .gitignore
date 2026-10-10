@@ -12,3 +12,5 @@ ms/*.fls
 ms/*.log
 ms/*.out
 ms/*.xdv
+
+data/derived/

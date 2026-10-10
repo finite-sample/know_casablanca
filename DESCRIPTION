@@ -1,7 +1,7 @@
 Package: watersofcasablanca
 Type: Project
 Title: The Waters of Casablanca: On Political Misinformation
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: c(
     person("Robert C.", "Luskin", role = "aut"),
     person("Gaurav", "Sood", role = c("aut", "cre"), email = "gsood07@gmail.com"))
@@ -21,6 +21,7 @@ Imports:
     purrr,
     readr,
     rlang,
+    rprojroot,
     sandwich,
     scales,
     stringr,
