@@ -21,8 +21,8 @@ with random pseudonyms that keep the `FY` (alumni) and `srep` (staff) prefixes
 the survey software used, and the staff file's free-text race answers are
 blank; the mapping to the original IDs was not kept. No other cell was changed.
 Country and state (from the IP address) are kept because the analysis restricts
-the MTurk samples to U.S. respondents. The panels' contact lists and
-demographic files are not part of this repository.
+the MTurk samples to U.S. respondents. The panels' contact lists are not part of this repository. The minimal alumni
+intake extract described below uses the same pseudonymous identifiers.
 
 ## Questionnaires and keys
 
@@ -31,3 +31,21 @@ source for that key, and the statements dropped because they are not plainly
 true or false. `docs/mc_options.csv` maps each multiple-choice answer to
 correct, incorrect, or don't know. `docs/recode_ledger.csv` records every
 decision that differs from earlier analyses of these data.
+
+## Reconstructed analyses
+
+`raw/alumni_2010_demographics.csv` contains only the pseudonymous panel ID,
+birth year, gender, education, and race/ethnicity from the companion repository's
+anonymized intake extract. Repeated IDs are reconciled field by field; conflicting
+values become missing. [Measure notes](../docs/recovered_measures.md) document
+coverage, conflicts, coding, and the questionnaire evidence.
+
+`historical/` contains the minimal columns used from the archived ANES, GSS,
+NIC, and BTP analyses, plus the saved core table used for comparison. The 1992
+extract also contains original ANES response codes and contemporary party
+identification to distinguish nonresponse from DK and party timing.
+[The source ledger](../docs/historical_sources.csv) records source and extract
+SHA-256 hashes; stage 07 verifies every extract before fitting the models.
+These extracts let `make check` run independently of local archives and sibling
+repositories. `scripts/import_archived_data.R` regenerates them only when the
+original sources listed in the ledger are available.

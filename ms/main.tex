@@ -15,6 +15,7 @@
 \graphicspath{{../figs/}}
 \input{../tabs/macros.tex}
 \input{../tabs/extension_macros.tex}
+\input{../tabs/reconstruction_macros.tex}
 \input{../tabs/style.tex}
 
 \title{The Waters of Casablanca: On Political Misinformation}
@@ -233,11 +234,25 @@ Table~\ref{tab:beliefschemes} reports all five states. In March, the middle acco
 
 We next relate the respondent indices to political interest in each survey and to voting intention and partisan intensity in the two MTurk surveys. Voting intention is reported likelihood of voting in the next congressional election, from 0 (certain not to vote) to 10 (certain to vote). It is neither observed turnout nor candidate choice. Partisan intensity is twice the absolute distance from the midpoint of the 0--10 Democratic--Republican orientation scale. It measures extremity of partisan orientation, rather than a separately validated attachment-strength construct. All three outcomes range from 0 to 10.
 
-Within each study, we regress each engagement outcome on the four non-middle state indices and an intercept. Omitting the middle avoids the exact collinearity imposed by shares summing to one. A coefficient scaled by 0.1 describes the association with replacing ten percentage points of the middle share by the named state, holding the other shares fixed. Table~\ref{tab:engagement} reports Scheme 1 with complete-item respondents; Table~\ref{tab:beliefcontrasts} compares knowledge directly with misinformation under all three scorings and both missing-item rules. Intervals use HC3 standard errors and residual-degrees-of-freedom $t$ critical values. They are pointwise; Holm-adjusted $p$-values account for all estimable contrasts across studies, scorings, item sets, and missing-item rules within each outcome. The underlying analyses also split true from false propositions; these and the descriptive correlations are supplied with the replication materials. These retrospective comparisons are exploratory and do not identify causal effects of belief states.
+Within each study, we regress each engagement outcome on the four non-middle state indices and an intercept. Omitting the middle avoids the exact collinearity imposed by shares summing to one. A coefficient scaled by 0.1 describes the association with replacing ten percentage points of the middle share by the named state, holding the other shares fixed. Table~\ref{tab:engagement} reports Scheme 1 with complete-item respondents; Table~\ref{tab:beliefcontrasts} compares knowledge directly with misinformation under all three scorings and both missing-item rules. Intervals use HC3 standard errors and residual-degrees-of-freedom $t$ critical values. They are pointwise; Holm-adjusted $p$-values account for all estimable contrasts across studies, scorings, item sets, and missing-item rules within each original engagement outcome; the subsequently recovered panel voting measure forms a separate family. The underlying analyses also split true from false propositions; these and the descriptive correlations are supplied with the replication materials. These retrospective comparisons are exploratory and do not identify causal effects of belief states.
 
 Knowledge is positively associated with engagement relative to the middle category, but the evidence separating knowledge from misinformation is less decisive. In March under Scheme 1, replacing ten percentage points of the middle with knowledge is associated with \extMarchInterestK{} more interest points (95\% interval \extMarchInterestKCI{}), compared with \extMarchInterestM{} for misinformation (\extMarchInterestMCI{}), on a sample mean of \extMarchInterestKMean{}. The direct knowledge-minus-misinformation contrast for partisan intensity is \extMarchIntensity{} points (\extMarchIntensityCI{}). Neither comparison warrants treating the misinformed as uniformly disengaged.
 
 For voting intention, the corresponding March associations are \extMarchVoteK{} points for knowledge (\extMarchVoteKCI{}) and \extMarchVoteM{} for misinformation (\extMarchVoteMCI{}), from a mean of \extMarchVoteKMean{}. Replacing ten percentage points of misinformation with knowledge gives a direct contrast of \extMarchVoteDiff{} points (\extMarchVoteDiffCI{}). Under Scheme 2 it is \extMarchVoteLenient{} (\extMarchVoteLenientCI{}). The latter interval excludes zero before multiplicity adjustment, but the adjusted comparison does not provide firm evidence of a difference. July gives \extJulyVoteComplete{} (\extJulyVoteCompleteCI{}) among complete-item respondents and \extJulyVoteAvailable{} (\extJulyVoteAvailableCI{}) using available items under Scheme 1. The intervals span both signs, and the sample and item-composition changes preclude interpreting the point-estimate reversal as a behavioral effect.
+
+\subsection{Additional Correlates and the 2010 Voting Measures}
+
+The archived questionnaire also verifies a 0--10 intention to vote in the 2010 congressional elections. Table~\ref{tab:panelvoting} extends the engagement analysis to the alumni and staff samples. Under Scheme 1, replacing ten percentage points of the middle share with knowledge is associated with \newalumniVoteK{} voting-intention points among alumni (95\% interval \newalumniVoteKCI{}) and \newstaffVoteK{} among staff (\newstaffVoteKCI{}). The direct knowledge-minus-misinformation contrasts are \newalumniVoteDiff{} (\newalumniVoteDiffCI{}) and \newstaffVoteDiff{} (\newstaffVoteDiffCI{}), respectively. The staff interval excludes zero before adjustment, but neither direct comparison does so after Holm adjustment across the separate family of panel-voting specifications. These are intentions, not observed turnout.
+
+Demographic differences in knowledge do not consistently mirror differences in misinformation. Table~\ref{tab:demographics} shows that age is positively correlated with both endpoint indices in the alumni, staff, and March complete-item samples; July's knowledge association differs. More conservative ideological identification is associated with less knowledge in the two 2010 samples, but its association with misinformation is small and differs in sign. These descriptive correlations depend on the proposition set and sample, and ideological position was not measured comparably in the MTurk exports. Table~\ref{tab:attachment} separately reports strong versus weak party attachment among self-identified Democrats and Republicans; it should not be equated with the MTurk scale's partisan extremity. The replication tables report gender, education, race/ethnicity, party, and all scoring and missing-item variants. Alumni demographics were linked from panel intake, with conflicting fields set to missing; staff demographics come from the survey itself. The four surveys contain no verified candidate-choice measure from which to estimate the proposed choice models.
+
+\subsection{Historical Multiple-Choice Evidence}
+
+Earlier analyses used conventional response items in the ANES, GSS, NIC, and BTP surveys. Reconstructing them helps establish what these responses can support, but does not turn an incorrect answer into a confidence measure. We recover the original correct/incorrect/DK distributions and fit three-category response models with knowledge, party identification, and their interaction; the ANES items with a separate ``same'' response also support four-category models with partisan affect. Table~\ref{tab:historicalpredictions} reports average predicted probabilities at observed covariates, at neutral partisanship, and at zero knowledge. The models describe responses conditional on their predictors. They neither identify the effects of changing those predictors nor assign respondents to cognitive states. NIC relates a baseline warming answer to post-wave knowledge; BTP's original knowledge index includes the outcome item, so we also report an index excluding it.
+
+The historical partisan comparisons are particularly sensitive to their answer keys (Table~\ref{tab:historicalgaps}). For the 2004 past-year unemployment item, the Republican-minus-Democratic gap is \histunemparchived{} percentage points under the archived key but \histunempannualbenchmark{} under a benchmark that defines falling national unemployment as improvement. For inflation, the corresponding gaps are \histinflarchived{} and \histinflannualbenchmark{}. The latter benchmark treats rising twelve-month CPI inflation as worsening. The questionnaire and contemporary BLS releases support these benchmark definitions; the \href{https://github.com/finite-sample/know_casablanca/blob/main/docs/recovered_measures.md}{replication notes} provide the exact sources. The archived 1992 inflation key is less readily adjudicated because the direction of the annual change depends on the interview month. The 1992 reconstruction also restores missing and unasked responses that the archive had classified as DK. Its archived party variable comes from 1990; we report both that grouping and contemporary 1992 party identification. These comparisons use unweighted samples and historical coding conventions, not nationally representative estimates of misinformation.
+
+Finally, a single response item cannot identify separate informed, misinformed, and guessing classes. Multi-item latent-class fits can describe response patterns under local independence, but require a separate interpretation. Among one-, two-, and three-class fits to the same three-item ANES samples, BIC favors \latentnesEightEightClasses{} classes in 1988 and \latentnesZeroEightClasses{} in 2008 (Table~\ref{tab:latent}). The smallest favored 1988 class contains \latentnesEightEightSmallest{} of the fitted sample, and some response probabilities lie near the boundary. Repeated starts and alternative class counts reveal how model-dependent these profiles are. Neither the fit nor ordering classes by keyed-correct answers establishes that they represent knowledge, misinformation, or guessing.
 
 \section{Discussion}
 
@@ -305,7 +320,7 @@ That said, misinformation exists and may be consequential. So, short of actual m
 \clearpage
 {\ExtensionTableStyle
 \input{../tabs/belief_engagement.tex}
-\noindent\footnotesize \emph{Note:} Each study/outcome regression includes four belief-state shares and an intercept, with the middle omitted. Diff. is the association with replacing ten percentage points of the middle share by the named state. Mean is the outcome's sample mean. All outcomes use 0--10 scales; intensity is distance from partisan neutrality, scaled to that range. Intervals use HC3 covariance and residual-degrees-of-freedom $t$ critical values. $p_H$ adjusts for all estimable contrasts and specifications within the outcome using Holm's procedure; intervals are pointwise. Only respondents rating every retained item enter this table. No voting-intention or intensity estimates are reported for the 2010 samples because those measures were not harmonized. Estimates describe associations, not causal effects.
+\noindent\footnotesize \emph{Note:} Each study/outcome regression includes four belief-state shares and an intercept, with the middle omitted. Diff. is the association with replacing ten percentage points of the middle share by the named state. Mean is the outcome's sample mean. All outcomes use 0--10 scales; intensity is distance from partisan neutrality, scaled to that range. Intervals use HC3 covariance and residual-degrees-of-freedom $t$ critical values. $p_H$ adjusts for all estimable contrasts and specifications within the outcome using Holm's procedure; intervals are pointwise. Only respondents rating every retained item enter this table. The recovered 2010 voting-intention estimates appear in Table~\ref{tab:panelvoting}; panel party attachment is a different construct from MTurk extremity. Estimates describe associations, not causal effects.
 }
 
 \clearpage
@@ -313,6 +328,65 @@ That said, misinformation exists and may be consequential. So, short of actual m
 \input{../tabs/belief_contrasts.tex}
 \noindent\footnotesize \emph{Note:} Diff. is the association with replacing ten percentage points of misinformation with knowledge, holding other state shares fixed. Units, covariance, and multiplicity adjustment are as in Table~\ref{tab:engagement}. Complete and Available use the missing-item rules in Table~\ref{tab:beliefschemes}. All retained propositions enter the indices; changing the missing-item rule can change both respondents and item composition. A wide interval is not evidence of equivalence.
 }
+
+
+\clearpage
+\begin{table}[H]
+\centering
+\caption{Voting intention in the 2010 panels: complete-item respondents, Scheme 1}
+\label{tab:panelvoting}
+\ExtensionTableStyle
+\input{../tabs/panel_voting.tex}
+\begin{minipage}{0.97\linewidth}
+\vspace{0.5em}\footnotesize\emph{Note:} Diff. replaces ten percentage points of the middle share by the named state, except K minus M, which replaces misinformation with knowledge. All retained propositions enter the indices. Mean is voting intention on a 0--10 scale. Intervals use HC3 covariance and residual-degrees-of-freedom $t$ critical values. Holm adjustment covers all estimable panel-voting contrasts across schemes, proposition sets, and missing-item rules. Intervals are pointwise.
+\end{minipage}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Age and ideology correlations with the five belief-state indices}
+\label{tab:demographics}
+\ExtensionTableStyle
+\input{../tabs/demographic_correlations.tex}
+\begin{minipage}{0.97\linewidth}
+\vspace{0.5em}\footnotesize\emph{Note:} Pearson correlations, Scheme 1, all retained propositions, complete-item respondents; $n$ is the paired sample size. Age is survey year minus birth year. Ideology ranges from liberal to conservative in seven ordered categories; unconsidered ideology is missing. K, CB, Mid., IB, and M are as in Table~\ref{tab:beliefschemes}. These are descriptive correlations without significance tests.
+\end{minipage}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Belief-state percentages by party attachment in the 2010 panels}
+\label{tab:attachment}
+\ExtensionTableStyle
+\input{../tabs/attachment_states.tex}
+\begin{minipage}{0.97\linewidth}
+\vspace{0.5em}\footnotesize\emph{Note:} Self-identified Democrats and Republicans with a matching attachment response only; Scheme 1, all propositions, complete-item respondents. Entries are equally weighted respondent means in percent. Differences can reflect party and item composition as well as attachment.
+\end{minipage}
+\end{table}
+
+\clearpage
+{\ExtensionTableStyle
+\input{../tabs/historical_gaps.tex}
+\noindent\footnotesize\emph{Note:} R minus D compares Republican and Democratic shares agreeing with the specified key; explicit DK responses enter the denominator, missing responses do not. Archive preserves historical answer keys; Benchmark uses the specified national unemployment/CPI direction for the 2004 past-year questions. Intervals use independent-binomial standard errors and normal critical values, without multiplicity adjustment or survey-design corrections. The 1992 rows use the archived key and distinguish party identification measured in 1990 from that measured in 1992; raw missing/not-asked responses are excluded in both. Economy items distinguish four years (Economy), since July, and the past year. The 1988 unemployment and inflation items refer to change since 1980. Keyed correctness is not a confidence measure.
+}
+
+\clearpage
+{\ExtensionTableStyle
+\input{../tabs/historical_predictions.tex}
+\noindent\footnotesize\emph{Note:} Party models use correct/incorrect/DK outcomes and three-category party identification; Affect models keep ``same'' separate and use the Republican-minus-Democratic thermometer. Both include knowledge and its interaction with the partisan predictor. Neutral sets party to Independent or affect to zero; Zero K sets knowledge to zero. Entries average predicted probabilities over the same model sample; intervals use the coefficient covariance and delta method, conditional on those covariates. They are pointwise and model-based, not survey-design intervals. * excludes the Iraq/9-11 item from BTP's knowledge index. NIC's knowledge measure is post-wave and its warming response baseline. These scenarios are not causal effects or cognitive-state estimates.
+}
+
+\clearpage
+\begin{table}[H]
+\centering
+\caption{Latent response-class fits to three ANES items}
+\label{tab:latent}
+\ExtensionTableStyle
+\input{../tabs/latent_models.tex}
+\begin{minipage}{0.97\linewidth}
+\vspace{0.5em}\footnotesize\emph{Note:} Each year's fits use the same respondents with complete answers to all three four-category items. Lower BIC is preferred. Best starts counts runs attaining the best log likelihood within $10^{-5}$; the one-class independence model has a single solution. Min. share is the smallest class in percent. Boundary counts response probabilities within $10^{-6}$ of zero or one. TV is total variation between observed and fitted joint response distributions. Classes are response profiles under historical keys, not validated cognitive states.
+\end{minipage}
+\end{table}
 
 \endgroup
 \end{document}

@@ -1,0 +1,648 @@
+arep.id,year,gender,ethnic,educ
+FY958357,1945,Male,American Indian Native American,Masters degree (MA or MS)
+FY916757,2000,Male,Asian or Pacific Islander,Four year college degree (BA or BS)
+FY982538,1958,Female,White Caucasian,PhD MD MBA Law degree
+FY992215,1972,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY959528,1957,Female,White Caucasian,PhD MD MBA Law degree
+FY963040,1972,Female,Asian or Pacific Islander,Four year college degree (BA or BS)
+FY973419,1975,Male,Latino or Hispanic,PhD MD MBA Law degree
+FY917117,1986,Female,White Caucasian,Four year college degree (BA or BS)
+FY946593,1968,Male,White Caucasian,Masters degree (MA or MS)
+FY999775,1966,Female,#NAME?,Masters degree (MA or MS)
+FY959928,1983,Female,#NAME?,Masters degree (MA or MS)
+FY988153,1959,Male,Asian or Pacific Islander,Four year college degree (BA or BS)
+FY932078,1983,Female,Black or African American,PhD MD MBA Law degree
+FY930562,1955,Female,White Caucasian,Four year college degree (BA or BS)
+FY916874,1974,Male,White Caucasian,Masters degree (MA or MS)
+FY988481,1971,Male,Black or African American,PhD MD MBA Law degree
+FY935576,1972,Female,Asian or Pacific Islander,PhD MD MBA Law degree
+FY994406,1955,Male,White Caucasian,PhD MD MBA Law degree
+FY912288,,,,
+FY940745,1977,Female,White Caucasian,PhD MD MBA Law degree
+FY945695,1977,Female,Asian or Pacific Islander,PhD MD MBA Law degree
+FY912288,1982,Female,White Caucasian,Masters degree (MA or MS)
+FY906026,1974,Female,#NAME?,PhD MD MBA Law degree
+FY903043,1960,Female,Unknown,Four year college degree (BA or BS)
+FY931041,1945,Female,White Caucasian,Four year college degree (BA or BS)
+FY956139,1953,Male,White Caucasian,Masters degree (MA or MS)
+FY969725,1956,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY904267,1980,Female,White Caucasian,Masters degree (MA or MS)
+FY981926,1966,Male,Latino or Hispanic,Masters degree (MA or MS)
+FY972321,1946,Male,#NAME?,PhD MD MBA Law degree
+FY984691,1955,Female,White Caucasian,Masters degree (MA or MS)
+FY993928,1975,Male,Latino or Hispanic,PhD MD MBA Law degree
+FY988813,1927,Male,White Caucasian,Masters degree (MA or MS)
+FY958244,1960,Female,Black or African American,Masters degree (MA or MS)
+FY954856,1967,Female,White Caucasian,PhD MD MBA Law degree
+FY951845,1966,Male,#NAME?,Masters degree (MA or MS)
+FY991527,1980,Male,Black or African American,Masters degree (MA or MS)
+FY954190,1940,Female,White Caucasian,Four year college degree (BA or BS)
+,1940,Male,White Caucasian,Four year college degree (BA or BS)
+FY955778,1974,Male,White Caucasian,PhD MD MBA Law degree
+FY940890,1941,Female,White Caucasian,Four year college degree (BA or BS)
+FY972819,1957,Male,White Caucasian,PhD MD MBA Law degree
+FY967920,1931,Female,White Caucasian,Masters degree (MA or MS)
+FY997316,1947,Female,White Caucasian,Four year college degree (BA or BS)
+FY988320,1958,Male,White Caucasian,Masters degree (MA or MS)
+FY941254,1969,Female,White Caucasian,Masters degree (MA or MS)
+FY922050,1976,Male,White Caucasian,Masters degree (MA or MS)
+FY980512,1955,Male,White Caucasian,Masters degree (MA or MS)
+FY996119,1984,Female,#NAME?,Masters degree (MA or MS)
+FY938634,1985,Female,White Caucasian,Masters degree (MA or MS)
+FY963524,1935,Male,White Caucasian,PhD MD MBA Law degree
+FY963829,1978,Female,White Caucasian,Four year college degree (BA or BS)
+FY932456,1943,Female,White Caucasian,Masters degree (MA or MS)
+FY907469,1951,Female,White Caucasian,Four year college degree (BA or BS)
+FY963913,1945,Female,White Caucasian,PhD MD MBA Law degree
+FY944717,1959,Male,White Caucasian,Four year college degree (BA or BS)
+,1929,Male,White Caucasian,Masters degree (MA or MS)
+FY966249,1985,Female,Asian or Pacific Islander,Four year college degree (BA or BS)
+FY938344,1935,Male,White Caucasian,Four year college degree (BA or BS)
+FY948802,1978,Female,White Caucasian,PhD MD MBA Law degree
+FY932972,1953,Female,White Caucasian,Masters degree (MA or MS)
+FY933759,1944,Male,White Caucasian,Masters degree (MA or MS)
+FY931806,1944,Female,White Caucasian,PhD MD MBA Law degree
+FY942572,1924,Female,White Caucasian,Four year college degree (BA or BS)
+FY909575,1969,Female,White Caucasian,Masters degree (MA or MS)
+FY912395,1943,Male,White Caucasian,PhD MD MBA Law degree
+FY976269,1932,Male,White Caucasian,PhD MD MBA Law degree
+FY956537,1984,Female,White Caucasian,Four year college degree (BA or BS)
+FY911738,1971,Male,Asian or Pacific Islander,Masters degree (MA or MS)
+FY959261,1984,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY955469,1943,Female,White Caucasian,PhD MD MBA Law degree
+FY987316,1975,Female,White Caucasian,PhD MD MBA Law degree
+FY946138,1977,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY940087,1925,Male,White Caucasian,Four year college degree (BA or BS)
+FY952062,1976,Female,White Caucasian,Four year college degree (BA or BS)
+FY994684,1934,Female,White Caucasian,Four year college degree (BA or BS)
+FY924367,1955,Female,White Caucasian,Four year college degree (BA or BS)
+FY955711,1982,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY968976,1956,Female,White Caucasian,Masters degree (MA or MS)
+FY981760,1981,Female,White Caucasian,Masters degree (MA or MS)
+FY956362,1954,Female,White Caucasian,Four year college degree (BA or BS)
+FY981277,1963,Female,White Caucasian,PhD MD MBA Law degree
+FY977599,1957,Female,White Caucasian,Masters degree (MA or MS)
+FY962754,1968,Male,White Caucasian,Masters degree (MA or MS)
+FY969999,1983,Female,White Caucasian,Masters degree (MA or MS)
+FY930554,1942,Female,White Caucasian,Masters degree (MA or MS)
+FY962397,1955,Male,White Caucasian,Masters degree (MA or MS)
+FY929184,1977,Female,Black or African American,PhD MD MBA Law degree
+FY955884,1936,Female,,Four year college degree (BA or BS)
+FY904327,,,,
+FY919519,1963,Female,White Caucasian,Four year college degree (BA or BS)
+,1922,Female,,Masters degree (MA or MS)
+FY972641,1973,Female,Asian or Pacific Islander,PhD MD MBA Law degree
+FY909228,1946,Female,White Caucasian,Masters degree (MA or MS)
+FY940575,1955,Male,White Caucasian,PhD MD MBA Law degree
+FY976474,1961,Female,White Caucasian,Four year college degree (BA or BS)
+FY963492,1969,Female,White Caucasian,Four year college degree (BA or BS)
+FY954744,1984,Male,Asian or Pacific Islander,Masters degree (MA or MS)
+FY913501,1965,Female,Unknown,Masters degree (MA or MS)
+FY996689,1953,Male,White Caucasian,Four year college degree (BA or BS)
+FY963370,1958,Female,White Caucasian,Four year college degree (BA or BS)
+FY978840,1978,Female,White Caucasian,Masters degree (MA or MS)
+FY935376,1956,Male,White Caucasian,PhD MD MBA Law degree
+FY908065,1964,Female,White Caucasian,Masters degree (MA or MS)
+FY905833,1948,Female,White Caucasian,Masters degree (MA or MS)
+FY997031,1958,Male,Latino or Hispanic,PhD MD MBA Law degree
+FY908055,1975,Male,White Caucasian,PhD MD MBA Law degree
+FY992110,1974,Male,Latino or Hispanic,Masters degree (MA or MS)
+FY920663,1926,Male,White Caucasian,Four year college degree (BA or BS)
+FY977008,1939,Female,White Caucasian,Masters degree (MA or MS)
+FY920509,1961,Female,White Caucasian,Four year college degree (BA or BS)
+FY946501,1988,Female,White Caucasian,Four year college degree (BA or BS)
+FY909037,1974,Male,Black or African American,Masters degree (MA or MS)
+FY979092,1951,Female,White Caucasian,PhD MD MBA Law degree
+FY904932,1970,Male,Asian or Pacific Islander,Four year college degree (BA or BS)
+FY924958,1947,Female,White Caucasian,PhD MD MBA Law degree
+FY909789,1955,Male,White Caucasian,PhD MD MBA Law degree
+FY919777,1959,Male,White Caucasian,Masters degree (MA or MS)
+FY982103,1952,Female,#NAME?,PhD MD MBA Law degree
+FY981094,1969,Female,White Caucasian,Four year college degree (BA or BS)
+FY990792,,,,
+FY952485,1976,Female,White Caucasian,Four year college degree (BA or BS)
+FY990792,1971,Male,Latino or Hispanic,PhD MD MBA Law degree
+FY957584,1947,Male,White Caucasian,PhD MD MBA Law degree
+FY980620,1946,Female,White Caucasian,Four year college degree (BA or BS)
+FY947949,1976,Female,Asian or Pacific Islander,PhD MD MBA Law degree
+FY975666,1984,Male,Latino or Hispanic,Four year college degree (BA or BS)
+FY942657,1982,Female,#NAME?,Masters degree (MA or MS)
+FY993202,1966,Female,White Caucasian,Four year college degree (BA or BS)
+FY994152,1946,Female,White Caucasian,Masters degree (MA or MS)
+FY900433,1953,Female,White Caucasian,Four year college degree (BA or BS)
+FY997723,1967,Male,White Caucasian,PhD MD MBA Law degree
+FY966397,1973,Female,#NAME?,Masters degree (MA or MS)
+FY985858,1953,Female,White Caucasian,PhD MD MBA Law degree
+FY929864,1958,Female,White Caucasian,Four year college degree (BA or BS)
+FY962651,1979,Male,White Caucasian,Masters degree (MA or MS)
+FY988236,1943,Male,White Caucasian,Masters degree (MA or MS)
+FY900741,1972,Female,White Caucasian,
+FY900741,1972,Female,White Caucasian,PhD MD MBA Law degree
+FY905149,1955,Female,White Caucasian,Masters degree (MA or MS)
+FY994781,1931,Female,White Caucasian,Masters degree (MA or MS)
+FY946968,1971,Female,White Caucasian,PhD MD MBA Law degree
+FY957980,1985,Female,Asian or Pacific Islander,Four year college degree (BA or BS)
+FY960939,1939,Female,White Caucasian,PhD MD MBA Law degree
+FY972771,1978,Male,White Caucasian,PhD MD MBA Law degree
+FY967253,1960,Male,White Caucasian,PhD MD MBA Law degree
+FY982803,1954,Male,White Caucasian,Four year college degree (BA or BS)
+FY995128,1967,Female,White Caucasian,Masters degree (MA or MS)
+FY977383,1960,Male,White Caucasian,PhD MD MBA Law degree
+FY915795,1942,Female,White Caucasian,Masters degree (MA or MS)
+FY939876,1971,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY959579,1958,Male,White Caucasian,PhD MD MBA Law degree
+FY975832,1971,Female,White Caucasian,
+FY975832,1971,Female,White Caucasian,PhD MD MBA Law degree
+FY921285,1975,Female,White Caucasian,Masters degree (MA or MS)
+FY970878,1940,Male,White Caucasian,PhD MD MBA Law degree
+FY960611,1916,Male,White Caucasian,PhD MD MBA Law degree
+FY956131,1957,Female,White Caucasian,PhD MD MBA Law degree
+FY999080,1965,Female,Black or African American,PhD MD MBA Law degree
+FY907140,1944,Male,White Caucasian,Masters degree (MA or MS)
+FY930546,1969,Female,White Caucasian,PhD MD MBA Law degree
+FY931146,1925,Male,White Caucasian,Masters degree (MA or MS)
+FY918910,1944,Male,Latino or Hispanic,Masters degree (MA or MS)
+FY973822,1957,Male,White Caucasian,PhD MD MBA Law degree
+FY903514,1921,Male,White Caucasian,Four year college degree (BA or BS)
+FY961847,1982,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY964953,1954,Female,White Caucasian,PhD MD MBA Law degree
+FY937683,1951,Male,White Caucasian,PhD MD MBA Law degree
+FY957005,1978,Female,#NAME?,PhD MD MBA Law degree
+FY943970,1934,Female,White Caucasian,Four year college degree (BA or BS)
+FY903374,1967,Male,White Caucasian,PhD MD MBA Law degree
+FY914868,1973,Female,White Caucasian,PhD MD MBA Law degree
+FY952488,1943,Female,White Caucasian,Four year college degree (BA or BS)
+FY959430,1948,Male,White Caucasian,Masters degree (MA or MS)
+FY982526,1949,Female,White Caucasian,Four year college degree (BA or BS)
+FY904314,1975,Female,White Caucasian,PhD MD MBA Law degree
+FY992611,1959,Female,White Caucasian,Four year college degree (BA or BS)
+FY940353,1958,Male,White Caucasian,Four year college degree (BA or BS)
+FY988587,1978,Female,White Caucasian,Masters degree (MA or MS)
+FY977741,1956,Male,White Caucasian,Masters degree (MA or MS)
+FY970472,1986,Female,#NAME?,Four year college degree (BA or BS)
+FY960161,1941,Female,White Caucasian,PhD MD MBA Law degree
+FY942218,1962,Female,White Caucasian,Masters degree (MA or MS)
+FY963289,1972,Male,#NAME?,Masters degree (MA or MS)
+FY923829,1956,Male,White Caucasian,PhD MD MBA Law degree
+FY952591,1962,Female,White Caucasian,PhD MD MBA Law degree
+FY977020,1973,Female,White Caucasian,Masters degree (MA or MS)
+FY941159,1972,Male,White Caucasian,PhD MD MBA Law degree
+FY977451,1942,Male,White Caucasian,PhD MD MBA Law degree
+FY983801,1960,Female,White Caucasian,Masters degree (MA or MS)
+FY960055,1948,Male,White Caucasian,Four year college degree (BA or BS)
+FY995815,1985,Male,White Caucasian,Four year college degree (BA or BS)
+FY900881,1934,Female,White Caucasian,Masters degree (MA or MS)
+FY967001,1942,Male,White Caucasian,Masters degree (MA or MS)
+FY972040,1966,Male,White Caucasian,PhD MD MBA Law degree
+FY900830,1956,Male,White Caucasian,PhD MD MBA Law degree
+FY935003,1982,Female,White Caucasian,Masters degree (MA or MS)
+FY922157,1985,Female,White Caucasian,Four year college degree (BA or BS)
+FY958154,1942,Female,White Caucasian,Masters degree (MA or MS)
+FY912192,1935,Male,White Caucasian,
+FY912192,1935,Male,White Caucasian,Masters degree (MA or MS)
+FY978784,1944,Female,White Caucasian,PhD MD MBA Law degree
+FY999401,1949,Female,White Caucasian,PhD MD MBA Law degree
+FY988226,1969,Female,White Caucasian,PhD MD MBA Law degree
+FY907250,1959,Female,White Caucasian,PhD MD MBA Law degree
+FY965454,1938,Male,White Caucasian,PhD MD MBA Law degree
+FY962110,1967,Female,Latino or Hispanic,PhD MD MBA Law degree
+FY974342,1960,Male,#NAME?,Masters degree (MA or MS)
+FY962783,1979,Female,Asian or Pacific Islander,PhD MD MBA Law degree
+FY943284,1958,Female,White Caucasian,PhD MD MBA Law degree
+FY905143,1959,Male,White Caucasian,PhD MD MBA Law degree
+FY930422,1961,Male,White Caucasian,Masters degree (MA or MS)
+FY991013,1968,Female,White Caucasian,Masters degree (MA or MS)
+FY975569,1948,Female,White Caucasian,PhD MD MBA Law degree
+FY948239,1942,Female,White Caucasian,Masters degree (MA or MS)
+FY952230,1980,Female,White Caucasian,Four year college degree (BA or BS)
+FY943840,1955,Female,White Caucasian,Masters degree (MA or MS)
+FY902511,1957,Male,Latino or Hispanic,Masters degree (MA or MS)
+FY913535,1978,Female,White Caucasian,PhD MD MBA Law degree
+FY921735,1969,Female,White Caucasian,PhD MD MBA Law degree
+FY948016,1982,Male,White Caucasian,Masters degree (MA or MS)
+FY919744,1957,Male,White Caucasian,PhD MD MBA Law degree
+FY988909,1960,Female,White Caucasian,PhD MD MBA Law degree
+FY915175,1941,Male,White Caucasian,PhD MD MBA Law degree
+FY970691,1959,Female,White Caucasian,Four year college degree (BA or BS)
+FY932177,1987,Female,White Caucasian,Four year college degree (BA or BS)
+FY907296,1947,Male,White Caucasian,
+FY907296,1947,Male,White Caucasian,Masters degree (MA or MS)
+FY903494,1946,Male,#NAME?,PhD MD MBA Law degree
+FY995889,1970,Female,White Caucasian,PhD MD MBA Law degree
+FY983265,1942,Male,White Caucasian,PhD MD MBA Law degree
+FY913999,1944,Male,White Caucasian,PhD MD MBA Law degree
+FY977282,1948,Male,White Caucasian,PhD MD MBA Law degree
+FY969316,1952,Female,White Caucasian,Masters degree (MA or MS)
+FY934627,1973,Female,White Caucasian,PhD MD MBA Law degree
+FY981143,1987,Male,Latino or Hispanic,Four year college degree (BA or BS)
+FY931722,1973,Male,#NAME?,PhD MD MBA Law degree
+FY989878,1961,Male,White Caucasian,PhD MD MBA Law degree
+FY925412,1978,Male,White Caucasian,Masters degree (MA or MS)
+FY962928,1940,Female,White Caucasian,PhD MD MBA Law degree
+FY983931,1933,Male,White Caucasian,PhD MD MBA Law degree
+FY930667,1931,Female,White Caucasian,Four year college degree (BA or BS)
+FY939746,1935,Female,White Caucasian,Masters degree (MA or MS)
+FY975672,1941,Male,White Caucasian,PhD MD MBA Law degree
+FY984450,1952,Male,Latino or Hispanic,Masters degree (MA or MS)
+FY903420,1956,Female,Latino or Hispanic,PhD MD MBA Law degree
+FY932805,1977,Male,White Caucasian,Masters degree (MA or MS)
+FY912496,1984,Female,American Indian Native American,Four year college degree (BA or BS)
+FY975991,1951,Male,White Caucasian,PhD MD MBA Law degree
+FY999356,1951,Female,White Caucasian,Masters degree (MA or MS)
+FY980628,1961,Female,White Caucasian,Four year college degree (BA or BS)
+FY977808,1934,Male,White Caucasian,PhD MD MBA Law degree
+FY984023,1970,Male,White Caucasian,Masters degree (MA or MS)
+FY932524,1982,Female,#NAME?,Masters degree (MA or MS)
+FY964756,1945,Male,White Caucasian,PhD MD MBA Law degree
+FY940120,1932,Male,White Caucasian,Four year college degree (BA or BS)
+FY934103,1961,Female,White Caucasian,PhD MD MBA Law degree
+FY942923,1957,Female,White Caucasian,PhD MD MBA Law degree
+FY936182,1942,Female,White Caucasian,PhD MD MBA Law degree
+FY987146,1967,Female,White Caucasian,PhD MD MBA Law degree
+FY920739,1969,Female,#NAME?,PhD MD MBA Law degree
+FY984755,1963,Female,Unknown,PhD MD MBA Law degree
+FY981874,1970,Female,White Caucasian,PhD MD MBA Law degree
+FY951357,1935,Male,White Caucasian,PhD MD MBA Law degree
+FY919865,1977,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY978592,1953,Male,White Caucasian,PhD MD MBA Law degree
+FY928643,1935,Male,White Caucasian,Four year college degree (BA or BS)
+FY951690,1979,Female,Asian or Pacific Islander,PhD MD MBA Law degree
+FY930798,1964,Male,Latino or Hispanic,PhD MD MBA Law degree
+FY992972,1969,Female,#NAME?,Masters degree (MA or MS)
+FY986339,1962,Male,White Caucasian,PhD MD MBA Law degree
+FY938583,1935,Male,White Caucasian,Masters degree (MA or MS)
+FY967194,1976,Female,White Caucasian,Masters degree (MA or MS)
+FY934252,1943,Female,White Caucasian,Masters degree (MA or MS)
+FY913877,1954,Female,White Caucasian,PhD MD MBA Law degree
+FY990769,1955,Female,White Caucasian,Masters degree (MA or MS)
+FY986267,1971,Female,Latino or Hispanic,Four year college degree (BA or BS)
+FY963493,1981,Female,White Caucasian,PhD MD MBA Law degree
+FY909882,1978,Female,Black or African American,PhD MD MBA Law degree
+FY983557,1976,Female,,PhD MD MBA Law degree
+FY972164,1933,Female,White Caucasian,Masters degree (MA or MS)
+FY925604,1974,Male,Asian or Pacific Islander,Masters degree (MA or MS)
+FY909191,1928,Male,White Caucasian,PhD MD MBA Law degree
+FY975326,1952,Female,White Caucasian,PhD MD MBA Law degree
+FY988496,1961,Female,White Caucasian,PhD MD MBA Law degree
+FY935310,1982,Female,Asian or Pacific Islander,Four year college degree (BA or BS)
+FY909304,1964,Male,White Caucasian,PhD MD MBA Law degree
+FY936297,1947,Male,White Caucasian,Four year college degree (BA or BS)
+FY997962,1957,Female,White Caucasian,Masters degree (MA or MS)
+FY943371,1932,Male,Latino or Hispanic,Masters degree (MA or MS)
+FY952450,1962,Male,White Caucasian,Masters degree (MA or MS)
+FY902434,1953,Male,White Caucasian,PhD MD MBA Law degree
+FY938899,1928,Female,White Caucasian,Masters degree (MA or MS)
+FY928066,1945,Male,White Caucasian,Masters degree (MA or MS)
+FY922941,1972,Female,Asian or Pacific Islander,Four year college degree (BA or BS)
+FY986760,1950,Female,White Caucasian,PhD MD MBA Law degree
+FY977557,1965,Female,White Caucasian,PhD MD MBA Law degree
+FY985277,1965,Male,Asian or Pacific Islander,Masters degree (MA or MS)
+FY932109,1954,Female,White Caucasian,PhD MD MBA Law degree
+FY929850,1976,Male,White Caucasian,Masters degree (MA or MS)
+FY955871,1953,Male,White Caucasian,Four year college degree (BA or BS)
+FY942833,1951,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY947638,1957,Male,White Caucasian,Four year college degree (BA or BS)
+FY958621,1962,Female,White Caucasian,PhD MD MBA Law degree
+FY907545,1943,Female,White Caucasian,Masters degree (MA or MS)
+FY906114,1951,Male,White Caucasian,PhD MD MBA Law degree
+FY943768,1953,Female,White Caucasian,Masters degree (MA or MS)
+FY904566,1967,Female,White Caucasian,PhD MD MBA Law degree
+FY911306,1964,Male,White Caucasian,PhD MD MBA Law degree
+FY998415,1933,Female,White Caucasian,PhD MD MBA Law degree
+FY965446,1969,Male,#NAME?,Masters degree (MA or MS)
+FY932638,1933,Female,White Caucasian,Four year college degree (BA or BS)
+FY930405,1970,Female,White Caucasian,Masters degree (MA or MS)
+FY909832,1929,Female,White Caucasian,Four year college degree (BA or BS)
+FY929403,1936,Female,White Caucasian,Four year college degree (BA or BS)
+FY952914,1950,Male,White Caucasian,Masters degree (MA or MS)
+FY935544,1954,Female,Latino or Hispanic,PhD MD MBA Law degree
+FY980492,1953,Male,White Caucasian,PhD MD MBA Law degree
+FY931072,1968,Female,Black or African American,PhD MD MBA Law degree
+FY989891,1942,Female,White Caucasian,Masters degree (MA or MS)
+FY959155,1922,Female,White Caucasian,Masters degree (MA or MS)
+FY913551,1948,Female,White Caucasian,PhD MD MBA Law degree
+FY954379,1975,Female,Latino or Hispanic,Four year college degree (BA or BS)
+FY956725,1950,Female,White Caucasian,Masters degree (MA or MS)
+FY950313,1959,Male,Latino or Hispanic,Four year college degree (BA or BS)
+FY901712,1980,Female,White Caucasian,Four year college degree (BA or BS)
+FY921515,1953,Female,White Caucasian,PhD MD MBA Law degree
+FY936458,1969,Male,White Caucasian,PhD MD MBA Law degree
+FY989740,1975,Female,White Caucasian,PhD MD MBA Law degree
+FY970686,1980,Female,White Caucasian,PhD MD MBA Law degree
+FY970694,1956,Female,Asian or Pacific Islander,Four year college degree (BA or BS)
+FY974946,1966,Female,Asian or Pacific Islander,PhD MD MBA Law degree
+FY973615,1982,Female,White Caucasian,Four year college degree (BA or BS)
+FY978771,1942,Female,White Caucasian,Masters degree (MA or MS)
+FY963250,1947,Female,White Caucasian,PhD MD MBA Law degree
+FY968647,1971,Female,White Caucasian,Masters degree (MA or MS)
+FY980709,1969,Female,Black or African American,Masters degree (MA or MS)
+FY969713,1979,Female,Asian or Pacific Islander,PhD MD MBA Law degree
+FY942218,,,,
+FY936590,1941,Male,White Caucasian,PhD MD MBA Law degree
+FY935849,1947,Female,White Caucasian,Four year college degree (BA or BS)
+FY916205,1952,Female,White Caucasian,Masters degree (MA or MS)
+FY999642,1949,Female,Latino or Hispanic,Masters degree (MA or MS)
+FY942980,1963,Female,White Caucasian,PhD MD MBA Law degree
+FY959655,1940,Male,White Caucasian,Four year college degree (BA or BS)
+FY961823,1972,Female,White Caucasian,Masters degree (MA or MS)
+FY900891,1967,Male,White Caucasian,Masters degree (MA or MS)
+FY926875,1940,Female,White Caucasian,PhD MD MBA Law degree
+FY933838,1947,Male,White Caucasian,PhD MD MBA Law degree
+FY991879,1955,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY994814,1975,Female,Asian or Pacific Islander,PhD MD MBA Law degree
+FY938136,1967,Female,White Caucasian,Four year college degree (BA or BS)
+FY978104,1935,Male,White Caucasian,Masters degree (MA or MS)
+FY916002,1949,Male,White Caucasian,Masters degree (MA or MS)
+FY940510,1938,Female,White Caucasian,Masters degree (MA or MS)
+FY929892,1956,Female,White Caucasian,
+FY968175,1958,Female,White Caucasian,PhD MD MBA Law degree
+FY977638,1955,Female,White Caucasian,Masters degree (MA or MS)
+FY902812,1972,Female,White Caucasian,Masters degree (MA or MS)
+FY904068,1974,Male,Latino or Hispanic,PhD MD MBA Law degree
+,1942,Male,White Caucasian,PhD MD MBA Law degree
+FY904554,1958,Male,White Caucasian,PhD MD MBA Law degree
+FY967614,1957,Female,White Caucasian,Four year college degree (BA or BS)
+FY930782,1980,Male,White Caucasian,PhD MD MBA Law degree
+FY915590,1987,Male,Asian or Pacific Islander,Four year college degree (BA or BS)
+FY952734,1957,Male,White Caucasian,PhD MD MBA Law degree
+FY910018,1957,Female,White Caucasian,PhD MD MBA Law degree
+FY963115,1962,Female,Black or African American,PhD MD MBA Law degree
+FY999589,1958,Female,White Caucasian,Masters degree (MA or MS)
+FY931774,1957,Female,White Caucasian,Masters degree (MA or MS)
+FY983289,1985,Female,White Caucasian,Four year college degree (BA or BS)
+FY909875,1971,Female,White Caucasian,PhD MD MBA Law degree
+FY962441,1971,Female,White Caucasian,Masters degree (MA or MS)
+FY994777,1944,Female,White Caucasian,Masters degree (MA or MS)
+FY985587,1972,Female,Asian or Pacific Islander,PhD MD MBA Law degree
+FY906326,1945,Female,White Caucasian,Masters degree (MA or MS)
+FY970272,1948,Female,#NAME?,PhD MD MBA Law degree
+FY956488,1941,Female,White Caucasian,Masters degree (MA or MS)
+FY921017,1958,Female,White Caucasian,PhD MD MBA Law degree
+FY936879,1953,Male,White Caucasian,Masters degree (MA or MS)
+FY908381,1971,Female,White Caucasian,Masters degree (MA or MS)
+FY933075,1954,Male,White Caucasian,PhD MD MBA Law degree
+FY986393,1971,Female,White Caucasian,PhD MD MBA Law degree
+FY945081,1979,Female,White Caucasian,PhD MD MBA Law degree
+FY923992,1953,Female,White Caucasian,Four year college degree (BA or BS)
+FY963797,1950,Female,White Caucasian,Four year college degree (BA or BS)
+FY982382,1937,Male,White Caucasian,PhD MD MBA Law degree
+FY967303,1946,Male,White Caucasian,Masters degree (MA or MS)
+FY989322,1950,Male,White Caucasian,Masters degree (MA or MS)
+FY961004,1978,Female,White Caucasian,PhD MD MBA Law degree
+FY956293,1968,Female,White Caucasian,PhD MD MBA Law degree
+FY945516,1959,Female,White Caucasian,PhD MD MBA Law degree
+FY966177,1943,Male,White Caucasian,PhD MD MBA Law degree
+FY914694,1943,Male,Latino or Hispanic,PhD MD MBA Law degree
+FY984142,1956,Female,White Caucasian,Four year college degree (BA or BS)
+FY997427,1954,Male,White Caucasian,PhD MD MBA Law degree
+FY996161,1979,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY961481,1963,Male,#NAME?,Masters degree (MA or MS)
+FY949764,1940,Female,White Caucasian,Masters degree (MA or MS)
+FY945209,1949,Female,White Caucasian,PhD MD MBA Law degree
+FY977340,1970,Female,White Caucasian,PhD MD MBA Law degree
+FY967371,1953,Male,White Caucasian,Masters degree (MA or MS)
+FY919525,1942,Female,White Caucasian,Masters degree (MA or MS)
+FY925002,1953,Female,White Caucasian,Masters degree (MA or MS)
+FY914085,1933,Male,White Caucasian,PhD MD MBA Law degree
+FY960979,1976,Male,Latino or Hispanic,PhD MD MBA Law degree
+FY995514,1982,Female,White Caucasian,Four year college degree (BA or BS)
+FY919153,1969,Female,,Four year college degree (BA or BS)
+FY969474,,,,
+FY950523,1950,Female,Latino or Hispanic,Masters degree (MA or MS)
+FY993408,1950,Male,White Caucasian,PhD MD MBA Law degree
+FY969474,1972,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY977056,1959,Female,White Caucasian,PhD MD MBA Law degree
+FY983576,1986,Female,Asian or Pacific Islander,Four year college degree (BA or BS)
+FY904196,1959,Female,White Caucasian,Masters degree (MA or MS)
+FY986005,1967,Female,White Caucasian,PhD MD MBA Law degree
+FY947150,1983,Female,White Caucasian,Four year college degree (BA or BS)
+FY963648,1940,Female,White Caucasian,Four year college degree (BA or BS)
+FY947150,,,,
+FY947150,1983,Female,White Caucasian,Four year college degree (BA or BS)
+FY919984,1942,Male,White Caucasian,Masters degree (MA or MS)
+FY923229,1969,Male,Latino or Hispanic,Masters degree (MA or MS)
+FY945016,1944,Male,White Caucasian,Masters degree (MA or MS)
+FY960034,1932,Male,White Caucasian,Four year college degree (BA or BS)
+FY911282,1951,Female,White Caucasian,Four year college degree (BA or BS)
+FY962658,1958,Female,White Caucasian,PhD MD MBA Law degree
+FY982242,1975,Male,Asian or Pacific Islander,
+FY901770,1979,Female,White Caucasian,
+FY974520,1967,Female,White Caucasian,Masters degree (MA or MS)
+FY907048,1964,Female,White Caucasian,PhD MD MBA Law degree
+FY906296,1975,Female,White Caucasian,Masters degree (MA or MS)
+FY936136,1940,Female,White Caucasian,Masters degree (MA or MS)
+FY974614,1953,Male,White Caucasian,Masters degree (MA or MS)
+FY975057,1966,Female,White Caucasian,Masters degree (MA or MS)
+FY911860,1956,Male,White Caucasian,PhD MD MBA Law degree
+FY966081,1977,Female,White Caucasian,Masters degree (MA or MS)
+FY974383,1949,Female,White Caucasian,PhD MD MBA Law degree
+FY924456,1979,Male,Asian or Pacific Islander,PhD MD MBA Law degree
+FY920149,1934,Female,White Caucasian,Masters degree (MA or MS)
+FY980271,1933,Male,White Caucasian,PhD MD MBA Law degree
+FY936461,1942,Male,White Caucasian,PhD MD MBA Law degree
+FY996602,1943,Male,White Caucasian,Masters degree (MA or MS)
+FY980271,1933,Male,White Caucasian,PhD MD MBA Law degree
+FY964071,1953,Female,White Caucasian,Masters degree (MA or MS)
+FY937702,1966,Female,Latino or Hispanic,Four year college degree (BA or BS)
+FY947599,1952,Female,Latino or Hispanic,PhD MD MBA Law degree
+FY960778,1974,Female,White Caucasian,Masters degree (MA or MS)
+FY980349,1976,Female,White Caucasian,Four year college degree (BA or BS)
+FY919126,1961,Female,White Caucasian,PhD MD MBA Law degree
+FY902340,1984,Female,Latino or Hispanic,Four year college degree (BA or BS)
+FY942949,1970,Male,White Caucasian,Masters degree (MA or MS)
+FY993818,1933,Female,White Caucasian,Four year college degree (BA or BS)
+FY921384,1969,Female,Latino or Hispanic,Masters degree (MA or MS)
+FY930761,1963,Female,White Caucasian,Masters degree (MA or MS)
+FY962461,1973,Female,White Caucasian,Masters degree (MA or MS)
+FY920609,1956,Male,Latino or Hispanic,PhD MD MBA Law degree
+FY935918,1939,Male,White Caucasian,Four year college degree (BA or BS)
+FY904216,1942,Male,White Caucasian,PhD MD MBA Law degree
+FY959558,1951,Female,White Caucasian,Masters degree (MA or MS)
+FY942829,1982,Male,White Caucasian,Masters degree (MA or MS)
+FY904896,1978,Female,White Caucasian,PhD MD MBA Law degree
+FY929732,1949,Male,White Caucasian,Four year college degree (BA or BS)
+FY962351,1958,Female,White Caucasian,PhD MD MBA Law degree
+FY901541,1955,Female,Latino or Hispanic,Masters degree (MA or MS)
+FY999105,1957,Male,White Caucasian,Four year college degree (BA or BS)
+FY996630,1933,Male,White Caucasian,Four year college degree (BA or BS)
+FY969311,1986,Male,White Caucasian,Masters degree (MA or MS)
+FY975582,1967,Female,White Caucasian,PhD MD MBA Law degree
+FY956695,1982,Male,Black or African American,Masters degree (MA or MS)
+FY942480,1953,Male,White Caucasian,PhD MD MBA Law degree
+FY967945,1961,Male,#NAME?,Masters degree (MA or MS)
+FY972762,1971,Female,White Caucasian,PhD MD MBA Law degree
+FY979316,1976,Female,Black or African American,Masters degree (MA or MS)
+FY970997,1969,Female,White Caucasian,Masters degree (MA or MS)
+FY994203,1960,Male,Asian or Pacific Islander,Masters degree (MA or MS)
+FY912053,1946,Male,White Caucasian,PhD MD MBA Law degree
+FY912994,1962,Female,White Caucasian,Masters degree (MA or MS)
+FY932804,1957,Male,White Caucasian,PhD MD MBA Law degree
+FY983870,1947,Male,White Caucasian,PhD MD MBA Law degree
+FY983870,,,,
+FY936928,1960,Female,White Caucasian,Four year college degree (BA or BS)
+FY913746,1970,Male,White Caucasian,Masters degree (MA or MS)
+FY922997,1937,Female,White Caucasian,Masters degree (MA or MS)
+FY963930,1968,Male,Asian or Pacific Islander,Masters degree (MA or MS)
+FY973899,1953,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY973899,1953,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY944982,1944,Male,White Caucasian,Masters degree (MA or MS)
+FY938920,1980,Female,#NAME?,Masters degree (MA or MS)
+FY972672,1968,Female,Asian or Pacific Islander,PhD MD MBA Law degree
+FY939558,1933,Male,White Caucasian,
+FY994872,1970,Male,White Caucasian,PhD MD MBA Law degree
+FY910012,1970,Male,Latino or Hispanic,Masters degree (MA or MS)
+FY984989,1957,Male,White Caucasian,PhD MD MBA Law degree
+FY984610,1985,Female,White Caucasian,Four year college degree (BA or BS)
+FY993518,1959,Male,Latino or Hispanic,Masters degree (MA or MS)
+FY921774,1945,Male,White Caucasian,PhD MD MBA Law degree
+FY938904,1966,Female,White Caucasian,PhD MD MBA Law degree
+FY979910,,Female,Latino or Hispanic,Masters degree (MA or MS)
+FY908452,1939,Female,White Caucasian,Four year college degree (BA or BS)
+FY995649,1944,Male,White Caucasian,Masters degree (MA or MS)
+FY919508,1964,Female,White Caucasian,Masters degree (MA or MS)
+FY939558,1933,Male,White Caucasian,Four year college degree (BA or BS)
+FY946581,1968,Female,Black or African American,PhD MD MBA Law degree
+FY936415,1941,Female,White Caucasian,PhD MD MBA Law degree
+FY919778,1983,Female,White Caucasian,Four year college degree (BA or BS)
+FY906014,1955,Female,White Caucasian,Masters degree (MA or MS)
+FY980313,1935,Male,White Caucasian,Masters degree (MA or MS)
+FY965947,1943,Male,Latino or Hispanic,PhD MD MBA Law degree
+FY996369,1978,Female,#NAME?,
+FY996369,1978,Female,#NAME?,PhD MD MBA Law degree
+FY978718,1946,Female,White Caucasian,PhD MD MBA Law degree
+FY998569,1954,Female,Latino or Hispanic,PhD MD MBA Law degree
+FY904644,1962,Male,White Caucasian,PhD MD MBA Law degree
+FY948098,1954,Female,White Caucasian,Masters degree (MA or MS)
+FY987518,1945,Male,White Caucasian,
+FY987518,1945,Male,White Caucasian,Four year college degree (BA or BS)
+FY982294,1977,Female,White Caucasian,Masters degree (MA or MS)
+FY925966,1959,Female,White Caucasian,Masters degree (MA or MS)
+FY975992,1953,Male,White Caucasian,Masters degree (MA or MS)
+FY961166,,,,
+FY908627,1955,Male,White Caucasian,PhD MD MBA Law degree
+FY962733,1970,Female,White Caucasian,PhD MD MBA Law degree
+FY917187,1970,Female,White Caucasian,PhD MD MBA Law degree
+FY908875,1936,Male,White Caucasian,PhD MD MBA Law degree
+FY902515,1948,Female,White Caucasian,Four year college degree (BA or BS)
+FY935155,1986,Male,White Caucasian,Four year college degree (BA or BS)
+FY956121,1950,Male,Black or African American,PhD MD MBA Law degree
+FY949580,1930,Female,White Caucasian,Four year college degree (BA or BS)
+FY984593,1968,Female,Latino or Hispanic,Masters degree (MA or MS)
+FY929732,1949,Male,White Caucasian,Four year college degree (BA or BS)
+FY995007,1946,Male,White Caucasian,
+FY995007,1946,Male,White Caucasian,Masters degree (MA or MS)
+FY927211,1967,Male,Unknown,Masters degree (MA or MS)
+FY970130,1968,Female,Latino or Hispanic,PhD MD MBA Law degree
+FY957617,1966,Male,Black or African American,PhD MD MBA Law degree
+FY908229,1975,Female,White Caucasian,PhD MD MBA Law degree
+FY914314,1959,Female,White Caucasian,Masters degree (MA or MS)
+FY923469,1930,Male,White Caucasian,PhD MD MBA Law degree
+FY949911,1976,Male,White Caucasian,PhD MD MBA Law degree
+FY904420,1931,Female,White Caucasian,Masters degree (MA or MS)
+FY989745,1947,Female,White Caucasian,Masters degree (MA or MS)
+FY973899,1953,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+FY929892,1956,Female,White Caucasian,PhD MD MBA Law degree
+FY998013,1950,Female,White Caucasian,PhD MD MBA Law degree
+FY940975,1963,Female,White Caucasian,Four year college degree (BA or BS)
+FY927197,1980,Female,White Caucasian,PhD MD MBA Law degree
+FY978396,1946,Female,White Caucasian,PhD MD MBA Law degree
+FY970206,1939,Male,White Caucasian,Masters degree (MA or MS)
+FY957539,1978,Female,White Caucasian,Masters degree (MA or MS)
+FY920210,1958,Female,White Caucasian,Four year college degree (BA or BS)
+FY969214,1960,Female,White Caucasian,Masters degree (MA or MS)
+FY959676,1951,Male,White Caucasian,Masters degree (MA or MS)
+FY931086,1965,Female,Asian or Pacific Islander,Four year college degree (BA or BS)
+FY946844,1955,Male,White Caucasian,Masters degree (MA or MS)
+FY934989,1984,Female,Asian or Pacific Islander,Masters degree (MA or MS)
+,,,,
+FY931820,1957,Female,White Caucasian,Masters degree (MA or MS)
+FY923748,1977,Female,Black or African American,Masters degree (MA or MS)
+FY930761,,,,
+FY918994,1937,Female,White Caucasian,Masters degree (MA or MS)
+FY958915,1961,Female,#NAME?,Four year college degree (BA or BS)
+FY974105,1941,Female,White Caucasian,PhD MD MBA Law degree
+FY991551,1948,Male,White Caucasian,PhD MD MBA Law degree
+,,,,
+FY979650,1931,Female,Unknown,PhD MD MBA Law degree
+FY955814,1956,Female,White Caucasian,PhD MD MBA Law degree
+FY920690,1972,Female,White Caucasian,PhD MD MBA Law degree
+FY972771,1978,Male,White Caucasian,PhD MD MBA Law degree
+FY983064,1966,Female,White Caucasian,Four year college degree (BA or BS)
+FY929673,1945,Male,#NAME?,Masters degree (MA or MS)
+FY970179,1977,Female,White Caucasian,PhD MD MBA Law degree
+FY976070,1972,Female,Asian or Pacific Islander,PhD MD MBA Law degree
+FY913187,1956,Female,White Caucasian,PhD MD MBA Law degree
+,,,,
+FY980159,1946,Male,Latino or Hispanic,Masters degree (MA or MS)
+FY941287,1945,Female,White Caucasian,Masters degree (MA or MS)
+FY918792,1986,Female,White Caucasian,Four year college degree (BA or BS)
+FY911262,1961,Male,#NAME?,PhD MD MBA Law degree
+,1980,Female,Asian or Pacific Islander,PhD MD MBA Law degree
+FY965568,1926,Female,White Caucasian,Four year college degree (BA or BS)
+FY927042,1958,Female,White Caucasian,PhD MD MBA Law degree
+FY976359,1986,Female,White Caucasian,Four year college degree (BA or BS)
+FY951764,1968,Female,Latino or Hispanic,Masters degree (MA or MS)
+FY951830,1943,Male,White Caucasian,PhD MD MBA Law degree
+FY987009,1959,Female,#NAME?,Masters degree (MA or MS)
+FY940047,1935,Female,White Caucasian,
+FY940047,,,,
+FY929841,1973,Male,Asian or Pacific Islander,Masters degree (MA or MS)
+FY978875,1979,Female,,Masters degree (MA or MS)
+FY996137,1958,Female,White Caucasian,PhD MD MBA Law degree
+FY991569,1958,Female,Latino or Hispanic,Four year college degree (BA or BS)
+FY938999,1973,Male,Latino or Hispanic,Masters degree (MA or MS)
+FY974121,1981,Female,White Caucasian,Masters degree (MA or MS)
+FY972628,1973,Female,White Caucasian,PhD MD MBA Law degree
+FY921774,1945,Male,White Caucasian,PhD MD MBA Law degree
+FY990161,1933,Male,White Caucasian,PhD MD MBA Law degree
+FY938793,1982,Female,Latino or Hispanic,Masters degree (MA or MS)
+FY969693,1951,Female,White Caucasian,Masters degree (MA or MS)
+FY978837,1938,Male,,Masters degree (MA or MS)
+FY996137,1958,Female,White Caucasian,PhD MD MBA Law degree
+FY916757,1967,Male,Latino or Hispanic,
+FY907400,1957,Female,White Caucasian,Four year college degree (BA or BS)
+FY970292,1961,Male,Asian or Pacific Islander,
+FY970292,1961,Male,Asian or Pacific Islander,PhD MD MBA Law degree
+FY994721,1956,,White Caucasian,PhD MD MBA Law degree
+FY932899,1966,Female,#NAME?,Four year college degree (BA or BS)
+FY990645,1959,Female,Latino or Hispanic,PhD MD MBA Law degree
+FY988928,1957,Female,White Caucasian,Four year college degree (BA or BS)
+FY943443,1963,Female,#NAME?,Masters degree (MA or MS)
+FY995443,1951,Female,White Caucasian,PhD MD MBA Law degree
+FY920597,1955,Female,#NAME?,Four year college degree (BA or BS)
+FY957424,1950,Female,White Caucasian,PhD MD MBA Law degree
+FY963541,1961,Female,White Caucasian,Four year college degree (BA or BS)
+FY958900,1963,Female,White Caucasian,Masters degree (MA or MS)
+FY910978,1962,Female,#NAME?,Four year college degree (BA or BS)
+FY997218,1956,Female,White Caucasian,PhD MD MBA Law degree
+FY923545,1952,Male,Asian or Pacific Islander,PhD MD MBA Law degree
+FY960478,1956,Female,White Caucasian,PhD MD MBA Law degree
+FY970178,1949,Female,Latino or Hispanic,Masters degree (MA or MS)
+FY953843,1961,Female,#NAME?,Four year college degree (BA or BS)
+FY947737,1946,Male,Latino or Hispanic,Four year college degree (BA or BS)
+FY998510,1958,Female,White Caucasian,Masters degree (MA or MS)
+FY934245,1944,Male,Asian or Pacific Islander,
+FY934245,1944,Male,Asian or Pacific Islander,PhD MD MBA Law degree
+FY961837,1953,Female,White Caucasian,Masters degree (MA or MS)
+FY947737,1957,Female,Latino or Hispanic,PhD MD MBA Law degree
+FY949005,1959,Female,White Caucasian,Four year college degree (BA or BS)
+FY937671,1951,Female,White Caucasian,Masters degree (MA or MS)
+FY915367,1958,Female,White Caucasian,PhD MD MBA Law degree
+FY959946,1946,Female,White Caucasian,Masters degree (MA or MS)
+,1946,Male,Latino or Hispanic,Four year college degree (BA or BS)
+FY952866,,,,
+,1957,Female,Latino or Hispanic,PhD MD MBA Law degree
+FY948320,1952,Female,White Caucasian,PhD MD MBA Law degree
+FY970625,1957,Female,White Caucasian,Masters degree (MA or MS)
+FY967890,1943,Female,Black or African American,Masters degree (MA or MS)
+FY952866,1957,Female,#NAME?,
+FY906864,1958,Female,White Caucasian,Four year college degree (BA or BS)
+FY918842,1955,Female,White Caucasian,Masters degree (MA or MS)
+FY982343,1968,Male,White Caucasian,Four year college degree (BA or BS)
+FY976994,1960,Female,White Caucasian,Four year college degree (BA or BS)
+FY916511,1962,Male,White Caucasian,Masters degree (MA or MS)
+FY908039,1955,Male,White Caucasian,PhD MD MBA Law degree
+FY902962,1958,Male,White Caucasian,PhD MD MBA Law degree
+FY916757,1900,Female,Black or African American,
+FY960732,1953,Female,White Caucasian,
+FY977056,1959,Female,White Caucasian,PhD MD MBA Law degree

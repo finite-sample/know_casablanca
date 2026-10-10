@@ -41,12 +41,16 @@ rating_columns_2010 <- c(
 
 # Alumni and staff answered the same instrument. Respondents who opened the
 # survey more than once keep their first complete attempt.
-read_panel_2010 <- function(file, id_marker, study) {
+read_panel_records <- function(file, id_marker) {
   readr::read_csv(raw_path(file), col_types = readr::cols(.default = "c")) |>
     dplyr::filter(stringr::str_detect(userid, id_marker)) |>
     dplyr::mutate(started = lubridate::mdy_hm(date)) |>
     dplyr::arrange(userid, status != "Complete", started) |>
-    dplyr::distinct(userid, .keep_all = TRUE) |>
+    dplyr::distinct(userid, .keep_all = TRUE)
+}
+
+read_panel_2010 <- function(file, id_marker, study) {
+  read_panel_records(file, id_marker) |>
     dplyr::filter(correct.or.conf %in% c("percent", "regular")) |>
     dplyr::transmute(
       study = study,

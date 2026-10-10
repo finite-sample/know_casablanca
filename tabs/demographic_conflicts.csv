@@ -1,0 +1,7 @@
+respondent,field,distinct_values,value,conflict
+FY916757,ethnic,3,,TRUE
+FY916757,gender,2,,TRUE
+FY916757,year,3,,TRUE
+FY947737,educ,2,,TRUE
+FY947737,gender,2,,TRUE
+FY947737,year,2,,TRUE

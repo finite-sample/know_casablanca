@@ -75,4 +75,5 @@ Holm p-values account for all estimable contrasts and specifications within voti
 Interest, partisan intensity, each state-versus-middle coefficient, and true/false splits
 are in [the model table](../tabs/belief_engagement_models.csv). Descriptive Pearson correlations
 are in [the correlation table](../tabs/belief_engagement_correlations.csv). Models lacking
-outcome data are flagged; 2010 voting and partisan intensity were not harmonized here.
+outcome data are flagged. Recovered 2010 voting measures and panel attachment are analyzed separately
+in [the reconstruction](reconstructed_results.md); panel attachment is not MTurk partisan extremity.

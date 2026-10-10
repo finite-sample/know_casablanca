@@ -16,6 +16,7 @@ table_style <- list(
 )
 
 raw_files <- c(
+  alumni_2010_demographics.csv = "bbdd1f60171304dd3028f23a3e1778dee80ca8c0cba9077802e4fa7e5dfbb16a",
   alumni_2010.csv = "7baf68c339ab36d99eac7ff018c6c4e1179b13443dd8450f1d0d1c6b13ab6c82",
   staff_2010.csv = "891f04e9cfe768d0b666a3133a23da05478b90c4a6653285fe197d263e7fb5c2",
   mturk_march_2017.csv = "845864d3861868f27a781aa3ed5875e77b5d8587f216eff22930416521808f02",

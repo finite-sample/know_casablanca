@@ -46,10 +46,11 @@ make check
 
 `make restore` installs the versions in `renv.lock`. `make check` runs the
 analysis, builds the manuscript, lints the R code, and runs the tests.
-`make analysis` runs stages 01–04 without compiling the manuscript.
+`make analysis` runs stages 01–08 without compiling the manuscript.
 
-The manuscript needs XeLaTeX and latexmk. Every number in the text comes from
-`tabs/macros.tex`, which `scripts/04_tables.R` writes from the analysis output.
+The manuscript needs XeLaTeX and latexmk. Empirical estimates quoted in the text
+come from generated macros in `tabs/macros.tex`, `tabs/extension_macros.tex`,
+and `tabs/reconstruction_macros.tex`.
 
 With Docker installed, `make ci-docker` runs the same checks in `rocker/verse:4.6.0`.
 
@@ -77,7 +78,10 @@ With Docker installed, `make ci-docker` runs the same checks in `rocker/verse:4.
 | `03_figures.R` | Read estimates and write PDF and PNG figures to `figs/` |
 | `04_tables.R` | Write LaTeX tables, number macros, and table styles to `tabs/` |
 | `05_extensions.R` | Compare the three planned belief-state scorings and estimate descriptive engagement associations |
-| `99_run_all.R` | Load configuration and helpers, then run stages 01–05 in order |
+| `06_correlates.R` | Recover demographics, ideology, party attachment, and 2010 voting intention |
+| `07_historical.R` | Reconstruct historical response models, partisan gaps, and latent response classes |
+| `08_reconstruction_tables.R` | Generate reconstruction tables and manuscript values |
+| `99_run_all.R` | Load configuration and helpers, then run stages 01–08 in order |
 
 Prepared data in `data/derived/` are generated and ignored by Git. Table settings
 in `00_config.R` cover standard tables and the denser appendix tables; the
@@ -90,3 +94,14 @@ intensity. See the [analysis plan](docs/belief_state_extensions.md) and
 these comparisons in its results, discussion, and three generated appendix
 tables; quoted estimates come from generated LaTeX macros. These associations
 are descriptive; voting intention is not observed turnout or candidate choice.
+
+The subsequent [reconstruction](docs/reconstructed_results.md) adds the verified
+2010 voting measures and demographic correlates, eleven historical party-based
+response models, eight ANES affect models, partisan-gap sensitivity to answer
+keys, and exploratory latent response classes. The [source notes](docs/recovered_measures.md)
+document questionnaire evidence, data joins, repaired historical code, and
+interpretation limits. The [retrospective plan](docs/historical_analysis_plan.md)
+records specifications and changes following source review. `data/historical/`
+contains minimal, hash-verified extracts, so the normal build does not depend on
+the local historical archive or sibling repositories. `scripts/import_archived_data.R`
+recreates those extracts when the documented original sources are available.

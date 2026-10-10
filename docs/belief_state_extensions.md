@@ -41,7 +41,8 @@ Political interest is the existing 0–10 measure in all four surveys. In the tw
 MTurk surveys, `vote_1` explicitly asks likelihood of voting in the *next*
 congressional election, from 0 (certain not to vote) to 10 (certain to vote).
 It is intention, not observed turnout or candidate choice. The 2010
-`vote.2010` measure is deferred until its instrument wording is verified.
+`vote.2010` measure was initially deferred. The recovered questionnaire now
+verifies it; `06_correlates.R` analyzes it in a separate panel-voting family.
 
 In both MTurk exports, `pid_strength_1` is a directional 0–10 scale from
 completely pro-Democratic to completely pro-Republican, with 5 neutral. Define
