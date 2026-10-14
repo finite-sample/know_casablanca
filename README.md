@@ -91,3 +91,7 @@ The earlier [belief-state scoring results](docs/belief_extension_results.md) and
 Their scoring labels and latent response classes do not identify the five
 premeasurement cognitive states. They are separate reports, not empirical
 validation of the current manuscript's state definitions.
+
+<!-- adjacent:start -->
+
+<!-- adjacent:end -->
