@@ -94,4 +94,14 @@ validation of the current manuscript's state definitions.
 
 <!-- adjacent:start -->
 
+## 🔗 Adjacent Repositories
+
+- [finite-sample/know_hidden](https://github.com/finite-sample/know_hidden) — Mis-measuring Political Knowledge? Do People Know More—or Even Less—about Politics than Commonly Thought?
+- [finite-sample/know_misinfo_misinfo](https://github.com/finite-sample/know_misinfo_misinfo) — Misinformation about Misinformation? Of Headlines and Survey Design \(Luskin, Sood, Park, Blank\)
+- [finite-sample/know_pgap_review](https://github.com/finite-sample/know_pgap_review) — Replication Materials For "A Gap in Our Understanding? Reconsidering the Evidence for Partisan Knowledge Gaps"
+- [finite-sample/know_pgap_cues](https://github.com/finite-sample/know_pgap_cues) — Partisan cues and evaluations of the same economic information \(Roush and Sood\)
+- [finite-sample/know_gains](https://github.com/finite-sample/know_gains) — Measuring Learning in Informative Processes \(Luskin, Helfer, Sood\)
+
+_Powered by [Adjacent](https://github.com/gojiplus/adjacent)_
+
 <!-- adjacent:end -->
